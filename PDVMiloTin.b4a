@@ -1,0 +1,371 @@
+﻿Build1=Default,pdv.milotin
+File1=arial rounded mt bold bold.ttf
+File10=iconCreditCard.png
+File11=iconFail.png
+File12=iconFPX.png
+File13=iconFund1.png
+File14=iconFund2.png
+File15=iconFunding.png
+File16=iconFunding1.png
+File17=iconHistory1.png
+File18=iconHistory2.png
+File19=iconHome1.png
+File2=avatar.png
+File20=iconHome2.png
+File21=iconMaschain.png
+File22=iconMenu.png
+File23=iconMoney.png
+File24=iconPassword.png
+File25=iconProgress.png
+File26=iconProgress1.png
+File27=iconProject.png
+File28=iconProject1.png
+File29=iconRM1.png
+File3=db.db
+File30=iconSuccess.png
+File31=iconUser1.png
+File32=iconUser2.png
+File33=iconUsername.png
+File34=iconWallet.png
+File35=ListViewLy1.bal
+File36=mainbg1.jpg
+File37=MainLy.bal
+File38=MainLyBak.bal
+File39=mltlogo.png
+File4=HomeLy.bal
+File40=mtheader.jpg
+File41=mtheader.png
+File42=SendFundLy.bal
+File43=splash.jpg
+File44=UserLy.bal
+File5=iconBack.png
+File6=iconBlockchain.png
+File7=iconBTC.png
+File8=iconCircle.png
+File9=iconClose2.png
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
+FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Default Group
+FileGroup24=Default Group
+FileGroup25=Default Group
+FileGroup26=Default Group
+FileGroup27=Default Group
+FileGroup28=Default Group
+FileGroup29=Default Group
+FileGroup3=Default Group
+FileGroup30=Default Group
+FileGroup31=Default Group
+FileGroup32=Default Group
+FileGroup33=Default Group
+FileGroup34=Default Group
+FileGroup35=Default Group
+FileGroup36=Default Group
+FileGroup37=Default Group
+FileGroup38=Default Group
+FileGroup39=Default Group
+FileGroup4=Default Group
+FileGroup40=Default Group
+FileGroup41=Default Group
+FileGroup42=Default Group
+FileGroup43=Default Group
+FileGroup44=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=bitmapcreator
+Library10=phone
+Library11=randomaccessfile
+Library12=reflection
+Library13=runtimepermissions
+Library14=sql
+Library15=viewsex
+Library16=xui
+Library2=camera
+Library3=clipboard
+Library4=core
+Library5=javaobject
+Library6=jhsicezxing1
+Library7=json
+Library8=keyvaluestore2
+Library9=okhttputils2
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~AddManifestText(<uses-feature android:name="android.hardware.telephony" android:required="false" />)~\n~AddManifestText(<uses-feature android:name="android.hardware.camera" android:required="false" />)~\n~AddManifestText(<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />)~\n~AddManifestText(<uses-feature android:name="android.hardware.camera.flash" android:required="false" />)~\n~'AddPermission("android.permission.ACCESS_COARSE_LOCATION")~\n~AddPermission("android.permission.INTERNET")~\n~AddPermission("android.permission.ACCESS_FINE_LOCATION")~\n~AddPermission("android.permission.WAKE_LOCK")~\n~AddPermission("android.permission.DEVICE_POWER")~\n~'AddPermission("android.permission.ACCESS_COARSE_UPDATES")~\n~AddPermission("android.permission.READ_PHONE_STATE")~\n~AddPermission("android.permission.VIBRATE")~\n~AddPermission("android.permission.CAMERA")~\n~AddPermission("android.permission.FLASHLIGHT")~\n~AddPermission("android.hardware.camera")~\n~AddApplicationText(<activity android:name="ice.zxing.CaptureActivity"~\n~            android:screenOrientation="portrait" android:configChanges="orientation|keyboardHidden"~\n~            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~            android:windowSoftInputMode="stateAlwaysHidden">~\n~        </activity>)
+Module1=CameraExClass
+Module2=CircularProgressBar
+Module3=CustomListView
+Module4=HomeMd
+Module5=QRcode
+Module6=SendFundMd
+Module7=Starter
+Module8=UserMd
+NumberOfFiles=44
+NumberOfLibraries=16
+NumberOfModules=8
+Version=12.8
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Milo Tin
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	Private xui As XUI
+	Private Timer1 As Timer
+	Private SQL1 As SQL
+	Private cursor1, cursorSetting As Cursor
+	Private ClientKey As String = "29ce9025492f7af26177ff2c85b3703a1ec763dbbc49a19dff1442d6b810b68b"
+	Private HashedClientSecret As String = "sk_71a349f5467456ee1c321604553cc6afa62b3e8a9482f5749ab4ab70f10b7380"
+	Private TokenContractAddress As String = "0x5BA886F619b95E2b2a875503e2FCE58c14027ade"
+	Private AuditContractAddress As String = "0x352D1B542278e277061617b2CcEcb6B56E62b757"
+End Sub
+
+Sub Globals
+	Private kvs As KeyValueStore
+	Private rp As RuntimePermissions
+	Private shared As String
+	' Declare the HTTP job
+
+	Private pnMain As Panel
+	Private lblTop As Label
+	Private pnUsername As Panel
+	Private imgUsername As ImageView
+	Private txtUsername As EditText
+	Private iconCheck As Label
+	Private pnPassword As Panel
+	Private imgPassword As ImageView
+	Private txtPassword As EditText
+	Private pnWallet As Panel
+	Private imgWallet As ImageView
+	Private txtWalletAddress As EditText
+	Private btnLogin As Button
+	Private lblForgotPassword As Label
+
+	Private pnSplash As Panel
+	Private lblCopyright As Label
+End Sub
+
+Sub	 Activity_Create(FirstTime As Boolean)	
+
+	Activity.LoadLayout("MainLy")
+	
+	shared = rp.GetSafeDirDefaultExternal("")
+	kvs.Initialize(shared, "Userdatastore")
+	
+	If File.Exists(File.DirDefaultExternal ,"db.db") = False Then
+		File.Copy(File.DirAssets,"db.db",File.DirDefaultExternal,"db.db")
+	End If
+	
+	If SQL1.IsInitialized = False Then
+		SQL1.Initialize(File.DirDefaultExternal, "db.db", False)
+	End If
+	
+	kvs.Put("client_id",ClientKey)
+	kvs.Put("client_secret",HashedClientSecret)
+	kvs.Put("token-contract",TokenContractAddress)
+	kvs.Put("audit-contract",AuditContractAddress)
+	kvs.Put("wallet-address",txtWalletAddress.Text)
+
+'	txtPassword.EditText.PasswordMode = True
+	
+	If FirstTime Then '如果第一次，显示splash screen
+		btnLogin.Visible = False
+		pnSplash.Visible=True
+'		imgSplashLogo.Visible = True
+		lblCopyright.Visible = True
+		Timer1.Initialize("Timer1", 3000)
+		Timer1.Enabled=True
+	Else '否则 (第二次就)不显示splash screen
+		pnSplash.Visible=False
+		Timer1.Enabled=False
+'		imgSplashLogo.Visible = False
+		lblCopyright.Visible = False
+		btnLogin.Visible = True
+	End If
+	
+'	RefreshLanguageUI
+	txtUsername.Text = "admin"
+	txtPassword.Text = "admin"
+	
+'	If kvs.Get("RemUsername") = "" Then
+''		CheckBox1.Checked = False
+'		txtUsername.Text = ""
+'		kvs.Put("RemUsername","")
+'		txtPassword.Text = ""
+'		kvs.Put("RemPassword","")
+'	Else
+''		CheckBox1.Checked = True
+'		txtUsername.Text = kvs.Get("RemUsername")
+'		txtPassword.Text = kvs.Get("RemPassword")
+'
+'	End If
+    
+	
+End Sub
+
+Sub Timer1_tick
+	
+	pnSplash.Visible=False
+	Timer1.Enabled = False
+'	imgSplashLogo.Visible =False
+	btnLogin.Visible = True
+
+End Sub
+
+Sub GetWallet
+	
+	Dim JobGetWallet As HttpJob
+	JobGetWallet.Initialize("JobGetWallet", Me)
+	Dim address As String = txtWalletAddress.Text'"0x7A26711056301B6A8b374d4191Bd6015c868273F" ' Replace with the actual wallet address
+	Dim url As String = "https://service-testnet.maschain.com/api/wallet/wallet/" & address
+	JobGetWallet.Download(url)
+	JobGetWallet.GetRequest.SetHeader("client_id", ClientKey)
+	JobGetWallet.GetRequest.SetHeader("client_secret", HashedClientSecret)
+
+End Sub
+
+Sub JobDone(job As HttpJob)
+	ProgressDialogHide
+	
+	If job.Success = True Then
+
+		Dim jsonString As String = job.GetString
+		Log(jsonString)
+
+		Dim parser As JSONParser
+		parser.Initialize(jsonString)
+
+		If job.JobName = "JobGetWallet" Then
+
+			
+			Dim root As Map = parser.NextObject
+			Dim result As Map = root.Get("result")
+        
+
+			kvs.Put("WalletId",result.Get("id"))
+			kvs.Put("WalletAddress",result.Get("address"))
+			kvs.Put("WalletName",result.Get("name"))
+
+			
+		End If
+
+	Else
+
+		Return
+	End If
+    
+	' Release the job
+	job.Release
+	
+	StartActivity("HomeMd")
+	Activity.Finish
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub btnLogin_Click
+	
+'	Dim intent As Intent
+'	intent.Initialize(intent.ACTION_VIEW, "ergo://")
+'	StartActivity(intent)
+	If txtUsername.Text = "" Then
+		Msgbox("Please Fill In Username!","LOGIN")
+	End If
+	
+	If txtPassword.Text = "" Then
+		Msgbox("Please Fill In Password!","LOGIN")
+	End If
+	
+	cursor1 = SQL1.ExecQuery("SELECT * FROM ttUser WHERE ttStatus = 1 AND ttUsername = '" & txtUsername.Text & "'" & " AND ttPassword = '" & txtPassword.Text & "'" )
+	
+	If cursor1.RowCount > 0 Then
+		Private Phone1 As Phone
+		DoEvents
+		Phone1.HideKeyboard(Activity)
+		DoEvents
+		
+'		Get Setting
+		
+		cursor1.Position = 0
+		kvs.Put("CURRID", cursor1.GetString("ID"))
+'		kvs.PutSimple("CURRUID", cursor1.GetString("ttUid"))
+		kvs.Put("REMUSERID", txtUsername.Text)
+		kvs.Put("CURRUSERNAME", cursor1.GetString("ttUsername"))
+		kvs.Put("CURRUSERROLE", cursor1.GetString("ttUserRole")) '用户权限，在DB里面ttUser TABLE 增加用户 admin=0/user=1
+
+	Else
+		Msgbox("Incorrect Username Or Password!","LOGIN FAIL")
+		Return
+	End If
+
+	
+'	If CheckBox1.Checked = True Then
+'		kvs.Put("RemUsername",txtUsername.Text)
+'		kvs.Put("RemPassword",txtPassword.Text)
+'	Else If CheckBox1.Checked = False Then
+'		kvs.Put("RemUsername","")
+'		kvs.Put("RemPassword","")
+'	End If
+
+
+	GetWallet
+	
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean
+
+	If KeyCode = KeyCodes.KEYCODE_BACK Then
+		
+		Dim str1 As String
+		Dim str2 As String
+		
+		Select Case "English" 'kvs.GetSimple("CurrLanguage")
+			Case "中文"
+				str1 = "确定要离开吗?"
+				str2 = "温馨提醒"
+			Case "English"
+				str1 = "Are You Sure Want to Exit?"
+				str2 = "Reminder"
+		End Select
+		
+		Select Msgbox2(str1,str2,"Yes","","No",Null)
+			Case DialogResponse.POSITIVE
+'				CallSubDelayed(FirebaseMessaging, "UnSubscribeToTopics")
+				kvs.Put("LEAVE","YES")
+				kvs.put("Logout","NO")
+				Activity.Finish
+			Case Else
+				Return True
+		End Select
+	End If
+  
+End Sub
