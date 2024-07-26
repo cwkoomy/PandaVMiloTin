@@ -34,7 +34,7 @@ public class usermd extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "pdv.milotin", "pdv.milotin.usermd");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "pdv.milotin", "pdv.milotin.usermd");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,6 +335,15 @@ public class usermd extends Activity implements B4AActivity{
             
     }
 
+
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example3.keyvaluestore _kvs = null;
 public anywheresoftware.b4a.objects.RuntimePermissions _rp = null;
@@ -361,168 +370,306 @@ public anywheresoftware.b4a.objects.ImageViewWrapper _imgqr = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblmyaddress = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btncopyaddress = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imguseravatar = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnframe2 = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblfullname = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnfullname = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblemail = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnemail = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnpassword = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pnphone = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblpassword = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblphone = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txtfullname = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txtemail = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txtpassword = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txtphone = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imgphone = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imgpassword = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imgemail = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imgfullname = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imgedit = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imgsave = null;
+public b4a.example.dateutils _dateutils = null;
 public pdv.milotin.main _main = null;
 public pdv.milotin.homemd _homemd = null;
 public pdv.milotin.sendfundmd _sendfundmd = null;
+public pdv.milotin.historymd _historymd = null;
+public pdv.milotin.fundmd _fundmd = null;
+public pdv.milotin.addprojectmd _addprojectmd = null;
 public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 43;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 45;BA.debugLine="Activity.LoadLayout(\"UserLy\")";
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=3211264;
+ //BA.debugLineNum = 3211264;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=3211266;
+ //BA.debugLineNum = 3211266;BA.debugLine="Activity.LoadLayout(\"UserLy\")";
 mostCurrent._activity.LoadLayout("UserLy",mostCurrent.activityBA);
- //BA.debugLineNum = 47;BA.debugLine="shared = rp.GetSafeDirDefaultExternal(\"\")";
+RDebugUtils.currentLine=3211268;
+ //BA.debugLineNum = 3211268;BA.debugLine="shared = rp.GetSafeDirDefaultExternal(\"\")";
 mostCurrent._shared = mostCurrent._rp.GetSafeDirDefaultExternal("");
- //BA.debugLineNum = 48;BA.debugLine="kvs.Initialize(shared, \"Userdatastore\")";
+RDebugUtils.currentLine=3211269;
+ //BA.debugLineNum = 3211269;BA.debugLine="kvs.Initialize(shared, \"Userdatastore\")";
 mostCurrent._kvs._initialize(processBA,mostCurrent._shared,"Userdatastore");
- //BA.debugLineNum = 49;BA.debugLine="qr.Initialize";
-mostCurrent._qr._initialize /*String*/ (processBA);
- //BA.debugLineNum = 51;BA.debugLine="If File.Exists(File.DirDefaultExternal ,\"db.db\")";
+RDebugUtils.currentLine=3211270;
+ //BA.debugLineNum = 3211270;BA.debugLine="qr.Initialize";
+mostCurrent._qr._initialize /*String*/ (null,processBA);
+RDebugUtils.currentLine=3211272;
+ //BA.debugLineNum = 3211272;BA.debugLine="If File.Exists(File.DirDefaultExternal ,\"db.db\")";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db")==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 52;BA.debugLine="File.Copy(File.DirAssets,\"db.db\",File.DirDefault";
+RDebugUtils.currentLine=3211273;
+ //BA.debugLineNum = 3211273;BA.debugLine="File.Copy(File.DirAssets,\"db.db\",File.DirDefault";
 anywheresoftware.b4a.keywords.Common.File.Copy(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"db.db",anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db");
  };
- //BA.debugLineNum = 55;BA.debugLine="If SQL1.IsInitialized = False Then";
+RDebugUtils.currentLine=3211276;
+ //BA.debugLineNum = 3211276;BA.debugLine="If SQL1.IsInitialized = False Then";
 if (mostCurrent._sql1.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 56;BA.debugLine="SQL1.Initialize(File.DirDefaultExternal, \"db.db\"";
+RDebugUtils.currentLine=3211277;
+ //BA.debugLineNum = 3211277;BA.debugLine="SQL1.Initialize(File.DirDefaultExternal, \"db.db\"";
 mostCurrent._sql1.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db",anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 59;BA.debugLine="GenerateQR";
+RDebugUtils.currentLine=3211280;
+ //BA.debugLineNum = 3211280;BA.debugLine="GenerateQR";
 _generateqr();
- //BA.debugLineNum = 61;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 67;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 69;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 63;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 65;BA.debugLine="End Sub";
-return "";
-}
-public static String  _btncopyaddress_click() throws Exception{
-b4a.util.BClipboard _clipb = null;
- //BA.debugLineNum = 103;BA.debugLine="Private Sub btnCopyAddress_Click";
- //BA.debugLineNum = 104;BA.debugLine="Dim clipb As BClipboard";
-_clipb = new b4a.util.BClipboard();
- //BA.debugLineNum = 105;BA.debugLine="clipb.setText(lblMyAddress.Text = kvs.Get(\"Wallet";
-_clipb.setText(mostCurrent.activityBA,BA.ObjectToString((mostCurrent._lblmyaddress.getText()).equals(BA.ObjectToString(mostCurrent._kvs._get("WalletAddress")))));
- //BA.debugLineNum = 106;BA.debugLine="ToastMessageShow(\"Address Copied\", True)";
-anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Address Copied"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 107;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3211282;
+ //BA.debugLineNum = 3211282;BA.debugLine="End Sub";
 return "";
 }
 public static String  _generateqr() throws Exception{
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "generateqr", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "generateqr", null));}
 String _strqrcode = "";
- //BA.debugLineNum = 71;BA.debugLine="Sub GenerateQR";
- //BA.debugLineNum = 73;BA.debugLine="Dim strQRCode As String";
+RDebugUtils.currentLine=3407872;
+ //BA.debugLineNum = 3407872;BA.debugLine="Sub GenerateQR";
+RDebugUtils.currentLine=3407874;
+ //BA.debugLineNum = 3407874;BA.debugLine="Dim strQRCode As String";
 _strqrcode = "";
- //BA.debugLineNum = 74;BA.debugLine="strQRCode = kvs.Get(\"WalletAddress\")";
+RDebugUtils.currentLine=3407875;
+ //BA.debugLineNum = 3407875;BA.debugLine="strQRCode = kvs.Get(\"WalletAddress\")";
 _strqrcode = BA.ObjectToString(mostCurrent._kvs._get("WalletAddress"));
- //BA.debugLineNum = 76;BA.debugLine="bmr = qr.drawQRCode(strQRCode)";
-mostCurrent._bmr = mostCurrent._qr._drawqrcode /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (_strqrcode);
- //BA.debugLineNum = 77;BA.debugLine="imgQR.Bitmap = bmr";
+RDebugUtils.currentLine=3407877;
+ //BA.debugLineNum = 3407877;BA.debugLine="bmr = qr.drawQRCode(strQRCode)";
+mostCurrent._bmr = mostCurrent._qr._drawqrcode /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (null,_strqrcode);
+RDebugUtils.currentLine=3407878;
+ //BA.debugLineNum = 3407878;BA.debugLine="imgQR.Bitmap = bmr";
 mostCurrent._imgqr.setBitmap((android.graphics.Bitmap)(mostCurrent._bmr.getObject()));
- //BA.debugLineNum = 78;BA.debugLine="Log(strQRCode)";
-anywheresoftware.b4a.keywords.Common.LogImpl("310813447",_strqrcode,0);
- //BA.debugLineNum = 83;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3407879;
+ //BA.debugLineNum = 3407879;BA.debugLine="Log(strQRCode)";
+anywheresoftware.b4a.keywords.Common.LogImpl("53407879",_strqrcode,0);
+RDebugUtils.currentLine=3407884;
+ //BA.debugLineNum = 3407884;BA.debugLine="End Sub";
 return "";
 }
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 15;BA.debugLine="Private kvs As KeyValueStore";
-mostCurrent._kvs = new b4a.example3.keyvaluestore();
- //BA.debugLineNum = 16;BA.debugLine="Private rp As RuntimePermissions";
-mostCurrent._rp = new anywheresoftware.b4a.objects.RuntimePermissions();
- //BA.debugLineNum = 17;BA.debugLine="Private shared As String";
-mostCurrent._shared = "";
- //BA.debugLineNum = 18;BA.debugLine="Private SQL1 As SQL";
-mostCurrent._sql1 = new anywheresoftware.b4a.sql.SQL();
- //BA.debugLineNum = 19;BA.debugLine="Dim bmr As Bitmap";
-mostCurrent._bmr = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Dim qr As QRcode";
-mostCurrent._qr = new pdv.milotin.qrcode();
- //BA.debugLineNum = 22;BA.debugLine="Private pnHeader1 As Panel";
-mostCurrent._pnheader1 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 23;BA.debugLine="Private lblTop As Label";
-mostCurrent._lbltop = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 24;BA.debugLine="Private lblBottom As Label";
-mostCurrent._lblbottom = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 25;BA.debugLine="Private lblHome As Label";
-mostCurrent._lblhome = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 26;BA.debugLine="Private lblFund As Label";
-mostCurrent._lblfund = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 27;BA.debugLine="Private lblHistory As Label";
-mostCurrent._lblhistory = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 28;BA.debugLine="Private lblUser As Label";
-mostCurrent._lbluser = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 29;BA.debugLine="Private lblMyBalance As Label";
-mostCurrent._lblmybalance = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 30;BA.debugLine="Private lblAmount As Label";
-mostCurrent._lblamount = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 31;BA.debugLine="Private lblLine1 As Label";
-mostCurrent._lblline1 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 32;BA.debugLine="Private lblHome2 As Label";
-mostCurrent._lblhome2 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 33;BA.debugLine="Private lblFund2 As Label";
-mostCurrent._lblfund2 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 34;BA.debugLine="Private lblHistory2 As Label";
-mostCurrent._lblhistory2 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 35;BA.debugLine="Private lblUser2 As Label";
-mostCurrent._lbluser2 = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 36;BA.debugLine="Private imgBack As ImageView";
-mostCurrent._imgback = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 37;BA.debugLine="Private imgQR As ImageView";
-mostCurrent._imgqr = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 38;BA.debugLine="Private lblMyAddress As Label";
-mostCurrent._lblmyaddress = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 39;BA.debugLine="Private btnCopyAddress As Button";
-mostCurrent._btncopyaddress = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 40;BA.debugLine="Private imgUserAvatar As ImageView";
-mostCurrent._imguseravatar = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 41;BA.debugLine="End Sub";
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+RDebugUtils.currentModule="usermd";
+RDebugUtils.currentLine=3342336;
+ //BA.debugLineNum = 3342336;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=3342338;
+ //BA.debugLineNum = 3342338;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=3276800;
+ //BA.debugLineNum = 3276800;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=3276802;
+ //BA.debugLineNum = 3276802;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgback_click() throws Exception{
- //BA.debugLineNum = 98;BA.debugLine="Private Sub imgBack_Click";
- //BA.debugLineNum = 99;BA.debugLine="StartActivity(\"HomeMd\")";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HomeMd"));
- //BA.debugLineNum = 100;BA.debugLine="Activity.Finish";
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "imgback_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "imgback_click", null));}
+RDebugUtils.currentLine=3735552;
+ //BA.debugLineNum = 3735552;BA.debugLine="Private Sub imgBack_Click";
+RDebugUtils.currentLine=3735553;
+ //BA.debugLineNum = 3735553;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 101;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3735554;
+ //BA.debugLineNum = 3735554;BA.debugLine="End Sub";
+return "";
+}
+public static String  _imgedit_click() throws Exception{
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "imgedit_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "imgedit_click", null));}
+RDebugUtils.currentLine=3801088;
+ //BA.debugLineNum = 3801088;BA.debugLine="Private Sub imgEdit_Click";
+RDebugUtils.currentLine=3801089;
+ //BA.debugLineNum = 3801089;BA.debugLine="txtFullName.Enabled = True";
+mostCurrent._txtfullname.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3801090;
+ //BA.debugLineNum = 3801090;BA.debugLine="txtEmail.Enabled = True";
+mostCurrent._txtemail.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3801091;
+ //BA.debugLineNum = 3801091;BA.debugLine="txtPassword.Enabled = True";
+mostCurrent._txtpassword.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3801092;
+ //BA.debugLineNum = 3801092;BA.debugLine="txtPhone.Enabled = True";
+mostCurrent._txtphone.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3801093;
+ //BA.debugLineNum = 3801093;BA.debugLine="txtFullName.TextColor = Colors.RGB(0,0,0)";
+mostCurrent._txtfullname.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=3801094;
+ //BA.debugLineNum = 3801094;BA.debugLine="txtEmail.TextColor = Colors.RGB(0,0,0)";
+mostCurrent._txtemail.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=3801095;
+ //BA.debugLineNum = 3801095;BA.debugLine="txtPassword.TextColor = Colors.RGB(0,0,0)";
+mostCurrent._txtpassword.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=3801096;
+ //BA.debugLineNum = 3801096;BA.debugLine="txtPhone.TextColor = Colors.RGB(0,0,0)";
+mostCurrent._txtphone.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=3801097;
+ //BA.debugLineNum = 3801097;BA.debugLine="imgSave.Visible = True";
+mostCurrent._imgsave.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3801098;
+ //BA.debugLineNum = 3801098;BA.debugLine="imgSave.Enabled = True";
+mostCurrent._imgsave.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3801099;
+ //BA.debugLineNum = 3801099;BA.debugLine="imgEdit.Visible = False";
+mostCurrent._imgedit.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3801100;
+ //BA.debugLineNum = 3801100;BA.debugLine="imgEdit.Enabled = False";
+mostCurrent._imgedit.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3801101;
+ //BA.debugLineNum = 3801101;BA.debugLine="End Sub";
+return "";
+}
+public static String  _imgsave_click() throws Exception{
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "imgsave_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "imgsave_click", null));}
+String _strfullname = "";
+String _stremail = "";
+String _strpassword = "";
+String _strphone = "";
+RDebugUtils.currentLine=3866624;
+ //BA.debugLineNum = 3866624;BA.debugLine="Private Sub imgSave_Click";
+RDebugUtils.currentLine=3866626;
+ //BA.debugLineNum = 3866626;BA.debugLine="Dim strFullName As String = txtFullName.Text";
+_strfullname = mostCurrent._txtfullname.getText();
+RDebugUtils.currentLine=3866627;
+ //BA.debugLineNum = 3866627;BA.debugLine="txtFullName.Text = strFullName";
+mostCurrent._txtfullname.setText(BA.ObjectToCharSequence(_strfullname));
+RDebugUtils.currentLine=3866628;
+ //BA.debugLineNum = 3866628;BA.debugLine="Dim strEmail As String = txtEmail.Text";
+_stremail = mostCurrent._txtemail.getText();
+RDebugUtils.currentLine=3866629;
+ //BA.debugLineNum = 3866629;BA.debugLine="txtEmail.Text = strEmail";
+mostCurrent._txtemail.setText(BA.ObjectToCharSequence(_stremail));
+RDebugUtils.currentLine=3866630;
+ //BA.debugLineNum = 3866630;BA.debugLine="Dim strPassword As String = txtPassword.Text";
+_strpassword = mostCurrent._txtpassword.getText();
+RDebugUtils.currentLine=3866631;
+ //BA.debugLineNum = 3866631;BA.debugLine="txtPassword.Text = strPassword";
+mostCurrent._txtpassword.setText(BA.ObjectToCharSequence(_strpassword));
+RDebugUtils.currentLine=3866632;
+ //BA.debugLineNum = 3866632;BA.debugLine="Dim strPhone As String = txtPhone.Text";
+_strphone = mostCurrent._txtphone.getText();
+RDebugUtils.currentLine=3866633;
+ //BA.debugLineNum = 3866633;BA.debugLine="txtPhone.Text = strPhone";
+mostCurrent._txtphone.setText(BA.ObjectToCharSequence(_strphone));
+RDebugUtils.currentLine=3866635;
+ //BA.debugLineNum = 3866635;BA.debugLine="txtFullName.Enabled = False";
+mostCurrent._txtfullname.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3866636;
+ //BA.debugLineNum = 3866636;BA.debugLine="txtEmail.Enabled = False";
+mostCurrent._txtemail.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3866637;
+ //BA.debugLineNum = 3866637;BA.debugLine="txtPassword.Enabled = False";
+mostCurrent._txtpassword.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3866638;
+ //BA.debugLineNum = 3866638;BA.debugLine="txtPhone.Enabled = False";
+mostCurrent._txtphone.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3866639;
+ //BA.debugLineNum = 3866639;BA.debugLine="txtFullName.TextColor = Colors.RGB(149,149,149)";
+mostCurrent._txtfullname.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
+RDebugUtils.currentLine=3866640;
+ //BA.debugLineNum = 3866640;BA.debugLine="txtEmail.TextColor = Colors.RGB(149,149,149)";
+mostCurrent._txtemail.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
+RDebugUtils.currentLine=3866641;
+ //BA.debugLineNum = 3866641;BA.debugLine="txtPassword.TextColor = Colors.RGB(149,149,149)";
+mostCurrent._txtpassword.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
+RDebugUtils.currentLine=3866642;
+ //BA.debugLineNum = 3866642;BA.debugLine="txtPhone.TextColor = Colors.RGB(149,149,149)";
+mostCurrent._txtphone.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
+RDebugUtils.currentLine=3866643;
+ //BA.debugLineNum = 3866643;BA.debugLine="imgEdit.Visible = True";
+mostCurrent._imgedit.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3866644;
+ //BA.debugLineNum = 3866644;BA.debugLine="imgEdit.Enabled = True";
+mostCurrent._imgedit.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3866645;
+ //BA.debugLineNum = 3866645;BA.debugLine="imgSave.Visible = False";
+mostCurrent._imgsave.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3866646;
+ //BA.debugLineNum = 3866646;BA.debugLine="imgSave.Enabled = False";
+mostCurrent._imgsave.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=3866647;
+ //BA.debugLineNum = 3866647;BA.debugLine="ToastMessageShow(\"Save Succesful!\", True)";
+anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Save Succesful!"),anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=3866648;
+ //BA.debugLineNum = 3866648;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblfund_click() throws Exception{
- //BA.debugLineNum = 90;BA.debugLine="Private Sub lblFund_Click";
- //BA.debugLineNum = 92;BA.debugLine="End Sub";
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lblfund_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblfund_click", null));}
+RDebugUtils.currentLine=3538944;
+ //BA.debugLineNum = 3538944;BA.debugLine="Private Sub lblFund_Click";
+RDebugUtils.currentLine=3538945;
+ //BA.debugLineNum = 3538945;BA.debugLine="StartActivity(\"FundMd\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("FundMd"));
+RDebugUtils.currentLine=3538946;
+ //BA.debugLineNum = 3538946;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+RDebugUtils.currentLine=3538947;
+ //BA.debugLineNum = 3538947;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhistory_click() throws Exception{
- //BA.debugLineNum = 94;BA.debugLine="Private Sub lblHistory_Click";
- //BA.debugLineNum = 96;BA.debugLine="End Sub";
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lblhistory_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblhistory_click", null));}
+RDebugUtils.currentLine=3604480;
+ //BA.debugLineNum = 3604480;BA.debugLine="Private Sub lblHistory_Click";
+RDebugUtils.currentLine=3604481;
+ //BA.debugLineNum = 3604481;BA.debugLine="StartActivity(\"HistoryMd\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HistoryMd"));
+RDebugUtils.currentLine=3604482;
+ //BA.debugLineNum = 3604482;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+RDebugUtils.currentLine=3604483;
+ //BA.debugLineNum = 3604483;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhome_click() throws Exception{
- //BA.debugLineNum = 85;BA.debugLine="Private Sub lblHome_Click";
- //BA.debugLineNum = 86;BA.debugLine="StartActivity(\"HomeMd\")";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HomeMd"));
- //BA.debugLineNum = 87;BA.debugLine="Activity.Finish";
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lblhome_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblhome_click", null));}
+RDebugUtils.currentLine=3473408;
+ //BA.debugLineNum = 3473408;BA.debugLine="Private Sub lblHome_Click";
+RDebugUtils.currentLine=3473409;
+ //BA.debugLineNum = 3473409;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 88;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3473410;
+ //BA.debugLineNum = 3473410;BA.debugLine="End Sub";
 return "";
 }
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 10;BA.debugLine="End Sub";
+public static String  _lbluser_click() throws Exception{
+RDebugUtils.currentModule="usermd";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "lbluser_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbluser_click", null));}
+RDebugUtils.currentLine=3670016;
+ //BA.debugLineNum = 3670016;BA.debugLine="Private Sub lblUser_Click";
+RDebugUtils.currentLine=3670018;
+ //BA.debugLineNum = 3670018;BA.debugLine="End Sub";
 return "";
 }
 }

@@ -73,6 +73,30 @@
 			android:screenOrientation="unspecified"
 			android:exported="true">
 		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".historymd"
+			android:label="Milo Tin"
+			android:screenOrientation="unspecified"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".fundmd"
+			android:label="Milo Tin"
+			android:screenOrientation="unspecified"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".addprojectmd"
+			android:label="Milo Tin"
+			android:screenOrientation="unspecified"
+			android:exported="true">
+		</activity>
 		<service
 			android:name=".starter"
 			android:exported="true">

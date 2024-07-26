@@ -60,6 +60,8 @@ Sub Globals
 	Private imgProject As ImageView
 	Private imgFunding As ImageView
 	Private imgProgress As ImageView
+	Private pnListView As Panel
+	Private btnAdd As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -84,7 +86,7 @@ Sub Activity_Create(FirstTime As Boolean)
 End Sub
 
 Sub Activity_Resume
-
+	GetAudit
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
@@ -181,12 +183,13 @@ Sub JobDone(Job As HttpJob)
 				totalFund = totalFund + fund
 '				lblAmount.Text = "RM " & NumberFormat2(totalFund, 0, 2, 2, True)
 				lblTotal.Text = root.Get("result")
-
+				lblAmount.Text = "RM " & NumberFormat2(totalFund, 0, 2, 2, True)
 				Log(totalFund)
 				' Add the item to the CustomListView
-				clvHome.Add(CreateListItem(result.Get("id"),metadata.Get("project"), metadata.Get("fund"), metadata.Get("progress"), metadata.Get("project_wallet"), metadata.Get("status"), clvHome.AsView.Width, 55dip), 80dip, result.Get("id"))
+				clvHome.Add(CreateListItem(result.Get("id"),metadata.Get("project"), metadata.Get("fund"), metadata.Get("progress"), metadata.Get("project_wallet"), metadata.Get("status"), clvHome.AsView.Width, 55dip), 80dip, result.Get("transactionHash"))
+				Log("transactionhash:" & result.Get("transactionHash"))
 				Dim gd As GradientDrawable
-				gd.Initialize("TR_BL", Array As Int(Colors.ARGB(100, 255, 255, 255), Colors.ARGB(100, 255, 255, 255))) ' Top-Right to Bottom-Left gradient
+				gd.Initialize("TR_BL", Array As Int(Colors.ARGB(0, 255, 255, 255), Colors.ARGB(0, 255, 255, 255))) ' Top-Right to Bottom-Left gradient
 				gd.CornerRadius = 20dip ' Adjust corner radius as needed
 				' Set the GradientDrawable as the background
 				clvHome.AsView.Background = gd
@@ -204,7 +207,7 @@ Sub JobDone(Job As HttpJob)
 			' Convert the result string to a double
 			Dim amount As Double
 			amount = strAmount
-			lblAmount.Text = "RM " & NumberFormat2(amount, 0, 2, 2, True)
+			
 
 		Else
 			' Handle other job names or errors
@@ -231,12 +234,37 @@ Sub CreateListItem(strID As String, strProject As String, strFund As String, Str
 	p.RemoveView
 	'label1 and button1 will point to the last added views.
 		lblProjectTitle2.Text = strProject
-		lblProjectFund2.Text = strFund
-	If StrProgress <> 100 Then
-		lblProjectProgress2.TextColor = Colors.RGB(254,171,43)
+		lblProjectFund2.Text = "RM " & NumberFormat2(strFund, 0, 2, 2, True)
+	Log(StrProgress)
+	If StrProgress = Null Or StrProgress = "null" Then
+		lblProjectProgress2.TextColor = Colors.RGB(1, 302, 36)
+		lblProjectProgress2.Text = "Fundraising Completed"
+	Else If StrProgress <> "100" Then
+		lblProjectProgress2.TextColor = Colors.RGB(254, 171, 43)
 		lblProjectProgress2.Text = "Fundraising in progress"
+	Else
+		lblProjectProgress2.TextColor = Colors.RGB(1, 302, 36)
+		lblProjectProgress2.Text = "Fundraising Completed"
 	End If
 	
+'	If StrProgress = "100" Then
+'		lblProjectProgress2.TextColor = Colors.RGB(1,302,36)
+'		lblProjectProgress2.Text = "Fundraising Completed"
+'
+'	Else If StrProgress = Null Or StrProgress = "null" Then
+'		lblProjectProgress2.TextColor = Colors.RGB(1,302,36)
+'		lblProjectProgress2.Text = "Fundraising Completed"
+'	Else
+'		lblProjectProgress2.TextColor = Colors.RGB(254,171,43)
+'		lblProjectProgress2.Text = "Fundraising in progress"
+'	End If
+
+	If StrProgress = Null Or StrProgress = "null" Then
+		StrProgress = "30"
+		cpBar1.Value = StrProgress
+	Else
+		cpBar1.Value = StrProgress
+	End If
 	cpBar1.Value = StrProgress
 	Return p
 
@@ -244,9 +272,9 @@ End Sub
 
 Sub clvHome_ItemClick (Index As Int, Value As Object)
 	
-	kvs.Put("AuditID",Value)
+	kvs.Put("AuditTransactionHash",Value)
 '	kvs.Put("ProjectWallet",Value)
-	Log(kvs.Get("AuditID"))
+	Log(kvs.Get("AuditTransactionHash"))
 	StartActivity("SendFundMd")
 	
 End Sub
@@ -282,11 +310,11 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 End Sub
 
 Private Sub lblFund_Click
-	
+	StartActivity("FundMd")
 End Sub
 
 Private Sub lblHistory_Click
-	
+	StartActivity("HistoryMd")
 End Sub
 
 Private Sub lblUser_Click
@@ -296,4 +324,8 @@ End Sub
 
 Private Sub imgMenu_Click
 	
+End Sub
+
+Private Sub btnAdd_Click
+	StartActivity("AddProjectMd")
 End Sub
