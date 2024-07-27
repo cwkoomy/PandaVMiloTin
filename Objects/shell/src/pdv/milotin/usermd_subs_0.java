@@ -106,7 +106,7 @@ Debug.ShouldStop(-2147483648);
 usermd.mostCurrent._imgqr.runMethod(false,"setBitmap",(usermd.mostCurrent._bmr.getObject()));
  BA.debugLineNum = 97;BA.debugLine="Log(strQRCode)";
 Debug.ShouldStop(1);
-usermd.mostCurrent.__c.runVoidMethod ("LogImpl","43407879",_strqrcode,0);
+usermd.mostCurrent.__c.runVoidMethod ("LogImpl","03080199",_strqrcode,0);
  BA.debugLineNum = 102;BA.debugLine="End Sub";
 Debug.ShouldStop(32);
 return RemoteObject.createImmutable("");

@@ -15,7 +15,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _drawqrcode(RemoteObject __ref,RemoteObject _data) throws Exception{
 try {
-		Debug.PushSubsStack("drawQRCode (qrcode) ","qrcode",11,__ref.getField(false, "ba"),__ref,15);
+		Debug.PushSubsStack("drawQRCode (qrcode) ","qrcode",12,__ref.getField(false, "ba"),__ref,15);
 if (RapidSub.canDelegate("drawqrcode")) { return __ref.runUserSub(false, "qrcode","drawqrcode", __ref, _data);}
 Debug.locals.put("data", _data);
  BA.debugLineNum = 15;BA.debugLine="Sub drawQRCode (data As String) As Bitmap";
@@ -35,7 +35,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (qrcode) ","qrcode",11,__ref.getField(false, "ba"),__ref,9);
+		Debug.PushSubsStack("Initialize (qrcode) ","qrcode",12,__ref.getField(false, "ba"),__ref,9);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "qrcode","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);

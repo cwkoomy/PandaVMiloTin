@@ -8,7 +8,7 @@ public class cameraexclass_subs_0 {
 
 public static RemoteObject  _camera_focusdone(RemoteObject __ref,RemoteObject _success) throws Exception{
 try {
-		Debug.PushSubsStack("Camera_FocusDone (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,289);
+		Debug.PushSubsStack("Camera_FocusDone (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,289);
 if (RapidSub.canDelegate("camera_focusdone")) { return __ref.runUserSub(false, "cameraexclass","camera_focusdone", __ref, _success);}
 Debug.locals.put("Success", _success);
  BA.debugLineNum = 289;BA.debugLine="Private Sub Camera_FocusDone (Success As Boolean)";
@@ -22,7 +22,7 @@ __ref.runClassMethod (pdv.milotin.cameraexclass.class, "_takepicture" /*RemoteOb
  }else {
  BA.debugLineNum = 293;BA.debugLine="Log(\"AutoFocus error.\")";
 Debug.ShouldStop(16);
-cameraexclass.__c.runVoidMethod ("LogImpl","48716292",RemoteObject.createImmutable("AutoFocus error."),0);
+cameraexclass.__c.runVoidMethod ("LogImpl","012517380",RemoteObject.createImmutable("AutoFocus error."),0);
  };
  BA.debugLineNum = 295;BA.debugLine="End Sub";
 Debug.ShouldStop(64);
@@ -36,7 +36,7 @@ finally {
 		}}
 public static RemoteObject  _camera_picturetaken(RemoteObject __ref,RemoteObject _data) throws Exception{
 try {
-		Debug.PushSubsStack("Camera_PictureTaken (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,103);
+		Debug.PushSubsStack("Camera_PictureTaken (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,103);
 if (RapidSub.canDelegate("camera_picturetaken")) { return __ref.runUserSub(false, "cameraexclass","camera_picturetaken", __ref, _data);}
 Debug.locals.put("Data", _data);
  BA.debugLineNum = 103;BA.debugLine="Private Sub Camera_PictureTaken (Data() As Byte)";
@@ -56,7 +56,7 @@ finally {
 		}}
 public static RemoteObject  _camera_preview(RemoteObject __ref,RemoteObject _data) throws Exception{
 try {
-		Debug.PushSubsStack("Camera_Preview (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("Camera_Preview (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,94);
 if (RapidSub.canDelegate("camera_preview")) { return __ref.runUserSub(false, "cameraexclass","camera_preview", __ref, _data);}
 Debug.locals.put("Data", _data);
  BA.debugLineNum = 94;BA.debugLine="Sub Camera_Preview (Data() As Byte)";
@@ -80,7 +80,7 @@ finally {
 		}}
 public static RemoteObject  _camera_ready(RemoteObject __ref,RemoteObject _success) throws Exception{
 try {
-		Debug.PushSubsStack("Camera_Ready (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,81);
+		Debug.PushSubsStack("Camera_Ready (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,81);
 if (RapidSub.canDelegate("camera_ready")) { return __ref.runUserSub(false, "cameraexclass","camera_ready", __ref, _success);}
 Debug.locals.put("Success", _success);
  BA.debugLineNum = 81;BA.debugLine="Private Sub Camera_Ready (Success As Boolean)";
@@ -106,7 +106,7 @@ __ref.runClassMethod (pdv.milotin.cameraexclass.class, "_setdisplayorientation" 
  }else {
  BA.debugLineNum = 89;BA.debugLine="Log(\"success = false, \" & LastException)";
 Debug.ShouldStop(16777216);
-cameraexclass.__c.runVoidMethod ("LogImpl","46815752",RemoteObject.concat(RemoteObject.createImmutable("success = false, "),cameraexclass.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
+cameraexclass.__c.runVoidMethod ("LogImpl","010616840",RemoteObject.concat(RemoteObject.createImmutable("success = false, "),cameraexclass.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
  };
  BA.debugLineNum = 91;BA.debugLine="CallSub2(target, event & \"_ready\", Success)";
 Debug.ShouldStop(67108864);
@@ -146,7 +146,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _closenow(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CloseNow (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,280);
+		Debug.PushSubsStack("CloseNow (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,280);
 if (RapidSub.canDelegate("closenow")) { return __ref.runUserSub(false, "cameraexclass","closenow", __ref);}
  BA.debugLineNum = 280;BA.debugLine="Public Sub CloseNow";
 Debug.ShouldStop(8388608);
@@ -171,7 +171,7 @@ finally {
 		}}
 public static RemoteObject  _commitparameters(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CommitParameters (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,136);
+		Debug.PushSubsStack("CommitParameters (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,136);
 if (RapidSub.canDelegate("commitparameters")) { return __ref.runUserSub(false, "cameraexclass","commitparameters", __ref);}
  BA.debugLineNum = 136;BA.debugLine="Public Sub CommitParameters";
 Debug.ShouldStop(128);
@@ -191,7 +191,7 @@ Debug.ShouldStop(4096);
 cameraexclass.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Error setting parameters.")),(Object)(cameraexclass.__c.getField(true,"True")));
  BA.debugLineNum = 142;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(8192);
-cameraexclass.__c.runVoidMethod ("LogImpl","47471110",BA.ObjectToString(cameraexclass.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
+cameraexclass.__c.runVoidMethod ("LogImpl","011272198",BA.ObjectToString(cameraexclass.__c.runMethod(false,"LastException",__ref.getField(false, "ba"))),0);
  };
  BA.debugLineNum = 144;BA.debugLine="End Sub";
 Debug.ShouldStop(32768);
@@ -205,7 +205,7 @@ finally {
 		}}
 public static RemoteObject  _findcamera(RemoteObject __ref,RemoteObject _frontcamera) throws Exception{
 try {
-		Debug.PushSubsStack("FindCamera (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,35);
+		Debug.PushSubsStack("FindCamera (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,35);
 if (RapidSub.canDelegate("findcamera")) { return __ref.runUserSub(false, "cameraexclass","findcamera", __ref, _frontcamera);}
 RemoteObject _ci = RemoteObject.declareNull("pdv.milotin.cameraexclass._camerainfoandid");
 RemoteObject _camerainfo = RemoteObject.declareNull("Object");
@@ -284,7 +284,7 @@ finally {
 		}}
 public static RemoteObject  _focusandtakepicture(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("FocusAndTakePicture (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,286);
+		Debug.PushSubsStack("FocusAndTakePicture (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,286);
 if (RapidSub.canDelegate("focusandtakepicture")) { return __ref.runUserSub(false, "cameraexclass","focusandtakepicture", __ref);}
  BA.debugLineNum = 286;BA.debugLine="Public Sub FocusAndTakePicture";
 Debug.ShouldStop(536870912);
@@ -303,7 +303,7 @@ finally {
 		}}
 public static RemoteObject  _getcoloreffect(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetColorEffect (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,146);
+		Debug.PushSubsStack("GetColorEffect (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,146);
 if (RapidSub.canDelegate("getcoloreffect")) { return __ref.runUserSub(false, "cameraexclass","getcoloreffect", __ref);}
  BA.debugLineNum = 146;BA.debugLine="Public Sub GetColorEffect As String";
 Debug.ShouldStop(131072);
@@ -322,7 +322,7 @@ finally {
 		}}
 public static RemoteObject  _getflashmode(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetFlashMode (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,181);
+		Debug.PushSubsStack("GetFlashMode (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,181);
 if (RapidSub.canDelegate("getflashmode")) { return __ref.runUserSub(false, "cameraexclass","getflashmode", __ref);}
  BA.debugLineNum = 181;BA.debugLine="Public Sub GetFlashMode As String";
 Debug.ShouldStop(1048576);
@@ -344,7 +344,7 @@ finally {
 		}}
 public static RemoteObject  _getfocusdistances(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetFocusDistances (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,272);
+		Debug.PushSubsStack("GetFocusDistances (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,272);
 if (RapidSub.canDelegate("getfocusdistances")) { return __ref.runUserSub(false, "cameraexclass","getfocusdistances", __ref);}
 RemoteObject _f = null;
  BA.debugLineNum = 272;BA.debugLine="Public Sub GetFocusDistances As Float()";
@@ -373,7 +373,7 @@ finally {
 		}}
 public static RemoteObject  _getparameter(RemoteObject __ref,RemoteObject _key) throws Exception{
 try {
-		Debug.PushSubsStack("GetParameter (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,131);
+		Debug.PushSubsStack("GetParameter (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,131);
 if (RapidSub.canDelegate("getparameter")) { return __ref.runUserSub(false, "cameraexclass","getparameter", __ref, _key);}
 Debug.locals.put("Key", _key);
  BA.debugLineNum = 131;BA.debugLine="Public Sub GetParameter(Key As String) As String";
@@ -396,7 +396,7 @@ finally {
 		}}
 public static RemoteObject  _getpicturesize(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetPictureSize (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,205);
+		Debug.PushSubsStack("GetPictureSize (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,205);
 if (RapidSub.canDelegate("getpicturesize")) { return __ref.runUserSub(false, "cameraexclass","getpicturesize", __ref);}
 RemoteObject _cs = RemoteObject.declareNull("pdv.milotin.cameraexclass._camerasize");
  BA.debugLineNum = 205;BA.debugLine="Public Sub GetPictureSize As CameraSize";
@@ -431,7 +431,7 @@ finally {
 		}}
 public static RemoteObject  _getpreviewsize(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetPreviewSize (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,196);
+		Debug.PushSubsStack("GetPreviewSize (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,196);
 if (RapidSub.canDelegate("getpreviewsize")) { return __ref.runUserSub(false, "cameraexclass","getpreviewsize", __ref);}
 RemoteObject _cs = RemoteObject.declareNull("pdv.milotin.cameraexclass._camerasize");
  BA.debugLineNum = 196;BA.debugLine="Public Sub GetPreviewSize As CameraSize";
@@ -466,7 +466,7 @@ finally {
 		}}
 public static RemoteObject  _getsupportedcoloreffects(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetSupportedColorEffects (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,191);
+		Debug.PushSubsStack("GetSupportedColorEffects (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,191);
 if (RapidSub.canDelegate("getsupportedcoloreffects")) { return __ref.runUserSub(false, "cameraexclass","getsupportedcoloreffects", __ref);}
  BA.debugLineNum = 191;BA.debugLine="Public Sub GetSupportedColorEffects As List";
 Debug.ShouldStop(1073741824);
@@ -488,7 +488,7 @@ finally {
 		}}
 public static RemoteObject  _getsupportedflashmodes(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetSupportedFlashModes (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,186);
+		Debug.PushSubsStack("GetSupportedFlashModes (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,186);
 if (RapidSub.canDelegate("getsupportedflashmodes")) { return __ref.runUserSub(false, "cameraexclass","getsupportedflashmodes", __ref);}
  BA.debugLineNum = 186;BA.debugLine="Public Sub GetSupportedFlashModes As List";
 Debug.ShouldStop(33554432);
@@ -510,7 +510,7 @@ finally {
 		}}
 public static RemoteObject  _getsupportedfocusmodes(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetSupportedFocusModes (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,237);
+		Debug.PushSubsStack("GetSupportedFocusModes (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,237);
 if (RapidSub.canDelegate("getsupportedfocusmodes")) { return __ref.runUserSub(false, "cameraexclass","getsupportedfocusmodes", __ref);}
 RemoteObject _fm = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
  BA.debugLineNum = 237;BA.debugLine="Public Sub GetSupportedFocusModes As List";
@@ -553,7 +553,7 @@ finally {
 		}}
 public static RemoteObject  _getsupportedpicturessizes(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetSupportedPicturesSizes (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,154);
+		Debug.PushSubsStack("GetSupportedPicturesSizes (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,154);
 if (RapidSub.canDelegate("getsupportedpicturessizes")) { return __ref.runUserSub(false, "cameraexclass","getsupportedpicturessizes", __ref);}
 RemoteObject _list1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
 RemoteObject _cs = null;
@@ -605,7 +605,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _panel1,RemoteObject _frontcamera,RemoteObject _targetmodule,RemoteObject _eventname) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,18);
+		Debug.PushSubsStack("Initialize (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,18);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "cameraexclass","initialize", __ref, _ba, _panel1, _frontcamera, _targetmodule, _eventname);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 RemoteObject _id = RemoteObject.createImmutable(0);
@@ -666,7 +666,7 @@ finally {
 		}}
 public static RemoteObject  _previewimagetojpeg(RemoteObject __ref,RemoteObject _data,RemoteObject _quality) throws Exception{
 try {
-		Debug.PushSubsStack("PreviewImageToJpeg (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,216);
+		Debug.PushSubsStack("PreviewImageToJpeg (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,216);
 if (RapidSub.canDelegate("previewimagetojpeg")) { return __ref.runUserSub(false, "cameraexclass","previewimagetojpeg", __ref, _data, _quality);}
 RemoteObject _size = RemoteObject.declareNull("Object");
 RemoteObject _previewformat = RemoteObject.declareNull("Object");
@@ -735,7 +735,7 @@ finally {
 		}}
 public static RemoteObject  _release(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Release (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,115);
+		Debug.PushSubsStack("Release (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,115);
 if (RapidSub.canDelegate("release")) { return __ref.runUserSub(false, "cameraexclass","release", __ref);}
  BA.debugLineNum = 115;BA.debugLine="Public Sub Release";
 Debug.ShouldStop(262144);
@@ -754,7 +754,7 @@ finally {
 		}}
 public static RemoteObject  _savepicturetofile(RemoteObject __ref,RemoteObject _data,RemoteObject _dir,RemoteObject _filename) throws Exception{
 try {
-		Debug.PushSubsStack("SavePictureToFile (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,120);
+		Debug.PushSubsStack("SavePictureToFile (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,120);
 if (RapidSub.canDelegate("savepicturetofile")) { return __ref.runUserSub(false, "cameraexclass","savepicturetofile", __ref, _data, _dir, _filename);}
 RemoteObject _out = RemoteObject.declareNull("anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper");
 Debug.locals.put("Data", _data);
@@ -784,7 +784,7 @@ finally {
 		}}
 public static RemoteObject  _setcoloreffect(RemoteObject __ref,RemoteObject _effect) throws Exception{
 try {
-		Debug.PushSubsStack("SetColorEffect (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,150);
+		Debug.PushSubsStack("SetColorEffect (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,150);
 if (RapidSub.canDelegate("setcoloreffect")) { return __ref.runUserSub(false, "cameraexclass","setcoloreffect", __ref, _effect);}
 Debug.locals.put("Effect", _effect);
  BA.debugLineNum = 150;BA.debugLine="Public Sub SetColorEffect(Effect As String)";
@@ -804,7 +804,7 @@ finally {
 		}}
 public static RemoteObject  _setcontinuousautofocus(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SetContinuousAutoFocus (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,256);
+		Debug.PushSubsStack("SetContinuousAutoFocus (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,256);
 if (RapidSub.canDelegate("setcontinuousautofocus")) { return __ref.runUserSub(false, "cameraexclass","setcontinuousautofocus", __ref);}
 RemoteObject _modes = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.List");
  BA.debugLineNum = 256;BA.debugLine="Public Sub SetContinuousAutoFocus";
@@ -829,7 +829,7 @@ __ref.runClassMethod (pdv.milotin.cameraexclass.class, "_setfocusmode" /*RemoteO
  }else {
  BA.debugLineNum = 263;BA.debugLine="Log(\"Continuous focus mode is not availabl";
 Debug.ShouldStop(64);
-cameraexclass.__c.runVoidMethod ("LogImpl","48388615",RemoteObject.createImmutable("Continuous focus mode is not available"),0);
+cameraexclass.__c.runVoidMethod ("LogImpl","012189703",RemoteObject.createImmutable("Continuous focus mode is not available"),0);
  }}
 ;
  BA.debugLineNum = 265;BA.debugLine="End Sub";
@@ -844,7 +844,7 @@ finally {
 		}}
 public static RemoteObject  _setdisplayorientation(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SetDisplayOrientation (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,56);
+		Debug.PushSubsStack("SetDisplayOrientation (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,56);
 if (RapidSub.canDelegate("setdisplayorientation")) { return __ref.runUserSub(false, "cameraexclass","setdisplayorientation", __ref);}
 RemoteObject _previewresult = RemoteObject.createImmutable(0);
 RemoteObject _result = RemoteObject.createImmutable(0);
@@ -900,7 +900,7 @@ Debug.ShouldStop(64);
 _result = _previewresult;Debug.locals.put("result", _result);
  BA.debugLineNum = 72;BA.debugLine="Log(previewResult)";
 Debug.ShouldStop(128);
-cameraexclass.__c.runVoidMethod ("LogImpl","46750224",BA.NumberToString(_previewresult),0);
+cameraexclass.__c.runVoidMethod ("LogImpl","010551312",BA.NumberToString(_previewresult),0);
  };
  BA.debugLineNum = 74;BA.debugLine="r.target = nativeCam";
 Debug.ShouldStop(512);
@@ -929,7 +929,7 @@ finally {
 		}}
 public static RemoteObject  _setflashmode(RemoteObject __ref,RemoteObject _mode) throws Exception{
 try {
-		Debug.PushSubsStack("SetFlashMode (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,176);
+		Debug.PushSubsStack("SetFlashMode (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,176);
 if (RapidSub.canDelegate("setflashmode")) { return __ref.runUserSub(false, "cameraexclass","setflashmode", __ref, _mode);}
 Debug.locals.put("Mode", _mode);
  BA.debugLineNum = 176;BA.debugLine="Public Sub SetFlashMode(Mode As String)";
@@ -952,7 +952,7 @@ finally {
 		}}
 public static RemoteObject  _setfocusmode(RemoteObject __ref,RemoteObject _mode) throws Exception{
 try {
-		Debug.PushSubsStack("SetFocusMode (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,267);
+		Debug.PushSubsStack("SetFocusMode (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,267);
 if (RapidSub.canDelegate("setfocusmode")) { return __ref.runUserSub(false, "cameraexclass","setfocusmode", __ref, _mode);}
 Debug.locals.put("Mode", _mode);
  BA.debugLineNum = 267;BA.debugLine="Public Sub SetFocusMode(Mode As String)";
@@ -975,7 +975,7 @@ finally {
 		}}
 public static RemoteObject  _setjpegquality(RemoteObject __ref,RemoteObject _quality) throws Exception{
 try {
-		Debug.PushSubsStack("SetJpegQuality (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,171);
+		Debug.PushSubsStack("SetJpegQuality (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,171);
 if (RapidSub.canDelegate("setjpegquality")) { return __ref.runUserSub(false, "cameraexclass","setjpegquality", __ref, _quality);}
 Debug.locals.put("Quality", _quality);
  BA.debugLineNum = 171;BA.debugLine="Public Sub SetJpegQuality(Quality As Int)";
@@ -998,7 +998,7 @@ finally {
 		}}
 public static RemoteObject  _setparameter(RemoteObject __ref,RemoteObject _key,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("SetParameter (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,126);
+		Debug.PushSubsStack("SetParameter (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,126);
 if (RapidSub.canDelegate("setparameter")) { return __ref.runUserSub(false, "cameraexclass","setparameter", __ref, _key, _value);}
 Debug.locals.put("Key", _key);
 Debug.locals.put("Value", _value);
@@ -1022,7 +1022,7 @@ finally {
 		}}
 public static RemoteObject  _setpicturesize(RemoteObject __ref,RemoteObject _width,RemoteObject _height) throws Exception{
 try {
-		Debug.PushSubsStack("SetPictureSize (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,166);
+		Debug.PushSubsStack("SetPictureSize (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,166);
 if (RapidSub.canDelegate("setpicturesize")) { return __ref.runUserSub(false, "cameraexclass","setpicturesize", __ref, _width, _height);}
 Debug.locals.put("Width", _width);
 Debug.locals.put("Height", _height);
@@ -1046,7 +1046,7 @@ finally {
 		}}
 public static RemoteObject  _startpreview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("StartPreview (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,107);
+		Debug.PushSubsStack("StartPreview (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,107);
 if (RapidSub.canDelegate("startpreview")) { return __ref.runUserSub(false, "cameraexclass","startpreview", __ref);}
  BA.debugLineNum = 107;BA.debugLine="Public Sub StartPreview";
 Debug.ShouldStop(1024);
@@ -1065,7 +1065,7 @@ finally {
 		}}
 public static RemoteObject  _stoppreview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("StopPreview (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,111);
+		Debug.PushSubsStack("StopPreview (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,111);
 if (RapidSub.canDelegate("stoppreview")) { return __ref.runUserSub(false, "cameraexclass","stoppreview", __ref);}
  BA.debugLineNum = 111;BA.debugLine="Public Sub StopPreview";
 Debug.ShouldStop(16384);
@@ -1084,7 +1084,7 @@ finally {
 		}}
 public static RemoteObject  _takepicture(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("TakePicture (cameraexclass) ","cameraexclass",8,__ref.getField(false, "ba"),__ref,99);
+		Debug.PushSubsStack("TakePicture (cameraexclass) ","cameraexclass",9,__ref.getField(false, "ba"),__ref,99);
 if (RapidSub.canDelegate("takepicture")) { return __ref.runUserSub(false, "cameraexclass","takepicture", __ref);}
  BA.debugLineNum = 99;BA.debugLine="Public Sub TakePicture";
 Debug.ShouldStop(4);

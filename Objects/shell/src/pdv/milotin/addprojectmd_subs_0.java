@@ -245,7 +245,7 @@ Debug.ShouldStop(16777216);
 _jsonstring = _job.runClassMethod (pdv.milotin.httpjob.class, "_getstring" /*RemoteObject*/ );Debug.locals.put("jsonString", _jsonstring);Debug.locals.put("jsonString", _jsonstring);
  BA.debugLineNum = 122;BA.debugLine="Log(jsonString)";
 Debug.ShouldStop(33554432);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963781",_jsonstring,0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636101",_jsonstring,0);
  BA.debugLineNum = 124;BA.debugLine="Dim parser As JSONParser";
 Debug.ShouldStop(134217728);
 _parser = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.JSONParser");Debug.locals.put("parser", _parser);
@@ -287,19 +287,19 @@ _receipt = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map
 _receipt = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.collections.Map"), _result.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("receipt")))));Debug.locals.put("receipt", _receipt);Debug.locals.put("receipt", _receipt);
  BA.debugLineNum = 140;BA.debugLine="Log(\"Transaction Hash: \" & transactionHash)";
 Debug.ShouldStop(2048);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963799",RemoteObject.concat(RemoteObject.createImmutable("Transaction Hash: "),_transactionhash),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636119",RemoteObject.concat(RemoteObject.createImmutable("Transaction Hash: "),_transactionhash),0);
  BA.debugLineNum = 141;BA.debugLine="Log(\"Nonce: \" & nonce)";
 Debug.ShouldStop(4096);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963800",RemoteObject.concat(RemoteObject.createImmutable("Nonce: "),_nonce),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636120",RemoteObject.concat(RemoteObject.createImmutable("Nonce: "),_nonce),0);
  BA.debugLineNum = 142;BA.debugLine="Log(\"From: \" & from)";
 Debug.ShouldStop(8192);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963801",RemoteObject.concat(RemoteObject.createImmutable("From: "),_from),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636121",RemoteObject.concat(RemoteObject.createImmutable("From: "),_from),0);
  BA.debugLineNum = 143;BA.debugLine="Log(\"Status: \" & responseStatus)";
 Debug.ShouldStop(16384);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963802",RemoteObject.concat(RemoteObject.createImmutable("Status: "),_responsestatus),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636122",RemoteObject.concat(RemoteObject.createImmutable("Status: "),_responsestatus),0);
  BA.debugLineNum = 144;BA.debugLine="Log(\"Receipt: \" & receipt)";
 Debug.ShouldStop(32768);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963803",RemoteObject.concat(RemoteObject.createImmutable("Receipt: "),_receipt),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636123",RemoteObject.concat(RemoteObject.createImmutable("Receipt: "),_receipt),0);
  BA.debugLineNum = 145;BA.debugLine="pnBlackTransparent.Visible = True";
 Debug.ShouldStop(65536);
 addprojectmd.mostCurrent._pnblacktransparent.runMethod(true,"setVisible",addprojectmd.mostCurrent.__c.getField(true,"True"));
@@ -309,17 +309,17 @@ addprojectmd.mostCurrent._pnstatus.runMethod(true,"setVisible",addprojectmd.most
  }else {
  BA.debugLineNum = 150;BA.debugLine="Log(\"Failed to post the job\")";
 Debug.ShouldStop(2097152);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963809",RemoteObject.createImmutable("Failed to post the job"),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636129",RemoteObject.createImmutable("Failed to post the job"),0);
  };
  }else {
  BA.debugLineNum = 154;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 Debug.ShouldStop(33554432);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963813",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636133",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
  };
  }else {
  BA.debugLineNum = 158;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 Debug.ShouldStop(536870912);
-addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","45963817",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
+addprojectmd.mostCurrent.__c.runVoidMethod ("LogImpl","05636137",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
  };
  BA.debugLineNum = 162;BA.debugLine="Job.Release";
 Debug.ShouldStop(2);

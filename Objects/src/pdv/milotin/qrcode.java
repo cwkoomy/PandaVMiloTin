@@ -68,13 +68,13 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="qrcode";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=10682368;
- //BA.debugLineNum = 10682368;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=10682370;
- //BA.debugLineNum = 10682370;BA.debugLine="nativeMe = Me";
+RDebugUtils.currentLine=14483456;
+ //BA.debugLineNum = 14483456;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=14483458;
+ //BA.debugLineNum = 14483458;BA.debugLine="nativeMe = Me";
 __ref._nativeme /*anywheresoftware.b4j.object.JavaObject*/  = (anywheresoftware.b4j.object.JavaObject) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4j.object.JavaObject(), (java.lang.Object)(this));
-RDebugUtils.currentLine=10682372;
- //BA.debugLineNum = 10682372;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14483460;
+ //BA.debugLineNum = 14483460;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper  _drawqrcode(pdv.milotin.qrcode __ref,String _data) throws Exception{
@@ -82,25 +82,25 @@ __ref = this;
 RDebugUtils.currentModule="qrcode";
 if (Debug.shouldDelegate(ba, "drawqrcode", false))
 	 {return ((anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) Debug.delegate(ba, "drawqrcode", new Object[] {_data}));}
-RDebugUtils.currentLine=10747904;
- //BA.debugLineNum = 10747904;BA.debugLine="Sub drawQRCode (data As String) As Bitmap";
-RDebugUtils.currentLine=10747906;
- //BA.debugLineNum = 10747906;BA.debugLine="Return nativeMe.RunMethod(\"drawQRCode\", Array(dat";
+RDebugUtils.currentLine=14548992;
+ //BA.debugLineNum = 14548992;BA.debugLine="Sub drawQRCode (data As String) As Bitmap";
+RDebugUtils.currentLine=14548994;
+ //BA.debugLineNum = 14548994;BA.debugLine="Return nativeMe.RunMethod(\"drawQRCode\", Array(dat";
 if (true) return (anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(__ref._nativeme /*anywheresoftware.b4j.object.JavaObject*/ .RunMethod("drawQRCode",new Object[]{(Object)(_data)})));
-RDebugUtils.currentLine=10747908;
- //BA.debugLineNum = 10747908;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14548996;
+ //BA.debugLineNum = 14548996;BA.debugLine="End Sub";
 return null;
 }
 public String  _class_globals(pdv.milotin.qrcode __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="qrcode";
-RDebugUtils.currentLine=10616832;
- //BA.debugLineNum = 10616832;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=10616834;
- //BA.debugLineNum = 10616834;BA.debugLine="Dim nativeMe As JavaObject";
+RDebugUtils.currentLine=14417920;
+ //BA.debugLineNum = 14417920;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=14417922;
+ //BA.debugLineNum = 14417922;BA.debugLine="Dim nativeMe As JavaObject";
 _nativeme = new anywheresoftware.b4j.object.JavaObject();
-RDebugUtils.currentLine=10616836;
- //BA.debugLineNum = 10616836;BA.debugLine="End Sub";
+RDebugUtils.currentLine=14417924;
+ //BA.debugLineNum = 14417924;BA.debugLine="End Sub";
 return "";
 }
 

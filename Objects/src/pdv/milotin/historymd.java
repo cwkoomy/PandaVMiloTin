@@ -391,126 +391,126 @@ RDebugUtils.currentModule="historymd";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
 anywheresoftware.b4a.objects.drawable.GradientDrawable _gd = null;
-RDebugUtils.currentLine=4063232;
- //BA.debugLineNum = 4063232;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=4063234;
- //BA.debugLineNum = 4063234;BA.debugLine="Activity.LoadLayout(\"HistoryLy\")";
+RDebugUtils.currentLine=3735552;
+ //BA.debugLineNum = 3735552;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=3735554;
+ //BA.debugLineNum = 3735554;BA.debugLine="Activity.LoadLayout(\"HistoryLy\")";
 mostCurrent._activity.LoadLayout("HistoryLy",mostCurrent.activityBA);
-RDebugUtils.currentLine=4063237;
- //BA.debugLineNum = 4063237;BA.debugLine="clvHistory.FullScroll(True)";
+RDebugUtils.currentLine=3735557;
+ //BA.debugLineNum = 3735557;BA.debugLine="clvHistory.FullScroll(True)";
 mostCurrent._clvhistory.FullScroll(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=4063238;
- //BA.debugLineNum = 4063238;BA.debugLine="clvHistory.Panel.LoadLayout(\"ListViewLy2\")";
+RDebugUtils.currentLine=3735558;
+ //BA.debugLineNum = 3735558;BA.debugLine="clvHistory.Panel.LoadLayout(\"ListViewLy2\")";
 mostCurrent._clvhistory.getPanel().LoadLayout("ListViewLy2",mostCurrent.activityBA);
-RDebugUtils.currentLine=4063239;
- //BA.debugLineNum = 4063239;BA.debugLine="clvHistory.Panel.Height = 880dip";
+RDebugUtils.currentLine=3735559;
+ //BA.debugLineNum = 3735559;BA.debugLine="clvHistory.Panel.Height = 880dip";
 mostCurrent._clvhistory.getPanel().setHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (880)));
-RDebugUtils.currentLine=4063241;
- //BA.debugLineNum = 4063241;BA.debugLine="Dim gd As GradientDrawable";
+RDebugUtils.currentLine=3735561;
+ //BA.debugLineNum = 3735561;BA.debugLine="Dim gd As GradientDrawable";
 _gd = new anywheresoftware.b4a.objects.drawable.GradientDrawable();
-RDebugUtils.currentLine=4063242;
- //BA.debugLineNum = 4063242;BA.debugLine="gd.Initialize(\"TOP_BOTTOM\", Array As Int(Colors.A";
+RDebugUtils.currentLine=3735562;
+ //BA.debugLineNum = 3735562;BA.debugLine="gd.Initialize(\"TOP_BOTTOM\", Array As Int(Colors.A";
 _gd.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TOP_BOTTOM"),new int[]{anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (255),(int) (255),(int) (255)),anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (255),(int) (255),(int) (255))});
-RDebugUtils.currentLine=4063243;
- //BA.debugLineNum = 4063243;BA.debugLine="gd.CornerRadius = 20dip ' Adjust the corner radiu";
+RDebugUtils.currentLine=3735563;
+ //BA.debugLineNum = 3735563;BA.debugLine="gd.CornerRadius = 20dip ' Adjust the corner radiu";
 _gd.setCornerRadius((float) (anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (20))));
-RDebugUtils.currentLine=4063246;
- //BA.debugLineNum = 4063246;BA.debugLine="clvHistory.Background = gd";
+RDebugUtils.currentLine=3735566;
+ //BA.debugLineNum = 3735566;BA.debugLine="clvHistory.Background = gd";
 mostCurrent._clvhistory.setBackground((android.graphics.drawable.Drawable)(_gd.getObject()));
-RDebugUtils.currentLine=4063248;
- //BA.debugLineNum = 4063248;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3735568;
+ //BA.debugLineNum = 3735568;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="historymd";
-RDebugUtils.currentLine=4194304;
- //BA.debugLineNum = 4194304;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=4194306;
- //BA.debugLineNum = 4194306;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3866624;
+ //BA.debugLineNum = 3866624;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=3866626;
+ //BA.debugLineNum = 3866626;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="historymd";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=4128768;
- //BA.debugLineNum = 4128768;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=4128770;
- //BA.debugLineNum = 4128770;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3801088;
+ //BA.debugLineNum = 3801088;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=3801090;
+ //BA.debugLineNum = 3801090;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgback_click() throws Exception{
 RDebugUtils.currentModule="historymd";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "imgback_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "imgback_click", null));}
-RDebugUtils.currentLine=4521984;
- //BA.debugLineNum = 4521984;BA.debugLine="Private Sub imgBack_Click";
-RDebugUtils.currentLine=4521985;
- //BA.debugLineNum = 4521985;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=4194304;
+ //BA.debugLineNum = 4194304;BA.debugLine="Private Sub imgBack_Click";
+RDebugUtils.currentLine=4194305;
+ //BA.debugLineNum = 4194305;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4521986;
- //BA.debugLineNum = 4521986;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4194306;
+ //BA.debugLineNum = 4194306;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblfund_click() throws Exception{
 RDebugUtils.currentModule="historymd";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lblfund_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblfund_click", null));}
-RDebugUtils.currentLine=4325376;
- //BA.debugLineNum = 4325376;BA.debugLine="Private Sub lblFund_Click";
-RDebugUtils.currentLine=4325377;
- //BA.debugLineNum = 4325377;BA.debugLine="StartActivity(\"FundMd\")";
+RDebugUtils.currentLine=3997696;
+ //BA.debugLineNum = 3997696;BA.debugLine="Private Sub lblFund_Click";
+RDebugUtils.currentLine=3997697;
+ //BA.debugLineNum = 3997697;BA.debugLine="StartActivity(\"FundMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("FundMd"));
-RDebugUtils.currentLine=4325378;
- //BA.debugLineNum = 4325378;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=3997698;
+ //BA.debugLineNum = 3997698;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4325379;
- //BA.debugLineNum = 4325379;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3997699;
+ //BA.debugLineNum = 3997699;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhistory_click() throws Exception{
 RDebugUtils.currentModule="historymd";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lblhistory_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblhistory_click", null));}
-RDebugUtils.currentLine=4390912;
- //BA.debugLineNum = 4390912;BA.debugLine="Private Sub lblHistory_Click";
-RDebugUtils.currentLine=4390913;
- //BA.debugLineNum = 4390913;BA.debugLine="StartActivity(\"HistoryMd\")";
+RDebugUtils.currentLine=4063232;
+ //BA.debugLineNum = 4063232;BA.debugLine="Private Sub lblHistory_Click";
+RDebugUtils.currentLine=4063233;
+ //BA.debugLineNum = 4063233;BA.debugLine="StartActivity(\"HistoryMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HistoryMd"));
-RDebugUtils.currentLine=4390914;
- //BA.debugLineNum = 4390914;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=4063234;
+ //BA.debugLineNum = 4063234;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4390915;
- //BA.debugLineNum = 4390915;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4063235;
+ //BA.debugLineNum = 4063235;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhome_click() throws Exception{
 RDebugUtils.currentModule="historymd";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lblhome_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblhome_click", null));}
-RDebugUtils.currentLine=4259840;
- //BA.debugLineNum = 4259840;BA.debugLine="Private Sub lblHome_Click";
-RDebugUtils.currentLine=4259841;
- //BA.debugLineNum = 4259841;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=3932160;
+ //BA.debugLineNum = 3932160;BA.debugLine="Private Sub lblHome_Click";
+RDebugUtils.currentLine=3932161;
+ //BA.debugLineNum = 3932161;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4259842;
- //BA.debugLineNum = 4259842;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3932162;
+ //BA.debugLineNum = 3932162;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbluser_click() throws Exception{
 RDebugUtils.currentModule="historymd";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "lbluser_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbluser_click", null));}
-RDebugUtils.currentLine=4456448;
- //BA.debugLineNum = 4456448;BA.debugLine="Private Sub lblUser_Click";
-RDebugUtils.currentLine=4456449;
- //BA.debugLineNum = 4456449;BA.debugLine="StartActivity(\"UserMd\")";
+RDebugUtils.currentLine=4128768;
+ //BA.debugLineNum = 4128768;BA.debugLine="Private Sub lblUser_Click";
+RDebugUtils.currentLine=4128769;
+ //BA.debugLineNum = 4128769;BA.debugLine="StartActivity(\"UserMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("UserMd"));
-RDebugUtils.currentLine=4456450;
- //BA.debugLineNum = 4456450;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=4128770;
+ //BA.debugLineNum = 4128770;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4456451;
- //BA.debugLineNum = 4456451;BA.debugLine="End Sub";
+RDebugUtils.currentLine=4128771;
+ //BA.debugLineNum = 4128771;BA.debugLine="End Sub";
 return "";
 }
 }

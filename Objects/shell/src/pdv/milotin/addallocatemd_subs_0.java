@@ -8,7 +8,7 @@ public class addallocatemd_subs_0 {
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Create (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,78);
+		Debug.PushSubsStack("Activity_Create (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,78);
 if (RapidSub.canDelegate("activity_create")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","activity_create", _firsttime);}
 Debug.locals.put("FirstTime", _firsttime);
  BA.debugLineNum = 78;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
@@ -51,7 +51,7 @@ finally {
 		}}
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,293);
+		Debug.PushSubsStack("Activity_KeyPress (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,293);
 if (RapidSub.canDelegate("activity_keypress")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","activity_keypress", _keycode);}
 Debug.locals.put("KeyCode", _keycode);
  BA.debugLineNum = 293;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
@@ -84,7 +84,7 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,262);
+		Debug.PushSubsStack("Activity_Pause (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,262);
 if (RapidSub.canDelegate("activity_pause")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
  BA.debugLineNum = 262;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
@@ -101,7 +101,7 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,258);
+		Debug.PushSubsStack("Activity_Resume (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,258);
 if (RapidSub.canDelegate("activity_resume")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","activity_resume");}
  BA.debugLineNum = 258;BA.debugLine="Sub Activity_Resume";
 Debug.ShouldStop(2);
@@ -117,7 +117,7 @@ finally {
 		}}
 public static RemoteObject  _btnclose_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnClose_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,335);
+		Debug.PushSubsStack("btnClose_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,335);
 if (RapidSub.canDelegate("btnclose_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","btnclose_click");}
  BA.debugLineNum = 335;BA.debugLine="Private Sub btnClose_Click";
 Debug.ShouldStop(16384);
@@ -150,7 +150,7 @@ finally {
 		}}
 public static RemoteObject  _btnnext_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnNext_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,305);
+		Debug.PushSubsStack("btnNext_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,305);
 if (RapidSub.canDelegate("btnnext_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","btnnext_click");}
 RemoteObject _strselectcategory = RemoteObject.createImmutable("");
  BA.debugLineNum = 305;BA.debugLine="Private Sub btnNext_Click";
@@ -175,7 +175,7 @@ Debug.ShouldStop(4194304);
 addallocatemd.mostCurrent._kvs.runVoidMethod ("_put",(Object)(BA.ObjectToString("SelectedCategory")),(Object)((_strselectcategory)));
  BA.debugLineNum = 312;BA.debugLine="Log(strSelectCategory)";
 Debug.ShouldStop(8388608);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","414286855",_strselectcategory,0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09961479",_strselectcategory,0);
  BA.debugLineNum = 313;BA.debugLine="lblAllocateAmount.Text = txtAllocateFund.Text";
 Debug.ShouldStop(16777216);
 addallocatemd.mostCurrent._lblallocateamount.runMethod(true,"setText",BA.ObjectToCharSequence(addallocatemd.mostCurrent._txtallocatefund.runMethod(true,"getText")));
@@ -191,7 +191,7 @@ finally {
 		}}
 public static RemoteObject  _btnsend_click() throws Exception{
 try {
-		Debug.PushSubsStack("btnSend_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,319);
+		Debug.PushSubsStack("btnSend_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,319);
 if (RapidSub.canDelegate("btnsend_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","btnsend_click");}
  BA.debugLineNum = 319;BA.debugLine="Private Sub btnSend_Click";
 Debug.ShouldStop(1073741824);
@@ -210,7 +210,7 @@ finally {
 		}}
 public static RemoteObject  _calculatepercentage(RemoteObject _part,RemoteObject _total) throws Exception{
 try {
-		Debug.PushSubsStack("CalculatePercentage (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,346);
+		Debug.PushSubsStack("CalculatePercentage (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,346);
 if (RapidSub.canDelegate("calculatepercentage")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","calculatepercentage", _part, _total);}
 RemoteObject _percentage = RemoteObject.createImmutable(0);
 Debug.locals.put("part", _part);
@@ -254,7 +254,7 @@ addallocatemd.mostCurrent._lblprojectprogress2.runMethod(true,"setText",BA.Objec
  };
  BA.debugLineNum = 361;BA.debugLine="Log(NumberFormat(percentage, 1, 3))";
 Debug.ShouldStop(256);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","414614543",addallocatemd.mostCurrent.__c.runMethod(true,"NumberFormat",(Object)(_percentage),(Object)(BA.numberCast(int.class, 1)),(Object)(BA.numberCast(int.class, 3))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","010289167",addallocatemd.mostCurrent.__c.runMethod(true,"NumberFormat",(Object)(_percentage),(Object)(BA.numberCast(int.class, 1)),(Object)(BA.numberCast(int.class, 3))),0);
  BA.debugLineNum = 362;BA.debugLine="End Sub";
 Debug.ShouldStop(512);
 return RemoteObject.createImmutable("");
@@ -267,7 +267,7 @@ finally {
 		}}
 public static RemoteObject  _getauditbyid() throws Exception{
 try {
-		Debug.PushSubsStack("GetAuditByID (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,112);
+		Debug.PushSubsStack("GetAuditByID (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,112);
 if (RapidSub.canDelegate("getauditbyid")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","getauditbyid");}
 RemoteObject _jobgetauditbyid = RemoteObject.declareNull("pdv.milotin.httpjob");
 RemoteObject _url = RemoteObject.createImmutable("");
@@ -284,7 +284,7 @@ Debug.ShouldStop(1048576);
 _url = RemoteObject.concat(RemoteObject.createImmutable("https://service-testnet.maschain.com/api/audit/audit/"),addallocatemd.mostCurrent._kvs.runMethod(false,"_get",(Object)(RemoteObject.createImmutable("AuditTransactionHash"))));Debug.locals.put("url", _url);Debug.locals.put("url", _url);
  BA.debugLineNum = 118;BA.debugLine="Log(\"HASH:\" & kvs.Get(\"AuditTransactionHash\"))";
 Debug.ShouldStop(2097152);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413631494",RemoteObject.concat(RemoteObject.createImmutable("HASH:"),addallocatemd.mostCurrent._kvs.runMethod(false,"_get",(Object)(RemoteObject.createImmutable("AuditTransactionHash")))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09240582",RemoteObject.concat(RemoteObject.createImmutable("HASH:"),addallocatemd.mostCurrent._kvs.runMethod(false,"_get",(Object)(RemoteObject.createImmutable("AuditTransactionHash")))),0);
  BA.debugLineNum = 119;BA.debugLine="JobGetAuditByID.Download(url)";
 Debug.ShouldStop(4194304);
 _jobgetauditbyid.runClassMethod (pdv.milotin.httpjob.class, "_download" /*RemoteObject*/ ,(Object)(_url));
@@ -306,7 +306,7 @@ finally {
 		}}
 public static RemoteObject  _getauditcategory() throws Exception{
 try {
-		Debug.PushSubsStack("GetAuditCategory (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,99);
+		Debug.PushSubsStack("GetAuditCategory (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,99);
 if (RapidSub.canDelegate("getauditcategory")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","getauditcategory");}
 RemoteObject _jobgetauditcategory = RemoteObject.declareNull("pdv.milotin.httpjob");
 RemoteObject _url = RemoteObject.createImmutable("");
@@ -469,7 +469,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _imgback_click() throws Exception{
 try {
-		Debug.PushSubsStack("imgBack_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,287);
+		Debug.PushSubsStack("imgBack_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,287);
 if (RapidSub.canDelegate("imgback_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","imgback_click");}
  BA.debugLineNum = 287;BA.debugLine="Private Sub imgBack_Click";
 Debug.ShouldStop(1073741824);
@@ -494,7 +494,7 @@ finally {
 		}}
 public static RemoteObject  _imgclose_click() throws Exception{
 try {
-		Debug.PushSubsStack("imgClose_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,323);
+		Debug.PushSubsStack("imgClose_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,323);
 if (RapidSub.canDelegate("imgclose_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","imgclose_click");}
  BA.debugLineNum = 323;BA.debugLine="Private Sub imgClose_Click";
 Debug.ShouldStop(4);
@@ -512,7 +512,7 @@ Debug.ShouldStop(64);
 addallocatemd.mostCurrent._kvs.runVoidMethod ("_put",(Object)(BA.ObjectToString("DonateAmount")),(Object)((RemoteObject.createImmutable(""))));
  BA.debugLineNum = 328;BA.debugLine="Log(\"Donate :\" & kvs.Get(\"DonateAmount\"))";
 Debug.ShouldStop(128);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","414417925",RemoteObject.concat(RemoteObject.createImmutable("Donate :"),addallocatemd.mostCurrent._kvs.runMethod(false,"_get",(Object)(RemoteObject.createImmutable("DonateAmount")))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","010092549",RemoteObject.concat(RemoteObject.createImmutable("Donate :"),addallocatemd.mostCurrent._kvs.runMethod(false,"_get",(Object)(RemoteObject.createImmutable("DonateAmount")))),0);
  BA.debugLineNum = 329;BA.debugLine="End Sub";
 Debug.ShouldStop(256);
 return RemoteObject.createImmutable("");
@@ -525,7 +525,7 @@ finally {
 		}}
 public static RemoteObject  _imgclose2_click() throws Exception{
 try {
-		Debug.PushSubsStack("imgClose2_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,331);
+		Debug.PushSubsStack("imgClose2_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,331);
 if (RapidSub.canDelegate("imgclose2_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","imgclose2_click");}
  BA.debugLineNum = 331;BA.debugLine="Private Sub imgClose2_Click";
 Debug.ShouldStop(1024);
@@ -544,7 +544,7 @@ finally {
 		}}
 public static RemoteObject  _jobdone(RemoteObject _job) throws Exception{
 try {
-		Debug.PushSubsStack("JobDone (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,165);
+		Debug.PushSubsStack("JobDone (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,165);
 if (RapidSub.canDelegate("jobdone")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","jobdone", _job);}
 RemoteObject _jsonstring = RemoteObject.createImmutable("");
 RemoteObject _parser = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.JSONParser");
@@ -577,7 +577,7 @@ Debug.ShouldStop(1024);
 _jsonstring = _job.runClassMethod (pdv.milotin.httpjob.class, "_getstring" /*RemoteObject*/ );Debug.locals.put("jsonString", _jsonstring);Debug.locals.put("jsonString", _jsonstring);
  BA.debugLineNum = 172;BA.debugLine="Log(jsonString)";
 Debug.ShouldStop(2048);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828103",_jsonstring,0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371655",_jsonstring,0);
  BA.debugLineNum = 174;BA.debugLine="Dim parser As JSONParser";
 Debug.ShouldStop(8192);
 _parser = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.JSONParser");Debug.locals.put("parser", _parser);
@@ -663,19 +663,19 @@ _receipt = RemoteObject.createNew ("anywheresoftware.b4a.objects.collections.Map
 _receipt = RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.collections.Map"), _result.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("receipt")))));Debug.locals.put("receipt", _receipt);Debug.locals.put("receipt", _receipt);
  BA.debugLineNum = 208;BA.debugLine="Log(\"Transaction Hash: \" & transactionHash)";
 Debug.ShouldStop(32768);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828139",RemoteObject.concat(RemoteObject.createImmutable("Transaction Hash: "),_transactionhash),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371691",RemoteObject.concat(RemoteObject.createImmutable("Transaction Hash: "),_transactionhash),0);
  BA.debugLineNum = 209;BA.debugLine="Log(\"Nonce: \" & nonce)";
 Debug.ShouldStop(65536);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828140",RemoteObject.concat(RemoteObject.createImmutable("Nonce: "),_nonce),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371692",RemoteObject.concat(RemoteObject.createImmutable("Nonce: "),_nonce),0);
  BA.debugLineNum = 210;BA.debugLine="Log(\"From: \" & from)";
 Debug.ShouldStop(131072);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828141",RemoteObject.concat(RemoteObject.createImmutable("From: "),_from),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371693",RemoteObject.concat(RemoteObject.createImmutable("From: "),_from),0);
  BA.debugLineNum = 211;BA.debugLine="Log(\"Status: \" & responseStatus)";
 Debug.ShouldStop(262144);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828142",RemoteObject.concat(RemoteObject.createImmutable("Status: "),_responsestatus),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371694",RemoteObject.concat(RemoteObject.createImmutable("Status: "),_responsestatus),0);
  BA.debugLineNum = 212;BA.debugLine="Log(\"Receipt: \" & receipt)";
 Debug.ShouldStop(524288);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828143",RemoteObject.concat(RemoteObject.createImmutable("Receipt: "),_receipt),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371695",RemoteObject.concat(RemoteObject.createImmutable("Receipt: "),_receipt),0);
  BA.debugLineNum = 213;BA.debugLine="pnBlackTransparent.Visible = True";
 Debug.ShouldStop(1048576);
 addallocatemd.mostCurrent._pnblacktransparent.runMethod(true,"setVisible",addallocatemd.mostCurrent.__c.getField(true,"True"));
@@ -716,32 +716,32 @@ Debug.ShouldStop(512);
 _metadata.runVoidMethod ("Get",(Object)((RemoteObject.createImmutable("status"))));
  BA.debugLineNum = 236;BA.debugLine="Log(metadata.Get(\"project\"))";
 Debug.ShouldStop(2048);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828167",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("project"))))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371719",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("project"))))),0);
  BA.debugLineNum = 237;BA.debugLine="Log(metadata.Get(\"fund\"))";
 Debug.ShouldStop(4096);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828168",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("fund"))))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371720",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("fund"))))),0);
  BA.debugLineNum = 238;BA.debugLine="Log(metadata.Get(\"progress\"))";
 Debug.ShouldStop(8192);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828169",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("progress"))))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371721",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("progress"))))),0);
  BA.debugLineNum = 239;BA.debugLine="Log(metadata.Get(\"status\"))";
 Debug.ShouldStop(16384);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828170",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("status"))))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371722",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("status"))))),0);
  BA.debugLineNum = 240;BA.debugLine="Log(metadata.Get(\"project_wallet\"))";
 Debug.ShouldStop(32768);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828171",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("project_wallet"))))),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371723",BA.ObjectToString(_metadata.runMethod(false,"Get",(Object)((RemoteObject.createImmutable("project_wallet"))))),0);
  BA.debugLineNum = 242;BA.debugLine="GetAuditCategory";
 Debug.ShouldStop(131072);
 _getauditcategory();
  }else {
  BA.debugLineNum = 245;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 Debug.ShouldStop(1048576);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828176",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371728",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
  }}}
 ;
  }else {
  BA.debugLineNum = 250;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 Debug.ShouldStop(33554432);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","413828181",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09371733",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage" /*RemoteObject*/ )),0);
  };
  BA.debugLineNum = 254;BA.debugLine="Job.Release";
 Debug.ShouldStop(536870912);
@@ -758,7 +758,7 @@ finally {
 		}}
 public static RemoteObject  _lblfund_click() throws Exception{
 try {
-		Debug.PushSubsStack("lblFund_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,272);
+		Debug.PushSubsStack("lblFund_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,272);
 if (RapidSub.canDelegate("lblfund_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","lblfund_click");}
  BA.debugLineNum = 272;BA.debugLine="Private Sub lblFund_Click";
 Debug.ShouldStop(32768);
@@ -780,7 +780,7 @@ finally {
 		}}
 public static RemoteObject  _lblhistory_click() throws Exception{
 try {
-		Debug.PushSubsStack("lblHistory_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,277);
+		Debug.PushSubsStack("lblHistory_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,277);
 if (RapidSub.canDelegate("lblhistory_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","lblhistory_click");}
  BA.debugLineNum = 277;BA.debugLine="Private Sub lblHistory_Click";
 Debug.ShouldStop(1048576);
@@ -802,7 +802,7 @@ finally {
 		}}
 public static RemoteObject  _lblhome_click() throws Exception{
 try {
-		Debug.PushSubsStack("lblHome_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,267);
+		Debug.PushSubsStack("lblHome_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,267);
 if (RapidSub.canDelegate("lblhome_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","lblhome_click");}
  BA.debugLineNum = 267;BA.debugLine="Private Sub lblHome_Click";
 Debug.ShouldStop(1024);
@@ -824,7 +824,7 @@ finally {
 		}}
 public static RemoteObject  _lbluser_click() throws Exception{
 try {
-		Debug.PushSubsStack("lblUser_Click (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,282);
+		Debug.PushSubsStack("lblUser_Click (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,282);
 if (RapidSub.canDelegate("lbluser_click")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","lbluser_click");}
  BA.debugLineNum = 282;BA.debugLine="Private Sub lblUser_Click";
 Debug.ShouldStop(33554432);
@@ -846,7 +846,7 @@ finally {
 		}}
 public static RemoteObject  _postallocate() throws Exception{
 try {
-		Debug.PushSubsStack("PostAllocate (addallocatemd) ","addallocatemd",12,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,126);
+		Debug.PushSubsStack("PostAllocate (addallocatemd) ","addallocatemd",8,addallocatemd.mostCurrent.activityBA,addallocatemd.mostCurrent,126);
 if (RapidSub.canDelegate("postallocate")) { return pdv.milotin.addallocatemd.remoteMe.runUserSub(false, "addallocatemd","postallocate");}
 RemoteObject _postauditallocate = RemoteObject.declareNull("pdv.milotin.httpjob");
 RemoteObject _json = RemoteObject.declareNull("anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator");
@@ -915,7 +915,7 @@ Debug.ShouldStop(8388608);
 _json.runVoidMethod ("Initialize",(Object)(_data));
  BA.debugLineNum = 155;BA.debugLine="Log(json.ToString)";
 Debug.ShouldStop(67108864);
-addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","416121885",_json.runMethod(true,"ToString"),0);
+addallocatemd.mostCurrent.__c.runVoidMethod ("LogImpl","09306141",_json.runMethod(true,"ToString"),0);
  BA.debugLineNum = 158;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
 Debug.ShouldStop(536870912);
 _url = BA.ObjectToString("https://service-testnet.maschain.com/api/audit/audit/");Debug.locals.put("url", _url);Debug.locals.put("url", _url);

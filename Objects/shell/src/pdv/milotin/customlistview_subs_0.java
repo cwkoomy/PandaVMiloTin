@@ -8,7 +8,7 @@ public class customlistview_subs_0 {
 
 public static RemoteObject  _add(RemoteObject __ref,RemoteObject _pnl,RemoteObject _itemheight,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("Add (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,184);
+		Debug.PushSubsStack("Add (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,184);
 if (RapidSub.canDelegate("add")) { return __ref.runUserSub(false, "customlistview","add", __ref, _pnl, _itemheight, _value);}
 Debug.locals.put("Pnl", _pnl);
 Debug.locals.put("ItemHeight", _itemheight);
@@ -30,7 +30,7 @@ finally {
 		}}
 public static RemoteObject  _addtextitem(RemoteObject __ref,RemoteObject _text,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("AddTextItem (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,109);
+		Debug.PushSubsStack("AddTextItem (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,109);
 if (RapidSub.canDelegate("addtextitem")) { return __ref.runUserSub(false, "customlistview","addtextitem", __ref, _text, _value);}
 Debug.locals.put("Text", _text);
 Debug.locals.put("Value", _value);
@@ -51,7 +51,7 @@ finally {
 		}}
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,41);
+		Debug.PushSubsStack("AsView (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,41);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "customlistview","asview", __ref);}
  BA.debugLineNum = 41;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(256);
@@ -101,7 +101,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _clear(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Clear (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,65);
+		Debug.PushSubsStack("Clear (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,65);
 if (RapidSub.canDelegate("clear")) { return __ref.runUserSub(false, "customlistview","clear", __ref);}
 int _i = 0;
  BA.debugLineNum = 65;BA.debugLine="Public Sub Clear";
@@ -141,7 +141,7 @@ finally {
 		}}
 public static RemoteObject  _designercreateview(RemoteObject __ref,RemoteObject _base,RemoteObject _lbl,RemoteObject _props) throws Exception{
 try {
-		Debug.PushSubsStack("DesignerCreateView (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,46);
+		Debug.PushSubsStack("DesignerCreateView (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,46);
 if (RapidSub.canDelegate("designercreateview")) { return __ref.runUserSub(false, "customlistview","designercreateview", __ref, _base, _lbl, _props);}
 Debug.locals.put("base", _base);
 Debug.locals.put("lbl", _lbl);
@@ -181,7 +181,7 @@ finally {
 		}}
 public static RemoteObject  _getitemfromview(RemoteObject __ref,RemoteObject _v) throws Exception{
 try {
-		Debug.PushSubsStack("GetItemFromView (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,223);
+		Debug.PushSubsStack("GetItemFromView (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,223);
 if (RapidSub.canDelegate("getitemfromview")) { return __ref.runUserSub(false, "customlistview","getitemfromview", __ref, _v);}
 RemoteObject _parent = RemoteObject.declareNull("Object");
 RemoteObject _current = RemoteObject.declareNull("Object");
@@ -226,7 +226,7 @@ finally {
 		}}
 public static RemoteObject  _getpanel(RemoteObject __ref,RemoteObject _index) throws Exception{
 try {
-		Debug.PushSubsStack("GetPanel (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,82);
+		Debug.PushSubsStack("GetPanel (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,82);
 if (RapidSub.canDelegate("getpanel")) { return __ref.runUserSub(false, "customlistview","getpanel", __ref, _index);}
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 Debug.locals.put("Index", _index);
@@ -253,7 +253,7 @@ finally {
 		}}
 public static RemoteObject  _getsize(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("GetSize (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,77);
+		Debug.PushSubsStack("GetSize (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,77);
 if (RapidSub.canDelegate("getsize")) { return __ref.runUserSub(false, "customlistview","getsize", __ref);}
  BA.debugLineNum = 77;BA.debugLine="Public Sub GetSize As Int";
 Debug.ShouldStop(4096);
@@ -272,7 +272,7 @@ finally {
 		}}
 public static RemoteObject  _getvalue(RemoteObject __ref,RemoteObject _index) throws Exception{
 try {
-		Debug.PushSubsStack("GetValue (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,89);
+		Debug.PushSubsStack("GetValue (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,89);
 if (RapidSub.canDelegate("getvalue")) { return __ref.runUserSub(false, "customlistview","getvalue", __ref, _index);}
 Debug.locals.put("Index", _index);
  BA.debugLineNum = 89;BA.debugLine="Public Sub GetValue(Index As Int) As Object";
@@ -292,7 +292,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _vcallback,RemoteObject _veventname) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,23);
+		Debug.PushSubsStack("Initialize (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,23);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "customlistview","initialize", __ref, _ba, _vcallback, _veventname);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -348,7 +348,7 @@ finally {
 		}}
 public static RemoteObject  _insertat(RemoteObject __ref,RemoteObject _index,RemoteObject _pnl,RemoteObject _itemheight,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("InsertAt (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,136);
+		Debug.PushSubsStack("InsertAt (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,136);
 if (RapidSub.canDelegate("insertat")) { return __ref.runUserSub(false, "customlistview","insertat", __ref, _index, _pnl, _itemheight, _value);}
 RemoteObject _sd = RemoteObject.declareNull("anywheresoftware.b4a.objects.drawable.StateListDrawable");
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
@@ -493,7 +493,7 @@ finally {
 		}}
 public static RemoteObject  _insertattextitem(RemoteObject __ref,RemoteObject _index,RemoteObject _text,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("InsertAtTextItem (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,114);
+		Debug.PushSubsStack("InsertAtTextItem (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,114);
 if (RapidSub.canDelegate("insertattextitem")) { return __ref.runUserSub(false, "customlistview","insertattextitem", __ref, _index, _text, _value);}
 RemoteObject _pnl = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 RemoteObject _lbl = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
@@ -565,7 +565,7 @@ finally {
 		}}
 public static RemoteObject  _jumptoitem(RemoteObject __ref,RemoteObject _index) throws Exception{
 try {
-		Debug.PushSubsStack("JumpToItem (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,200);
+		Debug.PushSubsStack("JumpToItem (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,200);
 if (RapidSub.canDelegate("jumptoitem")) { return __ref.runUserSub(false, "customlistview","jumptoitem", __ref, _index);}
 RemoteObject _top = RemoteObject.createImmutable(0);
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
@@ -620,7 +620,7 @@ finally {
 		}}
 public static RemoteObject  _panel_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Panel_Click (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,214);
+		Debug.PushSubsStack("Panel_Click (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,214);
 if (RapidSub.canDelegate("panel_click")) { return __ref.runUserSub(false, "customlistview","panel_click", __ref);}
 RemoteObject _v = RemoteObject.declareNull("anywheresoftware.b4a.objects.ConcreteViewWrapper");
  BA.debugLineNum = 214;BA.debugLine="Private Sub Panel_Click";
@@ -650,7 +650,7 @@ finally {
 		}}
 public static RemoteObject  _removeat(RemoteObject __ref,RemoteObject _index) throws Exception{
 try {
-		Debug.PushSubsStack("RemoveAt (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("RemoveAt (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,94);
 if (RapidSub.canDelegate("removeat")) { return __ref.runUserSub(false, "customlistview","removeat", __ref, _index);}
 RemoteObject _removepanel = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
@@ -709,7 +709,7 @@ finally {
 		}}
 public static RemoteObject  _replacebasepanelwithview(RemoteObject __ref,RemoteObject _base,RemoteObject _view) throws Exception{
 try {
-		Debug.PushSubsStack("ReplaceBasePanelWithView (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,56);
+		Debug.PushSubsStack("ReplaceBasePanelWithView (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,56);
 if (RapidSub.canDelegate("replacebasepanelwithview")) { return __ref.runUserSub(false, "customlistview","replacebasepanelwithview", __ref, _base, _view);}
 RemoteObject _jo = RemoteObject.declareNull("anywheresoftware.b4j.object.JavaObject");
 RemoteObject _parent = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
@@ -743,7 +743,7 @@ finally {
 		}}
 public static RemoteObject  _sv_scrollchanged(RemoteObject __ref,RemoteObject _position) throws Exception{
 try {
-		Debug.PushSubsStack("sv_ScrollChanged (customlistview) ","customlistview",10,__ref.getField(false, "ba"),__ref,188);
+		Debug.PushSubsStack("sv_ScrollChanged (customlistview) ","customlistview",11,__ref.getField(false, "ba"),__ref,188);
 if (RapidSub.canDelegate("sv_scrollchanged")) { return __ref.runUserSub(false, "customlistview","sv_scrollchanged", __ref, _position);}
 Debug.locals.put("Position", _position);
  BA.debugLineNum = 188;BA.debugLine="Private Sub sv_ScrollChanged(Position As Int)";

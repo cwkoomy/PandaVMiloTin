@@ -599,80 +599,80 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
 	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
 String _str1 = "";
 String _str2 = "";
-RDebugUtils.currentLine=589824;
- //BA.debugLineNum = 589824;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
-RDebugUtils.currentLine=589826;
- //BA.debugLineNum = 589826;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+RDebugUtils.currentLine=8912896;
+ //BA.debugLineNum = 8912896;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+RDebugUtils.currentLine=8912898;
+ //BA.debugLineNum = 8912898;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=589828;
- //BA.debugLineNum = 589828;BA.debugLine="Dim str1 As String";
+RDebugUtils.currentLine=8912900;
+ //BA.debugLineNum = 8912900;BA.debugLine="Dim str1 As String";
 _str1 = "";
-RDebugUtils.currentLine=589829;
- //BA.debugLineNum = 589829;BA.debugLine="Dim str2 As String";
+RDebugUtils.currentLine=8912901;
+ //BA.debugLineNum = 8912901;BA.debugLine="Dim str2 As String";
 _str2 = "";
-RDebugUtils.currentLine=589831;
- //BA.debugLineNum = 589831;BA.debugLine="Select Case \"English\" 'kvs.GetSimple(\"CurrLangua";
+RDebugUtils.currentLine=8912903;
+ //BA.debugLineNum = 8912903;BA.debugLine="Select Case \"English\" 'kvs.GetSimple(\"CurrLangua";
 switch (BA.switchObjectToInt("English","中文","English")) {
 case 0: {
-RDebugUtils.currentLine=589833;
- //BA.debugLineNum = 589833;BA.debugLine="str1 = \"确定要离开吗?\"";
+RDebugUtils.currentLine=8912905;
+ //BA.debugLineNum = 8912905;BA.debugLine="str1 = \"确定要离开吗?\"";
 _str1 = "确定要离开吗?";
-RDebugUtils.currentLine=589834;
- //BA.debugLineNum = 589834;BA.debugLine="str2 = \"温馨提醒\"";
+RDebugUtils.currentLine=8912906;
+ //BA.debugLineNum = 8912906;BA.debugLine="str2 = \"温馨提醒\"";
 _str2 = "温馨提醒";
  break; }
 case 1: {
-RDebugUtils.currentLine=589836;
- //BA.debugLineNum = 589836;BA.debugLine="str1 = \"Are You Sure Want to Exit?\"";
+RDebugUtils.currentLine=8912908;
+ //BA.debugLineNum = 8912908;BA.debugLine="str1 = \"Are You Sure Want to Exit?\"";
 _str1 = "Are You Sure Want to Exit?";
-RDebugUtils.currentLine=589837;
- //BA.debugLineNum = 589837;BA.debugLine="str2 = \"Reminder\"";
+RDebugUtils.currentLine=8912909;
+ //BA.debugLineNum = 8912909;BA.debugLine="str2 = \"Reminder\"";
 _str2 = "Reminder";
  break; }
 }
 ;
-RDebugUtils.currentLine=589840;
- //BA.debugLineNum = 589840;BA.debugLine="Select Msgbox2(str1,str2,\"Yes\",\"\",\"No\",Null)";
+RDebugUtils.currentLine=8912912;
+ //BA.debugLineNum = 8912912;BA.debugLine="Select Msgbox2(str1,str2,\"Yes\",\"\",\"No\",Null)";
 switch (BA.switchObjectToInt(anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence(_str1),BA.ObjectToCharSequence(_str2),"Yes","","No",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE)) {
 case 0: {
-RDebugUtils.currentLine=589843;
- //BA.debugLineNum = 589843;BA.debugLine="kvs.Put(\"LEAVE\",\"YES\")";
+RDebugUtils.currentLine=8912915;
+ //BA.debugLineNum = 8912915;BA.debugLine="kvs.Put(\"LEAVE\",\"YES\")";
 mostCurrent._kvs._put("LEAVE",(Object)("YES"));
-RDebugUtils.currentLine=589844;
- //BA.debugLineNum = 589844;BA.debugLine="kvs.put(\"Logout\",\"NO\")";
+RDebugUtils.currentLine=8912916;
+ //BA.debugLineNum = 8912916;BA.debugLine="kvs.put(\"Logout\",\"NO\")";
 mostCurrent._kvs._put("Logout",(Object)("NO"));
-RDebugUtils.currentLine=589845;
- //BA.debugLineNum = 589845;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=8912917;
+ //BA.debugLineNum = 8912917;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  break; }
 default: {
-RDebugUtils.currentLine=589847;
- //BA.debugLineNum = 589847;BA.debugLine="Return True";
+RDebugUtils.currentLine=8912919;
+ //BA.debugLineNum = 8912919;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  break; }
 }
 ;
  };
-RDebugUtils.currentLine=589851;
- //BA.debugLineNum = 589851;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8912923;
+ //BA.debugLineNum = 8912923;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
 RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=458752;
- //BA.debugLineNum = 458752;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=458754;
- //BA.debugLineNum = 458754;BA.debugLine="End Sub";
+RDebugUtils.currentLine=262144;
+ //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=262146;
+ //BA.debugLineNum = 262146;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=393216;
- //BA.debugLineNum = 393216;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=393218;
- //BA.debugLineNum = 393218;BA.debugLine="End Sub";
+RDebugUtils.currentLine=196608;
+ //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=196610;
+ //BA.debugLineNum = 196610;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnlogin_click() throws Exception{
@@ -680,68 +680,68 @@ RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "btnlogin_click", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnlogin_click", null));}
 anywheresoftware.b4a.phone.Phone _phone1 = null;
-RDebugUtils.currentLine=524288;
- //BA.debugLineNum = 524288;BA.debugLine="Sub btnLogin_Click";
-RDebugUtils.currentLine=524293;
- //BA.debugLineNum = 524293;BA.debugLine="If txtUsername.Text = \"\" Then";
+RDebugUtils.currentLine=8847360;
+ //BA.debugLineNum = 8847360;BA.debugLine="Sub btnLogin_Click";
+RDebugUtils.currentLine=8847365;
+ //BA.debugLineNum = 8847365;BA.debugLine="If txtUsername.Text = \"\" Then";
 if ((mostCurrent._txtusername.getText()).equals("")) { 
-RDebugUtils.currentLine=524294;
- //BA.debugLineNum = 524294;BA.debugLine="Msgbox(\"Please Fill In Username!\",\"LOGIN\")";
+RDebugUtils.currentLine=8847366;
+ //BA.debugLineNum = 8847366;BA.debugLine="Msgbox(\"Please Fill In Username!\",\"LOGIN\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("Please Fill In Username!"),BA.ObjectToCharSequence("LOGIN"),mostCurrent.activityBA);
  };
-RDebugUtils.currentLine=524297;
- //BA.debugLineNum = 524297;BA.debugLine="If txtPassword.Text = \"\" Then";
+RDebugUtils.currentLine=8847369;
+ //BA.debugLineNum = 8847369;BA.debugLine="If txtPassword.Text = \"\" Then";
 if ((mostCurrent._txtpassword.getText()).equals("")) { 
-RDebugUtils.currentLine=524298;
- //BA.debugLineNum = 524298;BA.debugLine="Msgbox(\"Please Fill In Password!\",\"LOGIN\")";
+RDebugUtils.currentLine=8847370;
+ //BA.debugLineNum = 8847370;BA.debugLine="Msgbox(\"Please Fill In Password!\",\"LOGIN\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("Please Fill In Password!"),BA.ObjectToCharSequence("LOGIN"),mostCurrent.activityBA);
  };
-RDebugUtils.currentLine=524301;
- //BA.debugLineNum = 524301;BA.debugLine="cursor1 = SQL1.ExecQuery(\"SELECT * FROM ttUser WH";
+RDebugUtils.currentLine=8847373;
+ //BA.debugLineNum = 8847373;BA.debugLine="cursor1 = SQL1.ExecQuery(\"SELECT * FROM ttUser WH";
 _cursor1 = (anywheresoftware.b4a.sql.SQL.CursorWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.sql.SQL.CursorWrapper(), (android.database.Cursor)(_sql1.ExecQuery("SELECT * FROM ttUser WHERE ttStatus = 1 AND ttUsername = '"+mostCurrent._txtusername.getText()+"'"+" AND ttPassword = '"+mostCurrent._txtpassword.getText()+"'")));
-RDebugUtils.currentLine=524303;
- //BA.debugLineNum = 524303;BA.debugLine="If cursor1.RowCount > 0 Then";
+RDebugUtils.currentLine=8847375;
+ //BA.debugLineNum = 8847375;BA.debugLine="If cursor1.RowCount > 0 Then";
 if (_cursor1.getRowCount()>0) { 
-RDebugUtils.currentLine=524304;
- //BA.debugLineNum = 524304;BA.debugLine="Private Phone1 As Phone";
+RDebugUtils.currentLine=8847376;
+ //BA.debugLineNum = 8847376;BA.debugLine="Private Phone1 As Phone";
 _phone1 = new anywheresoftware.b4a.phone.Phone();
-RDebugUtils.currentLine=524305;
- //BA.debugLineNum = 524305;BA.debugLine="DoEvents";
+RDebugUtils.currentLine=8847377;
+ //BA.debugLineNum = 8847377;BA.debugLine="DoEvents";
 anywheresoftware.b4a.keywords.Common.DoEvents();
-RDebugUtils.currentLine=524306;
- //BA.debugLineNum = 524306;BA.debugLine="Phone1.HideKeyboard(Activity)";
+RDebugUtils.currentLine=8847378;
+ //BA.debugLineNum = 8847378;BA.debugLine="Phone1.HideKeyboard(Activity)";
 _phone1.HideKeyboard(mostCurrent._activity);
-RDebugUtils.currentLine=524307;
- //BA.debugLineNum = 524307;BA.debugLine="DoEvents";
+RDebugUtils.currentLine=8847379;
+ //BA.debugLineNum = 8847379;BA.debugLine="DoEvents";
 anywheresoftware.b4a.keywords.Common.DoEvents();
-RDebugUtils.currentLine=524311;
- //BA.debugLineNum = 524311;BA.debugLine="cursor1.Position = 0";
+RDebugUtils.currentLine=8847383;
+ //BA.debugLineNum = 8847383;BA.debugLine="cursor1.Position = 0";
 _cursor1.setPosition((int) (0));
-RDebugUtils.currentLine=524312;
- //BA.debugLineNum = 524312;BA.debugLine="kvs.Put(\"CURRID\", cursor1.GetString(\"ID\"))";
+RDebugUtils.currentLine=8847384;
+ //BA.debugLineNum = 8847384;BA.debugLine="kvs.Put(\"CURRID\", cursor1.GetString(\"ID\"))";
 mostCurrent._kvs._put("CURRID",(Object)(_cursor1.GetString("ID")));
-RDebugUtils.currentLine=524314;
- //BA.debugLineNum = 524314;BA.debugLine="kvs.Put(\"REMUSERID\", txtUsername.Text)";
+RDebugUtils.currentLine=8847386;
+ //BA.debugLineNum = 8847386;BA.debugLine="kvs.Put(\"REMUSERID\", txtUsername.Text)";
 mostCurrent._kvs._put("REMUSERID",(Object)(mostCurrent._txtusername.getText()));
-RDebugUtils.currentLine=524315;
- //BA.debugLineNum = 524315;BA.debugLine="kvs.Put(\"CURRUSERNAME\", cursor1.GetString(\"ttUse";
+RDebugUtils.currentLine=8847387;
+ //BA.debugLineNum = 8847387;BA.debugLine="kvs.Put(\"CURRUSERNAME\", cursor1.GetString(\"ttUse";
 mostCurrent._kvs._put("CURRUSERNAME",(Object)(_cursor1.GetString("ttUsername")));
-RDebugUtils.currentLine=524316;
- //BA.debugLineNum = 524316;BA.debugLine="kvs.Put(\"CURRUSERROLE\", cursor1.GetString(\"ttUse";
+RDebugUtils.currentLine=8847388;
+ //BA.debugLineNum = 8847388;BA.debugLine="kvs.Put(\"CURRUSERROLE\", cursor1.GetString(\"ttUse";
 mostCurrent._kvs._put("CURRUSERROLE",(Object)(_cursor1.GetString("ttUserRole")));
  }else {
-RDebugUtils.currentLine=524319;
- //BA.debugLineNum = 524319;BA.debugLine="Msgbox(\"Incorrect Username Or Password!\",\"LOGIN";
+RDebugUtils.currentLine=8847391;
+ //BA.debugLineNum = 8847391;BA.debugLine="Msgbox(\"Incorrect Username Or Password!\",\"LOGIN";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("Incorrect Username Or Password!"),BA.ObjectToCharSequence("LOGIN FAIL"),mostCurrent.activityBA);
-RDebugUtils.currentLine=524320;
- //BA.debugLineNum = 524320;BA.debugLine="Return";
+RDebugUtils.currentLine=8847392;
+ //BA.debugLineNum = 8847392;BA.debugLine="Return";
 if (true) return "";
  };
-RDebugUtils.currentLine=524333;
- //BA.debugLineNum = 524333;BA.debugLine="GetWallet";
+RDebugUtils.currentLine=8847405;
+ //BA.debugLineNum = 8847405;BA.debugLine="GetWallet";
 _getwallet();
-RDebugUtils.currentLine=524335;
- //BA.debugLineNum = 524335;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8847407;
+ //BA.debugLineNum = 8847407;BA.debugLine="End Sub";
 return "";
 }
 public static String  _getwallet() throws Exception{
@@ -751,31 +751,31 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "getwallet", false))
 pdv.milotin.httpjob _jobgetwallet = null;
 String _address = "";
 String _url = "";
-RDebugUtils.currentLine=262144;
- //BA.debugLineNum = 262144;BA.debugLine="Sub GetWallet";
-RDebugUtils.currentLine=262146;
- //BA.debugLineNum = 262146;BA.debugLine="Dim JobGetWallet As HttpJob";
+RDebugUtils.currentLine=8716288;
+ //BA.debugLineNum = 8716288;BA.debugLine="Sub GetWallet";
+RDebugUtils.currentLine=8716290;
+ //BA.debugLineNum = 8716290;BA.debugLine="Dim JobGetWallet As HttpJob";
 _jobgetwallet = new pdv.milotin.httpjob();
-RDebugUtils.currentLine=262147;
- //BA.debugLineNum = 262147;BA.debugLine="JobGetWallet.Initialize(\"JobGetWallet\", Me)";
+RDebugUtils.currentLine=8716291;
+ //BA.debugLineNum = 8716291;BA.debugLine="JobGetWallet.Initialize(\"JobGetWallet\", Me)";
 _jobgetwallet._initialize /*String*/ (null,processBA,"JobGetWallet",main.getObject());
-RDebugUtils.currentLine=262148;
- //BA.debugLineNum = 262148;BA.debugLine="Dim address As String = txtWalletAddress.Text'\"0x";
+RDebugUtils.currentLine=8716292;
+ //BA.debugLineNum = 8716292;BA.debugLine="Dim address As String = txtWalletAddress.Text'\"0x";
 _address = mostCurrent._txtwalletaddress.getText();
-RDebugUtils.currentLine=262149;
- //BA.debugLineNum = 262149;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
+RDebugUtils.currentLine=8716293;
+ //BA.debugLineNum = 8716293;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
 _url = "https://service-testnet.maschain.com/api/wallet/wallet/"+_address;
-RDebugUtils.currentLine=262150;
- //BA.debugLineNum = 262150;BA.debugLine="JobGetWallet.Download(url)";
+RDebugUtils.currentLine=8716294;
+ //BA.debugLineNum = 8716294;BA.debugLine="JobGetWallet.Download(url)";
 _jobgetwallet._download /*String*/ (null,_url);
-RDebugUtils.currentLine=262151;
- //BA.debugLineNum = 262151;BA.debugLine="JobGetWallet.GetRequest.SetHeader(\"client_id\", Cl";
+RDebugUtils.currentLine=8716295;
+ //BA.debugLineNum = 8716295;BA.debugLine="JobGetWallet.GetRequest.SetHeader(\"client_id\", Cl";
 _jobgetwallet._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ (null).SetHeader("client_id",_clientkey);
-RDebugUtils.currentLine=262152;
- //BA.debugLineNum = 262152;BA.debugLine="JobGetWallet.GetRequest.SetHeader(\"client_secret\"";
+RDebugUtils.currentLine=8716296;
+ //BA.debugLineNum = 8716296;BA.debugLine="JobGetWallet.GetRequest.SetHeader(\"client_secret\"";
 _jobgetwallet._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ (null).SetHeader("client_secret",_hashedclientsecret);
-RDebugUtils.currentLine=262154;
- //BA.debugLineNum = 262154;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8716298;
+ //BA.debugLineNum = 8716298;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(pdv.milotin.httpjob _job) throws Exception{
@@ -786,82 +786,82 @@ String _jsonstring = "";
 anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
 anywheresoftware.b4a.objects.collections.Map _root = null;
 anywheresoftware.b4a.objects.collections.Map _result = null;
-RDebugUtils.currentLine=327680;
- //BA.debugLineNum = 327680;BA.debugLine="Sub JobDone(job As HttpJob)";
-RDebugUtils.currentLine=327681;
- //BA.debugLineNum = 327681;BA.debugLine="ProgressDialogHide";
+RDebugUtils.currentLine=8781824;
+ //BA.debugLineNum = 8781824;BA.debugLine="Sub JobDone(job As HttpJob)";
+RDebugUtils.currentLine=8781825;
+ //BA.debugLineNum = 8781825;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
-RDebugUtils.currentLine=327683;
- //BA.debugLineNum = 327683;BA.debugLine="If job.Success = True Then";
+RDebugUtils.currentLine=8781827;
+ //BA.debugLineNum = 8781827;BA.debugLine="If job.Success = True Then";
 if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=327685;
- //BA.debugLineNum = 327685;BA.debugLine="Dim jsonString As String = job.GetString";
+RDebugUtils.currentLine=8781829;
+ //BA.debugLineNum = 8781829;BA.debugLine="Dim jsonString As String = job.GetString";
 _jsonstring = _job._getstring /*String*/ (null);
-RDebugUtils.currentLine=327686;
- //BA.debugLineNum = 327686;BA.debugLine="Log(jsonString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("4327686",_jsonstring,0);
-RDebugUtils.currentLine=327688;
- //BA.debugLineNum = 327688;BA.debugLine="Dim parser As JSONParser";
+RDebugUtils.currentLine=8781830;
+ //BA.debugLineNum = 8781830;BA.debugLine="Log(jsonString)";
+anywheresoftware.b4a.keywords.Common.LogImpl("08781830",_jsonstring,0);
+RDebugUtils.currentLine=8781832;
+ //BA.debugLineNum = 8781832;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
-RDebugUtils.currentLine=327689;
- //BA.debugLineNum = 327689;BA.debugLine="parser.Initialize(jsonString)";
+RDebugUtils.currentLine=8781833;
+ //BA.debugLineNum = 8781833;BA.debugLine="parser.Initialize(jsonString)";
 _parser.Initialize(_jsonstring);
-RDebugUtils.currentLine=327691;
- //BA.debugLineNum = 327691;BA.debugLine="If job.JobName = \"JobGetWallet\" Then";
+RDebugUtils.currentLine=8781835;
+ //BA.debugLineNum = 8781835;BA.debugLine="If job.JobName = \"JobGetWallet\" Then";
 if ((_job._jobname /*String*/ ).equals("JobGetWallet")) { 
-RDebugUtils.currentLine=327694;
- //BA.debugLineNum = 327694;BA.debugLine="Dim root As Map = parser.NextObject";
+RDebugUtils.currentLine=8781838;
+ //BA.debugLineNum = 8781838;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
-RDebugUtils.currentLine=327695;
- //BA.debugLineNum = 327695;BA.debugLine="Dim result As Map = root.Get(\"result\")";
+RDebugUtils.currentLine=8781839;
+ //BA.debugLineNum = 8781839;BA.debugLine="Dim result As Map = root.Get(\"result\")";
 _result = new anywheresoftware.b4a.objects.collections.Map();
 _result = (anywheresoftware.b4a.objects.collections.Map) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.Map(), (java.util.Map)(_root.Get((Object)("result"))));
-RDebugUtils.currentLine=327698;
- //BA.debugLineNum = 327698;BA.debugLine="kvs.Put(\"WalletId\",result.Get(\"id\"))";
+RDebugUtils.currentLine=8781842;
+ //BA.debugLineNum = 8781842;BA.debugLine="kvs.Put(\"WalletId\",result.Get(\"id\"))";
 mostCurrent._kvs._put("WalletId",_result.Get((Object)("id")));
-RDebugUtils.currentLine=327699;
- //BA.debugLineNum = 327699;BA.debugLine="kvs.Put(\"WalletAddress\",result.Get(\"address\"))";
+RDebugUtils.currentLine=8781843;
+ //BA.debugLineNum = 8781843;BA.debugLine="kvs.Put(\"WalletAddress\",result.Get(\"address\"))";
 mostCurrent._kvs._put("WalletAddress",_result.Get((Object)("address")));
-RDebugUtils.currentLine=327700;
- //BA.debugLineNum = 327700;BA.debugLine="kvs.Put(\"WalletName\",result.Get(\"name\"))";
+RDebugUtils.currentLine=8781844;
+ //BA.debugLineNum = 8781844;BA.debugLine="kvs.Put(\"WalletName\",result.Get(\"name\"))";
 mostCurrent._kvs._put("WalletName",_result.Get((Object)("name")));
  };
  }else {
-RDebugUtils.currentLine=327707;
- //BA.debugLineNum = 327707;BA.debugLine="Return";
+RDebugUtils.currentLine=8781851;
+ //BA.debugLineNum = 8781851;BA.debugLine="Return";
 if (true) return "";
  };
-RDebugUtils.currentLine=327711;
- //BA.debugLineNum = 327711;BA.debugLine="job.Release";
+RDebugUtils.currentLine=8781855;
+ //BA.debugLineNum = 8781855;BA.debugLine="job.Release";
 _job._release /*String*/ (null);
-RDebugUtils.currentLine=327713;
- //BA.debugLineNum = 327713;BA.debugLine="StartActivity(\"HomeMd\")";
+RDebugUtils.currentLine=8781857;
+ //BA.debugLineNum = 8781857;BA.debugLine="StartActivity(\"HomeMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HomeMd"));
-RDebugUtils.currentLine=327714;
- //BA.debugLineNum = 327714;BA.debugLine="Activity.Finish";
+RDebugUtils.currentLine=8781858;
+ //BA.debugLineNum = 8781858;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=327715;
- //BA.debugLineNum = 327715;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8781859;
+ //BA.debugLineNum = 8781859;BA.debugLine="End Sub";
 return "";
 }
 public static String  _timer1_tick() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "timer1_tick", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "timer1_tick", null));}
-RDebugUtils.currentLine=196608;
- //BA.debugLineNum = 196608;BA.debugLine="Sub Timer1_tick";
-RDebugUtils.currentLine=196610;
- //BA.debugLineNum = 196610;BA.debugLine="pnSplash.Visible=False";
+RDebugUtils.currentLine=8650752;
+ //BA.debugLineNum = 8650752;BA.debugLine="Sub Timer1_tick";
+RDebugUtils.currentLine=8650754;
+ //BA.debugLineNum = 8650754;BA.debugLine="pnSplash.Visible=False";
 mostCurrent._pnsplash.setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=196611;
- //BA.debugLineNum = 196611;BA.debugLine="Timer1.Enabled = False";
+RDebugUtils.currentLine=8650755;
+ //BA.debugLineNum = 8650755;BA.debugLine="Timer1.Enabled = False";
 _timer1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=196613;
- //BA.debugLineNum = 196613;BA.debugLine="btnLogin.Visible = True";
+RDebugUtils.currentLine=8650757;
+ //BA.debugLineNum = 8650757;BA.debugLine="btnLogin.Visible = True";
 mostCurrent._btnlogin.setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=196615;
- //BA.debugLineNum = 196615;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8650759;
+ //BA.debugLineNum = 8650759;BA.debugLine="End Sub";
 return "";
 }
 }

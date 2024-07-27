@@ -8,7 +8,7 @@ public class circularprogressbar_subs_0 {
 
 public static void  _animatevalueto(RemoteObject __ref,RemoteObject _newvalue) throws Exception{
 try {
-		Debug.PushSubsStack("AnimateValueTo (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("AnimateValueTo (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,94);
 if (RapidSub.canDelegate("animatevalueto")) { __ref.runUserSub(false, "circularprogressbar","animatevalueto", __ref, _newvalue); return;}
 ResumableSub_AnimateValueTo rsub = new ResumableSub_AnimateValueTo(null,__ref,_newvalue);
 rsub.resume(null, null);
@@ -38,7 +38,7 @@ RemoteObject _tempvalue = RemoteObject.createImmutable(0f);
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("AnimateValueTo (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("AnimateValueTo (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,94);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -149,7 +149,7 @@ finally {
 }
 public static RemoteObject  _base_resize(RemoteObject __ref,RemoteObject _width,RemoteObject _height) throws Exception{
 try {
-		Debug.PushSubsStack("Base_Resize (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,74);
+		Debug.PushSubsStack("Base_Resize (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,74);
 if (RapidSub.canDelegate("base_resize")) { return __ref.runUserSub(false, "circularprogressbar","base_resize", __ref, _width, _height);}
 RemoteObject _w = RemoteObject.createImmutable(0);
 Debug.locals.put("Width", _width);
@@ -233,7 +233,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _designercreateview(RemoteObject __ref,RemoteObject _base,RemoteObject _lbl,RemoteObject _props) throws Exception{
 try {
-		Debug.PushSubsStack("DesignerCreateView (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,33);
+		Debug.PushSubsStack("DesignerCreateView (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,33);
 if (RapidSub.canDelegate("designercreateview")) { return __ref.runUserSub(false, "circularprogressbar","designercreateview", __ref, _base, _lbl, _props);}
 RemoteObject _clrempty = RemoteObject.createImmutable(0);
 RemoteObject _iiv = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
@@ -317,7 +317,7 @@ finally {
 		}}
 public static RemoteObject  _drawvalue(RemoteObject __ref,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("DrawValue (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,131);
+		Debug.PushSubsStack("DrawValue (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,131);
 if (RapidSub.canDelegate("drawvalue")) { return __ref.runUserSub(false, "circularprogressbar","drawvalue", __ref, _value);}
 RemoteObject _startangle = RemoteObject.createImmutable(0f);
 RemoteObject _sweepangle = RemoteObject.createImmutable(0f);
@@ -366,7 +366,7 @@ finally {
 		}}
 public static RemoteObject  _getvalue(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("getValue (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,90);
+		Debug.PushSubsStack("getValue (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,90);
 if (RapidSub.canDelegate("getvalue")) { return __ref.runUserSub(false, "circularprogressbar","getvalue", __ref);}
  BA.debugLineNum = 90;BA.debugLine="Public Sub getValue As Float";
 Debug.ShouldStop(33554432);
@@ -385,7 +385,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _callback,RemoteObject _eventname) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,28);
+		Debug.PushSubsStack("Initialize (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,28);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "circularprogressbar","initialize", __ref, _ba, _callback, _eventname);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -411,7 +411,7 @@ finally {
 		}}
 public static RemoteObject  _resetbc(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ResetBC (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,57);
+		Debug.PushSubsStack("ResetBC (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,57);
 if (RapidSub.canDelegate("resetbc")) { return __ref.runUserSub(false, "circularprogressbar","resetbc", __ref);}
 RemoteObject _g = RemoteObject.declareNull("b4a.example.bitmapcreator");
 RemoteObject _r = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XCanvas.B4XRect");
@@ -485,7 +485,7 @@ finally {
 		}}
 public static RemoteObject  _setvalue(RemoteObject __ref,RemoteObject _newvalue) throws Exception{
 try {
-		Debug.PushSubsStack("setValue (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,86);
+		Debug.PushSubsStack("setValue (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,86);
 if (RapidSub.canDelegate("setvalue")) { return __ref.runUserSub(false, "circularprogressbar","setvalue", __ref, _newvalue);}
 Debug.locals.put("NewValue", _newvalue);
  BA.debugLineNum = 86;BA.debugLine="Public Sub setValue(NewValue As Float)";
@@ -505,7 +505,7 @@ finally {
 		}}
 public static RemoteObject  _valuefromtimeeaseinout(RemoteObject __ref,RemoteObject _time,RemoteObject _start,RemoteObject _changeinvalue,RemoteObject _duration) throws Exception{
 try {
-		Debug.PushSubsStack("ValueFromTimeEaseInOut (circularprogressbar) ","circularprogressbar",9,__ref.getField(false, "ba"),__ref,112);
+		Debug.PushSubsStack("ValueFromTimeEaseInOut (circularprogressbar) ","circularprogressbar",10,__ref.getField(false, "ba"),__ref,112);
 if (RapidSub.canDelegate("valuefromtimeeaseinout")) { return __ref.runUserSub(false, "circularprogressbar","valuefromtimeeaseinout", __ref, _time, _start, _changeinvalue, _duration);}
 Debug.locals.put("Time", _time);
 Debug.locals.put("Start", _start);
