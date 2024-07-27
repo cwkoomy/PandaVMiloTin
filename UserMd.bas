@@ -44,6 +44,25 @@ Sub Globals
 	Private lblMyAddress As Label
 	Private btnCopyAddress As Button
 	Private imgUserAvatar As ImageView
+	Private pnFrame2 As Panel
+	Private lblFullName As Label
+	Private pnFullName As Panel
+	Private lblEmail As Label
+	Private pnEmail As Panel
+	Private pnPassword As Panel
+	Private pnPhone As Panel
+	Private lblPassword As Label
+	Private lblPhone As Label
+	Private txtFullName As EditText
+	Private txtEmail As EditText
+	Private txtPassword As EditText
+	Private txtPhone As EditText
+	Private imgPhone As ImageView
+	Private imgPassword As ImageView
+	Private imgEmail As ImageView
+	Private imgFullName As ImageView
+	Private imgEdit As ImageView
+	Private imgSave As ImageView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -89,28 +108,32 @@ Sub GenerateQR
 End Sub
 
 Private Sub lblHome_Click
-	StartActivity("HomeMd")
 	Activity.Finish
 End Sub
 
 Private Sub lblFund_Click
-
+	StartActivity("FundMd")
+	Activity.Finish
 End Sub
 
 Private Sub lblHistory_Click
+	StartActivity("HistoryMd")
+	Activity.Finish
+End Sub
+
+Private Sub lblUser_Click
 
 End Sub
 
 Private Sub imgBack_Click
-	StartActivity("HomeMd")
 	Activity.Finish
 End Sub
 
-Private Sub btnCopyAddress_Click
-	Dim clipb As BClipboard
-	clipb.setText(lblMyAddress.Text = kvs.Get("WalletAddress"))
-	ToastMessageShow("Address Copied", True)
-End Sub
+'Private Sub btnCopyAddress_Click
+'	Dim clipb As BClipboard
+'	clipb.setText(lblMyAddress.Text = kvs.Get("WalletAddress"))
+'	ToastMessageShow("Address Copied", True)
+'End Sub
 
 
 'Private Sub btnCopyPaste_Click
@@ -121,3 +144,44 @@ End Sub
 '	End If
 '
 'End Sub
+
+Private Sub imgEdit_Click
+	txtFullName.Enabled = True
+	txtEmail.Enabled = True
+	txtPassword.Enabled = True
+	txtPhone.Enabled = True
+	txtFullName.TextColor = Colors.RGB(0,0,0)
+	txtEmail.TextColor = Colors.RGB(0,0,0)
+	txtPassword.TextColor = Colors.RGB(0,0,0)
+	txtPhone.TextColor = Colors.RGB(0,0,0)
+	imgSave.Visible = True
+	imgSave.Enabled = True
+	imgEdit.Visible = False
+	imgEdit.Enabled = False
+End Sub
+
+Private Sub imgSave_Click
+
+	Dim strFullName As String = txtFullName.Text
+	txtFullName.Text = strFullName
+	Dim strEmail As String = txtEmail.Text
+	txtEmail.Text = strEmail
+	Dim strPassword As String = txtPassword.Text
+	txtPassword.Text = strPassword
+	Dim strPhone As String = txtPhone.Text
+	txtPhone.Text = strPhone
+	
+	txtFullName.Enabled = False
+	txtEmail.Enabled = False
+	txtPassword.Enabled = False
+	txtPhone.Enabled = False
+	txtFullName.TextColor = Colors.RGB(149,149,149)
+	txtEmail.TextColor = Colors.RGB(149,149,149)
+	txtPassword.TextColor = Colors.RGB(149,149,149)
+	txtPhone.TextColor = Colors.RGB(149,149,149)
+	imgEdit.Visible = True
+	imgEdit.Enabled = True
+	imgSave.Visible = False
+	imgSave.Enabled = False
+	ToastMessageShow("Save Succesful!", True)
+End Sub

@@ -92,7 +92,8 @@ Sub GetAuditByID
 	Dim JobGetAuditByID As HttpJob
 	JobGetAuditByID.Initialize("JobGetAuditByID", Me)
 '	Dim address As String = kvs.Get("wallet-address")
-	Dim url As String = "https://service-testnet.maschain.com/api/audit/audit/" & kvs.Get("AuditID")
+	Dim url As String = "https://service-testnet.maschain.com/api/audit/audit/" & kvs.Get("AuditTransactionHash")
+	Log("HASH:" & kvs.Get("AuditTransactionHash"))
 	JobGetAuditByID.Download(url)
 	JobGetAuditByID.GetRequest.SetHeader("client_id", kvs.Get("client_id"))
 	JobGetAuditByID.GetRequest.SetHeader("client_secret", kvs.Get("client_secret"))
@@ -264,15 +265,22 @@ Private Sub lblHome_Click
 End Sub
 
 Private Sub lblFund_Click
-	
+	StartActivity("FundMd")
+	Activity.Finish
 End Sub
 
 Private Sub lblHistory_Click
-	
+	StartActivity("HistoryMd")
+	Activity.Finish
 End Sub
 
 Private Sub lblUser_Click
 	StartActivity("UserMd")
+	Activity.Finish
+End Sub
+
+Private Sub imgBack_Click
+	kvs.Put("ProjectWallet","")
 	Activity.Finish
 End Sub
 
@@ -297,10 +305,7 @@ Private Sub btnNext_Click
 	Log(kvs.Get("DonateAmount"))
 End Sub
 
-Private Sub imgBack_Click
-	kvs.Put("ProjectWallet","")
-	Activity.Finish
-End Sub
+
 
 Private Sub btnSend_Click
 	PostTransaction
@@ -336,6 +341,8 @@ Sub CalculatePercentage(part As Double, total As Double)
 		cpBar2.Value = "100"
 		lblProjectProgress2.TextColor = Colors.RGB(5,206,46)
 		lblProjectProgress2.Text = "Fundraising complete"
+		txtDonateAmount.Enabled = False
+		txtDonateAmount.Text = "-"
 		Else
 		cpBar2.Value = NumberFormat(percentage, 1, 3)
 	lblProjectProgress2.TextColor = Colors.RGB(254,171,43)
