@@ -37,12 +37,12 @@ views.get("pnheader1").vw.setLeft((int)((0d / 100 * width)));
 views.get("pnheader1").vw.setTop((int)((0d / 100 * height)));
 //BA.debugLineNum = 19;BA.debugLine="pnFrame1.Width = 90%x"[AddAllocateLy/General script]
 views.get("pnframe1").vw.setWidth((int)((90d / 100 * width)));
-//BA.debugLineNum = 20;BA.debugLine="pnFrame1.Height = 69%y"[AddAllocateLy/General script]
-views.get("pnframe1").vw.setHeight((int)((69d / 100 * height)));
+//BA.debugLineNum = 20;BA.debugLine="pnFrame1.Height = 80%y"[AddAllocateLy/General script]
+views.get("pnframe1").vw.setHeight((int)((80d / 100 * height)));
 //BA.debugLineNum = 21;BA.debugLine="pnFrame1.HorizontalCenter = 50%x"[AddAllocateLy/General script]
 views.get("pnframe1").vw.setLeft((int)((50d / 100 * width) - (views.get("pnframe1").vw.getWidth() / 2)));
-//BA.debugLineNum = 22;BA.debugLine="pnFrame1.Top = pnHeader1.VerticalCenter"[AddAllocateLy/General script]
-views.get("pnframe1").vw.setTop((int)((views.get("pnheader1").vw.getTop() + views.get("pnheader1").vw.getHeight()/2)));
+//BA.debugLineNum = 22;BA.debugLine="pnFrame1.Top = lblTop.Bottom"[AddAllocateLy/General script]
+views.get("pnframe1").vw.setTop((int)((views.get("lbltop").vw.getTop() + views.get("lbltop").vw.getHeight())));
 //BA.debugLineNum = 24;BA.debugLine="lblProjectTittle.Width = 80%x"[AddAllocateLy/General script]
 views.get("lblprojecttittle").vw.setWidth((int)((80d / 100 * width)));
 //BA.debugLineNum = 25;BA.debugLine="lblProjectTittle.Height = 40dip"[AddAllocateLy/General script]
@@ -83,8 +83,8 @@ views.get("imgcategory").vw.setWidth((int)((views.get("imgcategory").vw.getHeigh
 views.get("imgcategory").vw.setTop((int)((views.get("pncategory").vw.getHeight())/2d-(views.get("imgcategory").vw.getHeight())/2d));
 //BA.debugLineNum = 48;BA.debugLine="cboCategory.Width = 50%x"[AddAllocateLy/General script]
 views.get("cbocategory").vw.setWidth((int)((50d / 100 * width)));
-//BA.debugLineNum = 49;BA.debugLine="cboCategory.Left = imgCategory.Right +2%x"[AddAllocateLy/General script]
-views.get("cbocategory").vw.setLeft((int)((views.get("imgcategory").vw.getLeft() + views.get("imgcategory").vw.getWidth())+(2d / 100 * width)));
+//BA.debugLineNum = 49;BA.debugLine="cboCategory.Left = imgCategory.Right +4%x"[AddAllocateLy/General script]
+views.get("cbocategory").vw.setLeft((int)((views.get("imgcategory").vw.getLeft() + views.get("imgcategory").vw.getWidth())+(4d / 100 * width)));
 //BA.debugLineNum = 52;BA.debugLine="lblAllocateFund.Width = 70%x"[AddAllocateLy/General script]
 views.get("lblallocatefund").vw.setWidth((int)((70d / 100 * width)));
 //BA.debugLineNum = 53;BA.debugLine="lblAllocateFund.Height = 40dip"[AddAllocateLy/General script]

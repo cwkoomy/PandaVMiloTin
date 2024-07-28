@@ -10,7 +10,7 @@ public class circularprogressbar extends B4AClass.ImplB4AClass implements BA.Sub
     private static java.util.HashMap<String, java.lang.reflect.Method> htSubs;
     private void innerInitialize(BA _ba) throws Exception {
         if (ba == null) {
-            ba = new anywheresoftware.b4a.ShellBA(_ba, this, htSubs, "pdv.milotin.circularprogressbar");
+            ba = new BA(_ba, this, htSubs, "pdv.milotin.circularprogressbar");
             if (htSubs == null) {
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
@@ -23,14 +23,7 @@ public class circularprogressbar extends B4AClass.ImplB4AClass implements BA.Sub
             ba.raiseEvent2(null, true, "class_globals", false);
     }
 
- 
-    public void  innerInitializeHelper(anywheresoftware.b4a.BA _ba) throws Exception{
-        innerInitialize(_ba);
-    }
-    public Object callSub(String sub, Object sender, Object[] args) throws Exception {
-        return BA.SubDelegator.SubNotFound;
-    }
-public anywheresoftware.b4a.keywords.Common __c = null;
+ public anywheresoftware.b4a.keywords.Common __c = null;
 public String _meventname = "";
 public Object _mcallback = null;
 public anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
@@ -60,36 +53,17 @@ public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
 public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
+public pdv.milotin.viewallocatemd _viewallocatemd = null;
 public pdv.milotin.httputils2service _httputils2service = null;
-public String  _setvalue(pdv.milotin.circularprogressbar __ref,float _newvalue) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "setvalue", false))
-	 {return ((String) Debug.delegate(ba, "setvalue", new Object[] {_newvalue}));}
-RDebugUtils.currentLine=12910592;
- //BA.debugLineNum = 12910592;BA.debugLine="Public Sub setValue(NewValue As Float)";
-RDebugUtils.currentLine=12910593;
- //BA.debugLineNum = 12910593;BA.debugLine="AnimateValueTo(NewValue)";
-__ref._animatevalueto /*void*/ (null,_newvalue);
-RDebugUtils.currentLine=12910594;
- //BA.debugLineNum = 12910594;BA.debugLine="End Sub";
-return "";
-}
-public void  _animatevalueto(pdv.milotin.circularprogressbar __ref,float _newvalue) throws Exception{
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "animatevalueto", false))
-	 {Debug.delegate(ba, "animatevalueto", new Object[] {_newvalue}); return;}
-ResumableSub_AnimateValueTo rsub = new ResumableSub_AnimateValueTo(this,__ref,_newvalue);
+public void  _animatevalueto(float _newvalue) throws Exception{
+ResumableSub_AnimateValueTo rsub = new ResumableSub_AnimateValueTo(this,_newvalue);
 rsub.resume(ba, null);
 }
 public static class ResumableSub_AnimateValueTo extends BA.ResumableSub {
-public ResumableSub_AnimateValueTo(pdv.milotin.circularprogressbar parent,pdv.milotin.circularprogressbar __ref,float _newvalue) {
+public ResumableSub_AnimateValueTo(pdv.milotin.circularprogressbar parent,float _newvalue) {
 this.parent = parent;
-this.__ref = __ref;
 this._newvalue = _newvalue;
-this.__ref = parent;
 }
-pdv.milotin.circularprogressbar __ref;
 pdv.milotin.circularprogressbar parent;
 float _newvalue;
 int _myindex = 0;
@@ -100,7 +74,6 @@ float _tempvalue = 0f;
 
 @Override
 public void resume(BA ba, Object[] result) throws Exception{
-RDebugUtils.currentModule="circularprogressbar";
 
     while (true) {
         switch (state) {
@@ -110,29 +83,21 @@ return;
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=13041665;
- //BA.debugLineNum = 13041665;BA.debugLine="LoopIndex = LoopIndex + 1";
-__ref._loopindex /*int*/  = (int) (__ref._loopindex /*int*/ +1);
-RDebugUtils.currentLine=13041666;
- //BA.debugLineNum = 13041666;BA.debugLine="Dim MyIndex As Int = LoopIndex";
-_myindex = __ref._loopindex /*int*/ ;
-RDebugUtils.currentLine=13041667;
- //BA.debugLineNum = 13041667;BA.debugLine="Dim n As Long = DateTime.Now";
+ //BA.debugLineNum = 95;BA.debugLine="LoopIndex = LoopIndex + 1";
+parent._loopindex = (int) (parent._loopindex+1);
+ //BA.debugLineNum = 96;BA.debugLine="Dim MyIndex As Int = LoopIndex";
+_myindex = parent._loopindex;
+ //BA.debugLineNum = 97;BA.debugLine="Dim n As Long = DateTime.Now";
 _n = parent.__c.DateTime.getNow();
-RDebugUtils.currentLine=13041668;
- //BA.debugLineNum = 13041668;BA.debugLine="Dim duration As Int = Abs(currentValue - NewValue";
-_duration = (int) (parent.__c.Abs(__ref._currentvalue /*float*/ -_newvalue)/(double)100*__ref._durationfromzeroto100 /*int*/ +1000);
-RDebugUtils.currentLine=13041669;
- //BA.debugLineNum = 13041669;BA.debugLine="Dim start As Float = currentValue";
-_start = __ref._currentvalue /*float*/ ;
-RDebugUtils.currentLine=13041670;
- //BA.debugLineNum = 13041670;BA.debugLine="currentValue = NewValue";
-__ref._currentvalue /*float*/  = _newvalue;
-RDebugUtils.currentLine=13041671;
- //BA.debugLineNum = 13041671;BA.debugLine="Dim tempValue As Float";
+ //BA.debugLineNum = 98;BA.debugLine="Dim duration As Int = Abs(currentValue - NewValue";
+_duration = (int) (parent.__c.Abs(parent._currentvalue-_newvalue)/(double)100*parent._durationfromzeroto100+1000);
+ //BA.debugLineNum = 99;BA.debugLine="Dim start As Float = currentValue";
+_start = parent._currentvalue;
+ //BA.debugLineNum = 100;BA.debugLine="currentValue = NewValue";
+parent._currentvalue = _newvalue;
+ //BA.debugLineNum = 101;BA.debugLine="Dim tempValue As Float";
 _tempvalue = 0f;
-RDebugUtils.currentLine=13041672;
- //BA.debugLineNum = 13041672;BA.debugLine="Do While DateTime.Now < n + duration";
+ //BA.debugLineNum = 102;BA.debugLine="Do While DateTime.Now < n + duration";
 if (true) break;
 
 case 1:
@@ -147,29 +112,25 @@ if (true) break;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=13041673;
- //BA.debugLineNum = 13041673;BA.debugLine="tempValue = ValueFromTimeEaseInOut(DateTime.Now";
-_tempvalue = __ref._valuefromtimeeaseinout /*float*/ (null,(float) (parent.__c.DateTime.getNow()-_n),_start,(float) (_newvalue-_start),_duration);
-RDebugUtils.currentLine=13041674;
- //BA.debugLineNum = 13041674;BA.debugLine="DrawValue(tempValue)";
-__ref._drawvalue /*String*/ (null,_tempvalue);
-RDebugUtils.currentLine=13041675;
- //BA.debugLineNum = 13041675;BA.debugLine="Sleep(15)";
-parent.__c.Sleep(ba,new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "circularprogressbar", "animatevalueto"),(int) (15));
+ //BA.debugLineNum = 103;BA.debugLine="tempValue = ValueFromTimeEaseInOut(DateTime.Now";
+_tempvalue = parent._valuefromtimeeaseinout((float) (parent.__c.DateTime.getNow()-_n),_start,(float) (_newvalue-_start),_duration);
+ //BA.debugLineNum = 104;BA.debugLine="DrawValue(tempValue)";
+parent._drawvalue(_tempvalue);
+ //BA.debugLineNum = 105;BA.debugLine="Sleep(15)";
+parent.__c.Sleep(ba,this,(int) (15));
 this.state = 11;
 return;
 case 11:
 //C
 this.state = 4;
 ;
-RDebugUtils.currentLine=13041676;
- //BA.debugLineNum = 13041676;BA.debugLine="If MyIndex <> LoopIndex Then Return";
+ //BA.debugLineNum = 106;BA.debugLine="If MyIndex <> LoopIndex Then Return";
 if (true) break;
 
 case 4:
 //if
 this.state = 9;
-if (_myindex!=__ref._loopindex /*int*/ ) { 
+if (_myindex!=parent._loopindex) { 
 this.state = 6;
 ;}if (true) break;
 
@@ -189,356 +150,245 @@ case 10:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=13041678;
- //BA.debugLineNum = 13041678;BA.debugLine="DrawValue(currentValue)";
-__ref._drawvalue /*String*/ (null,__ref._currentvalue /*float*/ );
-RDebugUtils.currentLine=13041679;
- //BA.debugLineNum = 13041679;BA.debugLine="End Sub";
+ //BA.debugLineNum = 108;BA.debugLine="DrawValue(currentValue)";
+parent._drawvalue(parent._currentvalue);
+ //BA.debugLineNum = 109;BA.debugLine="End Sub";
 if (true) break;
 
             }
         }
     }
 }
-public float  _valuefromtimeeaseinout(pdv.milotin.circularprogressbar __ref,float _time,float _start,float _changeinvalue,int _duration) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "valuefromtimeeaseinout", false))
-	 {return ((Float) Debug.delegate(ba, "valuefromtimeeaseinout", new Object[] {_time,_start,_changeinvalue,_duration}));}
-RDebugUtils.currentLine=13107200;
- //BA.debugLineNum = 13107200;BA.debugLine="Private Sub ValueFromTimeEaseInOut(Time As Float,";
-RDebugUtils.currentLine=13107201;
- //BA.debugLineNum = 13107201;BA.debugLine="Time = Time / (Duration / 2)";
-_time = (float) (_time/(double)(_duration/(double)2));
-RDebugUtils.currentLine=13107202;
- //BA.debugLineNum = 13107202;BA.debugLine="If Time < 1 Then";
-if (_time<1) { 
-RDebugUtils.currentLine=13107203;
- //BA.debugLineNum = 13107203;BA.debugLine="Return ChangeInValue / 2 * Time * Time * Time *";
-if (true) return (float) (_changeinvalue/(double)2*_time*_time*_time*_time+_start);
- }else {
-RDebugUtils.currentLine=13107205;
- //BA.debugLineNum = 13107205;BA.debugLine="Time = Time - 2";
-_time = (float) (_time-2);
-RDebugUtils.currentLine=13107206;
- //BA.debugLineNum = 13107206;BA.debugLine="Return -ChangeInValue / 2 * (Time * Time * Time";
-if (true) return (float) (-_changeinvalue/(double)2*(_time*_time*_time*_time-2)+_start);
+public String  _base_resize(double _width,double _height) throws Exception{
+int _w = 0;
+ //BA.debugLineNum = 74;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
+ //BA.debugLineNum = 75;BA.debugLine="Dim w As Int = Min(Width, Height)";
+_w = (int) (__c.Min(_width,_height));
+ //BA.debugLineNum = 76;BA.debugLine="cx = w / 2";
+_cx = (float) (_w/(double)2);
+ //BA.debugLineNum = 77;BA.debugLine="cy = w / 2";
+_cy = (float) (_w/(double)2);
+ //BA.debugLineNum = 78;BA.debugLine="radius = cx - 10dip";
+_radius = (float) (_cx-__c.DipToCurrent((int) (10)));
+ //BA.debugLineNum = 79;BA.debugLine="iv.SetLayoutAnimated(0, 0, 0, w, w)";
+_iv.SetLayoutAnimated((int) (0),(int) (0),(int) (0),_w,_w);
+ //BA.debugLineNum = 80;BA.debugLine="If bc.mWidth <> w Then";
+if (_bc._mwidth!=_w) { 
+ //BA.debugLineNum = 81;BA.debugLine="ResetBC";
+_resetbc();
  };
-RDebugUtils.currentLine=13107208;
- //BA.debugLineNum = 13107208;BA.debugLine="End Sub";
-return 0f;
+ //BA.debugLineNum = 83;BA.debugLine="mLbl.SetLayoutAnimated(0, 0, cy - 20dip, w, 40dip";
+_mlbl.SetLayoutAnimated((int) (0),(int) (0),(int) (_cy-__c.DipToCurrent((int) (20))),_w,__c.DipToCurrent((int) (40)));
+ //BA.debugLineNum = 84;BA.debugLine="End Sub";
+return "";
 }
-public String  _drawvalue(pdv.milotin.circularprogressbar __ref,float _value) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "drawvalue", false))
-	 {return ((String) Debug.delegate(ba, "drawvalue", new Object[] {_value}));}
+public String  _class_globals() throws Exception{
+ //BA.debugLineNum = 9;BA.debugLine="Sub Class_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="Private mEventName As String 'ignore";
+_meventname = "";
+ //BA.debugLineNum = 11;BA.debugLine="Private mCallBack As Object 'ignore";
+_mcallback = new Object();
+ //BA.debugLineNum = 12;BA.debugLine="Private xui As XUI";
+_xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
+ //BA.debugLineNum = 13;BA.debugLine="Private mLbl As B4XView";
+_mlbl = new anywheresoftware.b4a.objects.B4XViewWrapper();
+ //BA.debugLineNum = 14;BA.debugLine="Private cx, cy, radius As Float";
+_cx = 0f;
+_cy = 0f;
+_radius = 0f;
+ //BA.debugLineNum = 15;BA.debugLine="Private stroke As Float";
+_stroke = 0f;
+ //BA.debugLineNum = 16;BA.debugLine="Private mBase As B4XView";
+_mbase = new anywheresoftware.b4a.objects.B4XViewWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private currentValue As Float";
+_currentvalue = 0f;
+ //BA.debugLineNum = 18;BA.debugLine="Private DurationFromZeroTo100 As Int";
+_durationfromzeroto100 = 0;
+ //BA.debugLineNum = 19;BA.debugLine="Private bc As BitmapCreator";
+_bc = new b4a.example.bitmapcreator();
+ //BA.debugLineNum = 20;BA.debugLine="Private emptyBrush As BCBrush";
+_emptybrush = new b4a.example.bcpath._bcbrush();
+ //BA.debugLineNum = 21;BA.debugLine="Private fullBrush As BCBrush";
+_fullbrush = new b4a.example.bcpath._bcbrush();
+ //BA.debugLineNum = 22;BA.debugLine="Private TransparentBrush As BCBrush";
+_transparentbrush = new b4a.example.bcpath._bcbrush();
+ //BA.debugLineNum = 23;BA.debugLine="Private iv As B4XView";
+_iv = new anywheresoftware.b4a.objects.B4XViewWrapper();
+ //BA.debugLineNum = 24;BA.debugLine="Private clr1, clr2 As Int";
+_clr1 = 0;
+_clr2 = 0;
+ //BA.debugLineNum = 25;BA.debugLine="Private LoopIndex As Int";
+_loopindex = 0;
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
+return "";
+}
+public String  _designercreateview(Object _base,anywheresoftware.b4a.objects.LabelWrapper _lbl,anywheresoftware.b4a.objects.collections.Map _props) throws Exception{
+int _clrempty = 0;
+anywheresoftware.b4a.objects.ImageViewWrapper _iiv = null;
+ //BA.debugLineNum = 33;BA.debugLine="Public Sub DesignerCreateView (Base As Object, Lbl";
+ //BA.debugLineNum = 34;BA.debugLine="mBase = Base";
+_mbase = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_base));
+ //BA.debugLineNum = 35;BA.debugLine="mBase.SetLayoutAnimated(0, mBase.Left, mBase.Top,";
+_mbase.SetLayoutAnimated((int) (0),_mbase.getLeft(),_mbase.getTop(),(int) (__c.Min(_mbase.getWidth(),_mbase.getHeight())),(int) (__c.Min(_mbase.getWidth(),_mbase.getHeight())));
+ //BA.debugLineNum = 36;BA.debugLine="Dim clrEmpty As Int = xui.PaintOrColorToColor(Pro";
+_clrempty = _xui.PaintOrColorToColor(_props.Get((Object)("ColorEmpty")));
+ //BA.debugLineNum = 37;BA.debugLine="clr1 = xui.PaintOrColorToColor(Props.Get(\"FirstCo";
+_clr1 = _xui.PaintOrColorToColor(_props.Get((Object)("FirstColor")));
+ //BA.debugLineNum = 38;BA.debugLine="clr2 = xui.PaintOrColorToColor(Props.Get(\"SecondC";
+_clr2 = _xui.PaintOrColorToColor(_props.Get((Object)("SecondColor")));
+ //BA.debugLineNum = 39;BA.debugLine="stroke = DipToCurrent(Props.Get(\"StrokeWidth\"))";
+_stroke = (float) (__c.DipToCurrent((int)(BA.ObjectToNumber(_props.Get((Object)("StrokeWidth"))))));
+ //BA.debugLineNum = 40;BA.debugLine="DurationFromZeroTo100 = Props.Get(\"Duration\")";
+_durationfromzeroto100 = (int)(BA.ObjectToNumber(_props.Get((Object)("Duration"))));
+ //BA.debugLineNum = 41;BA.debugLine="mLbl = Lbl";
+_mlbl = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_lbl.getObject()));
+ //BA.debugLineNum = 42;BA.debugLine="cx = mBase.Width / 2";
+_cx = (float) (_mbase.getWidth()/(double)2);
+ //BA.debugLineNum = 43;BA.debugLine="cy = mBase.Height / 2";
+_cy = (float) (_mbase.getHeight()/(double)2);
+ //BA.debugLineNum = 44;BA.debugLine="radius = cx - 10dip";
+_radius = (float) (_cx-__c.DipToCurrent((int) (10)));
+ //BA.debugLineNum = 45;BA.debugLine="mLbl.SetTextAlignment(\"CENTER\", \"CENTER\")";
+_mlbl.SetTextAlignment("CENTER","CENTER");
+ //BA.debugLineNum = 46;BA.debugLine="Dim iiv As ImageView";
+_iiv = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 47;BA.debugLine="iiv.Initialize(\"\")";
+_iiv.Initialize(ba,"");
+ //BA.debugLineNum = 48;BA.debugLine="iv = iiv";
+_iv = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_iiv.getObject()));
+ //BA.debugLineNum = 49;BA.debugLine="mBase.AddView(iv, 0, 0, mBase.Width, mBase.Height";
+_mbase.AddView((android.view.View)(_iv.getObject()),(int) (0),(int) (0),_mbase.getWidth(),_mbase.getHeight());
+ //BA.debugLineNum = 50;BA.debugLine="mBase.AddView(mLbl, 0, mBase.Height / 2 - 20dip,";
+_mbase.AddView((android.view.View)(_mlbl.getObject()),(int) (0),(int) (_mbase.getHeight()/(double)2-__c.DipToCurrent((int) (20))),_mbase.getWidth(),__c.DipToCurrent((int) (40)));
+ //BA.debugLineNum = 51;BA.debugLine="ResetBC";
+_resetbc();
+ //BA.debugLineNum = 52;BA.debugLine="emptyBrush = bc.CreateBrushFromColor(clrEmpty)";
+_emptybrush = _bc._createbrushfromcolor(_clrempty);
+ //BA.debugLineNum = 53;BA.debugLine="TransparentBrush = bc.CreateBrushFromColor(xui.Co";
+_transparentbrush = _bc._createbrushfromcolor(_xui.Color_Transparent);
+ //BA.debugLineNum = 54;BA.debugLine="DrawValue(currentValue)";
+_drawvalue(_currentvalue);
+ //BA.debugLineNum = 55;BA.debugLine="End Sub";
+return "";
+}
+public String  _drawvalue(float _value) throws Exception{
 float _startangle = 0f;
 float _sweepangle = 0f;
 float _halfstroke = 0f;
-RDebugUtils.currentLine=13172736;
- //BA.debugLineNum = 13172736;BA.debugLine="Private Sub DrawValue(Value As Float)";
-RDebugUtils.currentLine=13172737;
- //BA.debugLineNum = 13172737;BA.debugLine="bc.DrawRect2(bc.TargetRect, TransparentBrush, Tru";
-__ref._bc /*b4a.example.bitmapcreator*/ ._drawrect2(__ref._bc /*b4a.example.bitmapcreator*/ ._targetrect,__ref._transparentbrush /*b4a.example.bcpath._bcbrush*/ ,__c.True,(int) (0));
-RDebugUtils.currentLine=13172738;
- //BA.debugLineNum = 13172738;BA.debugLine="mLbl.Text = $\"$1.0{Value}\"$";
-__ref._mlbl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .setText(BA.ObjectToCharSequence((""+__c.SmartStringFormatter("1.0",(Object)(_value))+"")));
-RDebugUtils.currentLine=13172739;
- //BA.debugLineNum = 13172739;BA.debugLine="Dim startAngle = -90, sweepAngle = Value / 100 *";
+ //BA.debugLineNum = 131;BA.debugLine="Private Sub DrawValue(Value As Float)";
+ //BA.debugLineNum = 132;BA.debugLine="bc.DrawRect2(bc.TargetRect, TransparentBrush, Tru";
+_bc._drawrect2(_bc._targetrect,_transparentbrush,__c.True,(int) (0));
+ //BA.debugLineNum = 133;BA.debugLine="mLbl.Text = $\"$1.0{Value}\"$";
+_mlbl.setText(BA.ObjectToCharSequence((""+__c.SmartStringFormatter("1.0",(Object)(_value))+"")));
+ //BA.debugLineNum = 134;BA.debugLine="Dim startAngle = -90, sweepAngle = Value / 100 *";
 _startangle = (float) (-90);
 _sweepangle = (float) (_value/(double)100*361);
-RDebugUtils.currentLine=13172740;
- //BA.debugLineNum = 13172740;BA.debugLine="bc.DrawArc2(cx, cy, radius, emptyBrush, False, st";
-__ref._bc /*b4a.example.bitmapcreator*/ ._drawarc2(__ref._cx /*float*/ ,__ref._cy /*float*/ ,__ref._radius /*float*/ ,__ref._emptybrush /*b4a.example.bcpath._bcbrush*/ ,__c.False,(int) (__ref._stroke /*float*/ ),_startangle,(float) (-(360-_sweepangle)));
-RDebugUtils.currentLine=13172741;
- //BA.debugLineNum = 13172741;BA.debugLine="bc.DrawArc2(cx, cy, radius, fullBrush, False, str";
-__ref._bc /*b4a.example.bitmapcreator*/ ._drawarc2(__ref._cx /*float*/ ,__ref._cy /*float*/ ,__ref._radius /*float*/ ,__ref._fullbrush /*b4a.example.bcpath._bcbrush*/ ,__c.False,(int) (__ref._stroke /*float*/ ),_startangle,_sweepangle);
-RDebugUtils.currentLine=13172742;
- //BA.debugLineNum = 13172742;BA.debugLine="Dim halfStroke As Float = stroke / 2";
-_halfstroke = (float) (__ref._stroke /*float*/ /(double)2);
-RDebugUtils.currentLine=13172743;
- //BA.debugLineNum = 13172743;BA.debugLine="If Value > 0 Then";
+ //BA.debugLineNum = 135;BA.debugLine="bc.DrawArc2(cx, cy, radius, emptyBrush, False, st";
+_bc._drawarc2(_cx,_cy,_radius,_emptybrush,__c.False,(int) (_stroke),_startangle,(float) (-(360-_sweepangle)));
+ //BA.debugLineNum = 136;BA.debugLine="bc.DrawArc2(cx, cy, radius, fullBrush, False, str";
+_bc._drawarc2(_cx,_cy,_radius,_fullbrush,__c.False,(int) (_stroke),_startangle,_sweepangle);
+ //BA.debugLineNum = 137;BA.debugLine="Dim halfStroke As Float = stroke / 2";
+_halfstroke = (float) (_stroke/(double)2);
+ //BA.debugLineNum = 138;BA.debugLine="If Value > 0 Then";
 if (_value>0) { 
-RDebugUtils.currentLine=13172744;
- //BA.debugLineNum = 13172744;BA.debugLine="bc.DrawCircle2(cx + Round((radius - halfStroke)";
-__ref._bc /*b4a.example.bitmapcreator*/ ._drawcircle2((float) (__ref._cx /*float*/ +__c.Round((__ref._radius /*float*/ -_halfstroke)*__c.CosD(_startangle+_sweepangle))),(float) (__ref._cy /*float*/ +__c.Round((__ref._radius /*float*/ -_halfstroke)*__c.SinD(_startangle+_sweepangle))),_halfstroke,__ref._fullbrush /*b4a.example.bcpath._bcbrush*/ ,__c.True,(int) (0));
+ //BA.debugLineNum = 139;BA.debugLine="bc.DrawCircle2(cx + Round((radius - halfStroke)";
+_bc._drawcircle2((float) (_cx+__c.Round((_radius-_halfstroke)*__c.CosD(_startangle+_sweepangle))),(float) (_cy+__c.Round((_radius-_halfstroke)*__c.SinD(_startangle+_sweepangle))),_halfstroke,_fullbrush,__c.True,(int) (0));
  };
-RDebugUtils.currentLine=13172747;
- //BA.debugLineNum = 13172747;BA.debugLine="bc.SetBitmapToImageView(bc.Bitmap, iv)";
-__ref._bc /*b4a.example.bitmapcreator*/ ._setbitmaptoimageview(__ref._bc /*b4a.example.bitmapcreator*/ ._getbitmap(),__ref._iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ );
-RDebugUtils.currentLine=13172748;
- //BA.debugLineNum = 13172748;BA.debugLine="End Sub";
+ //BA.debugLineNum = 142;BA.debugLine="bc.SetBitmapToImageView(bc.Bitmap, iv)";
+_bc._setbitmaptoimageview(_bc._getbitmap(),_iv);
+ //BA.debugLineNum = 143;BA.debugLine="End Sub";
 return "";
 }
-public String  _base_resize(pdv.milotin.circularprogressbar __ref,double _width,double _height) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "base_resize", false))
-	 {return ((String) Debug.delegate(ba, "base_resize", new Object[] {_width,_height}));}
-int _w = 0;
-RDebugUtils.currentLine=12845056;
- //BA.debugLineNum = 12845056;BA.debugLine="Private Sub Base_Resize (Width As Double, Height A";
-RDebugUtils.currentLine=12845057;
- //BA.debugLineNum = 12845057;BA.debugLine="Dim w As Int = Min(Width, Height)";
-_w = (int) (__c.Min(_width,_height));
-RDebugUtils.currentLine=12845058;
- //BA.debugLineNum = 12845058;BA.debugLine="cx = w / 2";
-__ref._cx /*float*/  = (float) (_w/(double)2);
-RDebugUtils.currentLine=12845059;
- //BA.debugLineNum = 12845059;BA.debugLine="cy = w / 2";
-__ref._cy /*float*/  = (float) (_w/(double)2);
-RDebugUtils.currentLine=12845060;
- //BA.debugLineNum = 12845060;BA.debugLine="radius = cx - 10dip";
-__ref._radius /*float*/  = (float) (__ref._cx /*float*/ -__c.DipToCurrent((int) (10)));
-RDebugUtils.currentLine=12845061;
- //BA.debugLineNum = 12845061;BA.debugLine="iv.SetLayoutAnimated(0, 0, 0, w, w)";
-__ref._iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),(int) (0),(int) (0),_w,_w);
-RDebugUtils.currentLine=12845062;
- //BA.debugLineNum = 12845062;BA.debugLine="If bc.mWidth <> w Then";
-if (__ref._bc /*b4a.example.bitmapcreator*/ ._mwidth!=_w) { 
-RDebugUtils.currentLine=12845063;
- //BA.debugLineNum = 12845063;BA.debugLine="ResetBC";
-__ref._resetbc /*String*/ (null);
- };
-RDebugUtils.currentLine=12845065;
- //BA.debugLineNum = 12845065;BA.debugLine="mLbl.SetLayoutAnimated(0, 0, cy - 20dip, w, 40dip";
-__ref._mlbl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),(int) (0),(int) (__ref._cy /*float*/ -__c.DipToCurrent((int) (20))),_w,__c.DipToCurrent((int) (40)));
-RDebugUtils.currentLine=12845066;
- //BA.debugLineNum = 12845066;BA.debugLine="End Sub";
+public float  _getvalue() throws Exception{
+ //BA.debugLineNum = 90;BA.debugLine="Public Sub getValue As Float";
+ //BA.debugLineNum = 91;BA.debugLine="Return currentValue";
+if (true) return _currentvalue;
+ //BA.debugLineNum = 92;BA.debugLine="End Sub";
+return 0f;
+}
+public String  _initialize(anywheresoftware.b4a.BA _ba,Object _callback,String _eventname) throws Exception{
+innerInitialize(_ba);
+ //BA.debugLineNum = 28;BA.debugLine="Public Sub Initialize (Callback As Object, EventNa";
+ //BA.debugLineNum = 29;BA.debugLine="mEventName = EventName";
+_meventname = _eventname;
+ //BA.debugLineNum = 30;BA.debugLine="mCallBack = Callback";
+_mcallback = _callback;
+ //BA.debugLineNum = 31;BA.debugLine="End Sub";
 return "";
 }
-public String  _resetbc(pdv.milotin.circularprogressbar __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "resetbc", false))
-	 {return ((String) Debug.delegate(ba, "resetbc", null));}
+public String  _resetbc() throws Exception{
 b4a.example.bitmapcreator _g = null;
 anywheresoftware.b4a.objects.B4XCanvas.B4XRect _r = null;
 int _y = 0;
 int _x = 0;
 float _angle = 0f;
-RDebugUtils.currentLine=12779520;
- //BA.debugLineNum = 12779520;BA.debugLine="Private Sub ResetBC";
-RDebugUtils.currentLine=12779521;
- //BA.debugLineNum = 12779521;BA.debugLine="bc.Initialize(iv.Width, iv.Width)";
-__ref._bc /*b4a.example.bitmapcreator*/ ._initialize(ba,__ref._iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__ref._iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth());
-RDebugUtils.currentLine=12779522;
- //BA.debugLineNum = 12779522;BA.debugLine="Dim g As BitmapCreator";
+ //BA.debugLineNum = 57;BA.debugLine="Private Sub ResetBC";
+ //BA.debugLineNum = 58;BA.debugLine="bc.Initialize(iv.Width, iv.Width)";
+_bc._initialize(ba,_iv.getWidth(),_iv.getWidth());
+ //BA.debugLineNum = 59;BA.debugLine="Dim g As BitmapCreator";
 _g = new b4a.example.bitmapcreator();
-RDebugUtils.currentLine=12779523;
- //BA.debugLineNum = 12779523;BA.debugLine="g.Initialize(bc.mWidth, bc.mHeight)";
-_g._initialize(ba,__ref._bc /*b4a.example.bitmapcreator*/ ._mwidth,__ref._bc /*b4a.example.bitmapcreator*/ ._mheight);
-RDebugUtils.currentLine=12779524;
- //BA.debugLineNum = 12779524;BA.debugLine="Dim r As B4XRect";
+ //BA.debugLineNum = 60;BA.debugLine="g.Initialize(bc.mWidth, bc.mHeight)";
+_g._initialize(ba,_bc._mwidth,_bc._mheight);
+ //BA.debugLineNum = 61;BA.debugLine="Dim r As B4XRect";
 _r = new anywheresoftware.b4a.objects.B4XCanvas.B4XRect();
-RDebugUtils.currentLine=12779525;
- //BA.debugLineNum = 12779525;BA.debugLine="r.Initialize(0, 0, bc.mWidth, 2) 'ignore";
-_r.Initialize((float) (0),(float) (0),(float) (__ref._bc /*b4a.example.bitmapcreator*/ ._mwidth),(float) (2));
-RDebugUtils.currentLine=12779526;
- //BA.debugLineNum = 12779526;BA.debugLine="bc.FillGradient(Array As Int(clr1, clr2), r, \"LEF";
-__ref._bc /*b4a.example.bitmapcreator*/ ._fillgradient(new int[]{__ref._clr1 /*int*/ ,__ref._clr2 /*int*/ },_r,"LEFT_RIGHT");
-RDebugUtils.currentLine=12779527;
- //BA.debugLineNum = 12779527;BA.debugLine="For y = 0 To g.mHeight - 1";
+ //BA.debugLineNum = 62;BA.debugLine="r.Initialize(0, 0, bc.mWidth, 2) 'ignore";
+_r.Initialize((float) (0),(float) (0),(float) (_bc._mwidth),(float) (2));
+ //BA.debugLineNum = 63;BA.debugLine="bc.FillGradient(Array As Int(clr1, clr2), r, \"LEF";
+_bc._fillgradient(new int[]{_clr1,_clr2},_r,"LEFT_RIGHT");
+ //BA.debugLineNum = 64;BA.debugLine="For y = 0 To g.mHeight - 1";
 {
 final int step7 = 1;
 final int limit7 = (int) (_g._mheight-1);
 _y = (int) (0) ;
 for (;_y <= limit7 ;_y = _y + step7 ) {
-RDebugUtils.currentLine=12779528;
- //BA.debugLineNum = 12779528;BA.debugLine="For x = 0 To g.mWidth - 1";
+ //BA.debugLineNum = 65;BA.debugLine="For x = 0 To g.mWidth - 1";
 {
 final int step8 = 1;
 final int limit8 = (int) (_g._mwidth-1);
 _x = (int) (0) ;
 for (;_x <= limit8 ;_x = _x + step8 ) {
-RDebugUtils.currentLine=12779529;
- //BA.debugLineNum = 12779529;BA.debugLine="Dim angle As Float = ATan2D(y - cy, x - cx) + 9";
-_angle = (float) (__c.ATan2D(_y-__ref._cy /*float*/ ,_x-__ref._cx /*float*/ )+90.5);
-RDebugUtils.currentLine=12779530;
- //BA.debugLineNum = 12779530;BA.debugLine="If angle < 0 Then angle = angle + 360";
+ //BA.debugLineNum = 66;BA.debugLine="Dim angle As Float = ATan2D(y - cy, x - cx) + 9";
+_angle = (float) (__c.ATan2D(_y-_cy,_x-_cx)+90.5);
+ //BA.debugLineNum = 67;BA.debugLine="If angle < 0 Then angle = angle + 360";
 if (_angle<0) { 
 _angle = (float) (_angle+360);};
-RDebugUtils.currentLine=12779531;
- //BA.debugLineNum = 12779531;BA.debugLine="g.CopyPixel(bc, bc.mWidth * angle / 360, 0, x,";
-_g._copypixel(__ref._bc /*b4a.example.bitmapcreator*/ ,(int) (__ref._bc /*b4a.example.bitmapcreator*/ ._mwidth*_angle/(double)360),(int) (0),_x,_y);
+ //BA.debugLineNum = 68;BA.debugLine="g.CopyPixel(bc, bc.mWidth * angle / 360, 0, x,";
+_g._copypixel(_bc,(int) (_bc._mwidth*_angle/(double)360),(int) (0),_x,_y);
  }
 };
  }
 };
-RDebugUtils.currentLine=12779534;
- //BA.debugLineNum = 12779534;BA.debugLine="fullBrush = bc.CreateBrushFromBitmapCreator(g)";
-__ref._fullbrush /*b4a.example.bcpath._bcbrush*/  = __ref._bc /*b4a.example.bitmapcreator*/ ._createbrushfrombitmapcreator(_g);
-RDebugUtils.currentLine=12779535;
- //BA.debugLineNum = 12779535;BA.debugLine="End Sub";
+ //BA.debugLineNum = 71;BA.debugLine="fullBrush = bc.CreateBrushFromBitmapCreator(g)";
+_fullbrush = _bc._createbrushfrombitmapcreator(_g);
+ //BA.debugLineNum = 72;BA.debugLine="End Sub";
 return "";
 }
-public String  _class_globals(pdv.milotin.circularprogressbar __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-RDebugUtils.currentLine=12582912;
- //BA.debugLineNum = 12582912;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=12582913;
- //BA.debugLineNum = 12582913;BA.debugLine="Private mEventName As String 'ignore";
-_meventname = "";
-RDebugUtils.currentLine=12582914;
- //BA.debugLineNum = 12582914;BA.debugLine="Private mCallBack As Object 'ignore";
-_mcallback = new Object();
-RDebugUtils.currentLine=12582915;
- //BA.debugLineNum = 12582915;BA.debugLine="Private xui As XUI";
-_xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
-RDebugUtils.currentLine=12582916;
- //BA.debugLineNum = 12582916;BA.debugLine="Private mLbl As B4XView";
-_mlbl = new anywheresoftware.b4a.objects.B4XViewWrapper();
-RDebugUtils.currentLine=12582917;
- //BA.debugLineNum = 12582917;BA.debugLine="Private cx, cy, radius As Float";
-_cx = 0f;
-_cy = 0f;
-_radius = 0f;
-RDebugUtils.currentLine=12582918;
- //BA.debugLineNum = 12582918;BA.debugLine="Private stroke As Float";
-_stroke = 0f;
-RDebugUtils.currentLine=12582919;
- //BA.debugLineNum = 12582919;BA.debugLine="Private mBase As B4XView";
-_mbase = new anywheresoftware.b4a.objects.B4XViewWrapper();
-RDebugUtils.currentLine=12582920;
- //BA.debugLineNum = 12582920;BA.debugLine="Private currentValue As Float";
-_currentvalue = 0f;
-RDebugUtils.currentLine=12582921;
- //BA.debugLineNum = 12582921;BA.debugLine="Private DurationFromZeroTo100 As Int";
-_durationfromzeroto100 = 0;
-RDebugUtils.currentLine=12582922;
- //BA.debugLineNum = 12582922;BA.debugLine="Private bc As BitmapCreator";
-_bc = new b4a.example.bitmapcreator();
-RDebugUtils.currentLine=12582923;
- //BA.debugLineNum = 12582923;BA.debugLine="Private emptyBrush As BCBrush";
-_emptybrush = new b4a.example.bcpath._bcbrush();
-RDebugUtils.currentLine=12582924;
- //BA.debugLineNum = 12582924;BA.debugLine="Private fullBrush As BCBrush";
-_fullbrush = new b4a.example.bcpath._bcbrush();
-RDebugUtils.currentLine=12582925;
- //BA.debugLineNum = 12582925;BA.debugLine="Private TransparentBrush As BCBrush";
-_transparentbrush = new b4a.example.bcpath._bcbrush();
-RDebugUtils.currentLine=12582926;
- //BA.debugLineNum = 12582926;BA.debugLine="Private iv As B4XView";
-_iv = new anywheresoftware.b4a.objects.B4XViewWrapper();
-RDebugUtils.currentLine=12582927;
- //BA.debugLineNum = 12582927;BA.debugLine="Private clr1, clr2 As Int";
-_clr1 = 0;
-_clr2 = 0;
-RDebugUtils.currentLine=12582928;
- //BA.debugLineNum = 12582928;BA.debugLine="Private LoopIndex As Int";
-_loopindex = 0;
-RDebugUtils.currentLine=12582929;
- //BA.debugLineNum = 12582929;BA.debugLine="End Sub";
+public String  _setvalue(float _newvalue) throws Exception{
+ //BA.debugLineNum = 86;BA.debugLine="Public Sub setValue(NewValue As Float)";
+ //BA.debugLineNum = 87;BA.debugLine="AnimateValueTo(NewValue)";
+_animatevalueto(_newvalue);
+ //BA.debugLineNum = 88;BA.debugLine="End Sub";
 return "";
 }
-public String  _designercreateview(pdv.milotin.circularprogressbar __ref,Object _base,anywheresoftware.b4a.objects.LabelWrapper _lbl,anywheresoftware.b4a.objects.collections.Map _props) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "designercreateview", false))
-	 {return ((String) Debug.delegate(ba, "designercreateview", new Object[] {_base,_lbl,_props}));}
-int _clrempty = 0;
-anywheresoftware.b4a.objects.ImageViewWrapper _iiv = null;
-RDebugUtils.currentLine=12713984;
- //BA.debugLineNum = 12713984;BA.debugLine="Public Sub DesignerCreateView (Base As Object, Lbl";
-RDebugUtils.currentLine=12713985;
- //BA.debugLineNum = 12713985;BA.debugLine="mBase = Base";
-__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_base));
-RDebugUtils.currentLine=12713986;
- //BA.debugLineNum = 12713986;BA.debugLine="mBase.SetLayoutAnimated(0, mBase.Left, mBase.Top,";
-__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetLayoutAnimated((int) (0),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getLeft(),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getTop(),(int) (__c.Min(__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight())),(int) (__c.Min(__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight())));
-RDebugUtils.currentLine=12713987;
- //BA.debugLineNum = 12713987;BA.debugLine="Dim clrEmpty As Int = xui.PaintOrColorToColor(Pro";
-_clrempty = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .PaintOrColorToColor(_props.Get((Object)("ColorEmpty")));
-RDebugUtils.currentLine=12713988;
- //BA.debugLineNum = 12713988;BA.debugLine="clr1 = xui.PaintOrColorToColor(Props.Get(\"FirstCo";
-__ref._clr1 /*int*/  = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .PaintOrColorToColor(_props.Get((Object)("FirstColor")));
-RDebugUtils.currentLine=12713989;
- //BA.debugLineNum = 12713989;BA.debugLine="clr2 = xui.PaintOrColorToColor(Props.Get(\"SecondC";
-__ref._clr2 /*int*/  = __ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .PaintOrColorToColor(_props.Get((Object)("SecondColor")));
-RDebugUtils.currentLine=12713990;
- //BA.debugLineNum = 12713990;BA.debugLine="stroke = DipToCurrent(Props.Get(\"StrokeWidth\"))";
-__ref._stroke /*float*/  = (float) (__c.DipToCurrent((int)(BA.ObjectToNumber(_props.Get((Object)("StrokeWidth"))))));
-RDebugUtils.currentLine=12713991;
- //BA.debugLineNum = 12713991;BA.debugLine="DurationFromZeroTo100 = Props.Get(\"Duration\")";
-__ref._durationfromzeroto100 /*int*/  = (int)(BA.ObjectToNumber(_props.Get((Object)("Duration"))));
-RDebugUtils.currentLine=12713992;
- //BA.debugLineNum = 12713992;BA.debugLine="mLbl = Lbl";
-__ref._mlbl /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_lbl.getObject()));
-RDebugUtils.currentLine=12713993;
- //BA.debugLineNum = 12713993;BA.debugLine="cx = mBase.Width / 2";
-__ref._cx /*float*/  = (float) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth()/(double)2);
-RDebugUtils.currentLine=12713994;
- //BA.debugLineNum = 12713994;BA.debugLine="cy = mBase.Height / 2";
-__ref._cy /*float*/  = (float) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()/(double)2);
-RDebugUtils.currentLine=12713995;
- //BA.debugLineNum = 12713995;BA.debugLine="radius = cx - 10dip";
-__ref._radius /*float*/  = (float) (__ref._cx /*float*/ -__c.DipToCurrent((int) (10)));
-RDebugUtils.currentLine=12713996;
- //BA.debugLineNum = 12713996;BA.debugLine="mLbl.SetTextAlignment(\"CENTER\", \"CENTER\")";
-__ref._mlbl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .SetTextAlignment("CENTER","CENTER");
-RDebugUtils.currentLine=12713997;
- //BA.debugLineNum = 12713997;BA.debugLine="Dim iiv As ImageView";
-_iiv = new anywheresoftware.b4a.objects.ImageViewWrapper();
-RDebugUtils.currentLine=12713998;
- //BA.debugLineNum = 12713998;BA.debugLine="iiv.Initialize(\"\")";
-_iiv.Initialize(ba,"");
-RDebugUtils.currentLine=12713999;
- //BA.debugLineNum = 12713999;BA.debugLine="iv = iiv";
-__ref._iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/  = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.B4XViewWrapper(), (java.lang.Object)(_iiv.getObject()));
-RDebugUtils.currentLine=12714000;
- //BA.debugLineNum = 12714000;BA.debugLine="mBase.AddView(iv, 0, 0, mBase.Width, mBase.Height";
-__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((android.view.View)(__ref._iv /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getObject()),(int) (0),(int) (0),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight());
-RDebugUtils.currentLine=12714001;
- //BA.debugLineNum = 12714001;BA.debugLine="mBase.AddView(mLbl, 0, mBase.Height / 2 - 20dip,";
-__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .AddView((android.view.View)(__ref._mlbl /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getObject()),(int) (0),(int) (__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getHeight()/(double)2-__c.DipToCurrent((int) (20))),__ref._mbase /*anywheresoftware.b4a.objects.B4XViewWrapper*/ .getWidth(),__c.DipToCurrent((int) (40)));
-RDebugUtils.currentLine=12714002;
- //BA.debugLineNum = 12714002;BA.debugLine="ResetBC";
-__ref._resetbc /*String*/ (null);
-RDebugUtils.currentLine=12714003;
- //BA.debugLineNum = 12714003;BA.debugLine="emptyBrush = bc.CreateBrushFromColor(clrEmpty)";
-__ref._emptybrush /*b4a.example.bcpath._bcbrush*/  = __ref._bc /*b4a.example.bitmapcreator*/ ._createbrushfromcolor(_clrempty);
-RDebugUtils.currentLine=12714004;
- //BA.debugLineNum = 12714004;BA.debugLine="TransparentBrush = bc.CreateBrushFromColor(xui.Co";
-__ref._transparentbrush /*b4a.example.bcpath._bcbrush*/  = __ref._bc /*b4a.example.bitmapcreator*/ ._createbrushfromcolor(__ref._xui /*anywheresoftware.b4a.objects.B4XViewWrapper.XUI*/ .Color_Transparent);
-RDebugUtils.currentLine=12714005;
- //BA.debugLineNum = 12714005;BA.debugLine="DrawValue(currentValue)";
-__ref._drawvalue /*String*/ (null,__ref._currentvalue /*float*/ );
-RDebugUtils.currentLine=12714006;
- //BA.debugLineNum = 12714006;BA.debugLine="End Sub";
-return "";
-}
-public float  _getvalue(pdv.milotin.circularprogressbar __ref) throws Exception{
-__ref = this;
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "getvalue", false))
-	 {return ((Float) Debug.delegate(ba, "getvalue", null));}
-RDebugUtils.currentLine=12976128;
- //BA.debugLineNum = 12976128;BA.debugLine="Public Sub getValue As Float";
-RDebugUtils.currentLine=12976129;
- //BA.debugLineNum = 12976129;BA.debugLine="Return currentValue";
-if (true) return __ref._currentvalue /*float*/ ;
-RDebugUtils.currentLine=12976130;
- //BA.debugLineNum = 12976130;BA.debugLine="End Sub";
+public float  _valuefromtimeeaseinout(float _time,float _start,float _changeinvalue,int _duration) throws Exception{
+ //BA.debugLineNum = 112;BA.debugLine="Private Sub ValueFromTimeEaseInOut(Time As Float,";
+ //BA.debugLineNum = 113;BA.debugLine="Time = Time / (Duration / 2)";
+_time = (float) (_time/(double)(_duration/(double)2));
+ //BA.debugLineNum = 114;BA.debugLine="If Time < 1 Then";
+if (_time<1) { 
+ //BA.debugLineNum = 115;BA.debugLine="Return ChangeInValue / 2 * Time * Time * Time *";
+if (true) return (float) (_changeinvalue/(double)2*_time*_time*_time*_time+_start);
+ }else {
+ //BA.debugLineNum = 117;BA.debugLine="Time = Time - 2";
+_time = (float) (_time-2);
+ //BA.debugLineNum = 118;BA.debugLine="Return -ChangeInValue / 2 * (Time * Time * Time";
+if (true) return (float) (-_changeinvalue/(double)2*(_time*_time*_time*_time-2)+_start);
+ };
+ //BA.debugLineNum = 120;BA.debugLine="End Sub";
 return 0f;
 }
-public String  _initialize(pdv.milotin.circularprogressbar __ref,anywheresoftware.b4a.BA _ba,Object _callback,String _eventname) throws Exception{
-__ref = this;
-innerInitialize(_ba);
-RDebugUtils.currentModule="circularprogressbar";
-if (Debug.shouldDelegate(ba, "initialize", false))
-	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba,_callback,_eventname}));}
-RDebugUtils.currentLine=12648448;
- //BA.debugLineNum = 12648448;BA.debugLine="Public Sub Initialize (Callback As Object, EventNa";
-RDebugUtils.currentLine=12648449;
- //BA.debugLineNum = 12648449;BA.debugLine="mEventName = EventName";
-__ref._meventname /*String*/  = _eventname;
-RDebugUtils.currentLine=12648450;
- //BA.debugLineNum = 12648450;BA.debugLine="mCallBack = Callback";
-__ref._mcallback /*Object*/  = _callback;
-RDebugUtils.currentLine=12648451;
- //BA.debugLineNum = 12648451;BA.debugLine="End Sub";
-return "";
+public Object callSub(String sub, Object sender, Object[] args) throws Exception {
+BA.senderHolder.set(sender);
+return BA.SubDelegator.SubNotFound;
 }
 }

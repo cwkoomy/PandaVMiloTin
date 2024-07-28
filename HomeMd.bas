@@ -236,30 +236,18 @@ Sub CreateListItem(strID As String, strProject As String, strFund As String, Str
 		lblProjectFund2.Text = "RM " & NumberFormat2(strFund, 0, 2, 2, True)
 	Log(StrProgress)
 	If StrProgress = Null Or StrProgress = "null" Then
-		lblProjectProgress2.TextColor = Colors.RGB(1, 302, 36)
+		lblProjectProgress2.TextColor = Colors.RGB(5,206,46)
 		lblProjectProgress2.Text = "Fundraising Completed"
 	Else If StrProgress <> "100" Then
 		lblProjectProgress2.TextColor = Colors.RGB(254, 171, 43)
 		lblProjectProgress2.Text = "Fundraising in progress"
 	Else
-		lblProjectProgress2.TextColor = Colors.RGB(1, 302, 36)
+		lblProjectProgress2.TextColor = Colors.RGB(5,206,46)
 		lblProjectProgress2.Text = "Fundraising Completed"
 	End If
-	
-'	If StrProgress = "100" Then
-'		lblProjectProgress2.TextColor = Colors.RGB(1,302,36)
-'		lblProjectProgress2.Text = "Fundraising Completed"
-'
-'	Else If StrProgress = Null Or StrProgress = "null" Then
-'		lblProjectProgress2.TextColor = Colors.RGB(1,302,36)
-'		lblProjectProgress2.Text = "Fundraising Completed"
-'	Else
-'		lblProjectProgress2.TextColor = Colors.RGB(254,171,43)
-'		lblProjectProgress2.Text = "Fundraising in progress"
-'	End If
 
 	If StrProgress = Null Or StrProgress = "null" Then
-		StrProgress = "30"
+		StrProgress = "100"
 		cpBar1.Value = StrProgress
 	Else
 		cpBar1.Value = StrProgress

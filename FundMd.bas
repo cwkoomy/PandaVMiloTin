@@ -53,6 +53,10 @@ Sub Globals
 	Private imgProgress As ImageView
 	Private btnViewFund As Button
 	Private btnAddAllocate As Button
+	Private imgView As ImageView
+	Private btnDisFund As ImageView
+	Private btnCheckFund As ImageView
+
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -130,7 +134,7 @@ Sub JobDone(Job As HttpJob)
 '				lblAmount.Text = "RM " & NumberFormat2(totalFund, 0, 2, 2, True)
 				Log(totalFund)
 				' Add the item to the CustomListView
-				clvFundList.Add(CreateListItem(result.Get("id"),metadata.Get("project"), metadata.Get("fund"), metadata.Get("progress"), metadata.Get("project_wallet"), metadata.Get("status"), clvFundList.AsView.Width, 55dip), 80dip, result.Get("transactionHash"))
+				clvFundList.Add(CreateListItem(result.Get("id"),metadata.Get("project"), metadata.Get("fund"), metadata.Get("progress"), metadata.Get("project_wallet"), result.Get("transactionHash"), metadata.Get("status"), clvFundList.AsView.Width, 55dip), 80dip, result.Get("transactionHash"))
 				Dim gd As GradientDrawable
 				gd.Initialize("TR_BL", Array As Int(Colors.ARGB(0, 255, 255, 255), Colors.ARGB(0, 255, 255, 255))) ' Top-Right to Bottom-Left gradient
 				gd.CornerRadius = 20dip ' Adjust corner radius as needed
@@ -167,7 +171,7 @@ Sub JobDone(Job As HttpJob)
     
 End Sub
 
-Sub CreateListItem(strID As String, strProject As String, strFund As String, StrProgress As String, strProjectWallet As String, strStatus As String, Width As Int, Height As Int) As Panel
+Sub CreateListItem(strID As String, strProject As String, strFund As String, StrProgress As String, strProjectWallet As String, strTransactionHash As String, strStatus As String, Width As Int, Height As Int) As Panel
 	
 	Dim p As Panel
 	p.Initialize("")
@@ -180,15 +184,18 @@ Sub CreateListItem(strID As String, strProject As String, strFund As String, Str
 	lblProjectFund2.Text = "RM " & NumberFormat2(strFund, 0, 2, 2, True)
 	Log(StrProgress)
 	If StrProgress = Null Or StrProgress = "null" Then
-		lblProjectProgress2.TextColor = Colors.RGB(1, 302, 36)
+		lblProjectProgress2.TextColor = Colors.RGB(5,206,46)
 		lblProjectProgress2.Text = "Fundraising Completed"
 	Else If StrProgress <> "100" Then
 		lblProjectProgress2.TextColor = Colors.RGB(254, 171, 43)
 		lblProjectProgress2.Text = "Fundraising in progress"
 	Else
-		lblProjectProgress2.TextColor = Colors.RGB(1, 302, 36)
+		lblProjectProgress2.TextColor = Colors.RGB(5,206,46)
 		lblProjectProgress2.Text = "Fundraising Completed"
 	End If
+	
+	btnDisFund.Tag = strTransactionHash
+	btnCheckFund.Tag  = strTransactionHash
 	
 '	If StrProgress = "100" Then
 '		lblProjectProgress2.TextColor = Colors.RGB(1,302,36)
@@ -215,11 +222,11 @@ End Sub
 
 Sub clvFundList_ItemClick (Index As Int, Value As Object)
 	
-	kvs.Put("AuditTransactionHash",Value)
-'	kvs.Put("ProjectWallet",Value)
-	Log(kvs.Get("AuditTransactionHash"))
-	
-	StartActivity("AddAllocateMd")
+'	kvs.Put("AuditTransactionHash",Value)
+''	kvs.Put("ProjectWallet",Value)
+'	Log(kvs.Get("AuditTransactionHash"))
+'	
+'	StartActivity("AddAllocateMd")
 	
 End Sub
 
@@ -255,4 +262,31 @@ End Sub
 
 Private Sub imgBack_Click
 	Activity.Finish
+End Sub
+
+Private Sub btnDisFund_Click
+	Dim index As Int = clvFundList.GetItemFromView(Sender)
+	Dim pnl As B4XView = clvFundList.GetPanel(index)
+	Dim imgDisFund As B4XView = pnl.GetView(5)
+	Log("imgDisFund.Tag :" & imgDisFund.Tag)
+	kvs.Put("AuditTransactionHash",imgDisFund.Tag)
+	
+	'Jump to Distribution Fund
+	StartActivity("AddAllocateMd")
+	
+End Sub
+
+Private Sub btnCheckFund_Click
+	Dim index As Int = clvFundList.GetItemFromView(Sender)
+	Dim pnl As B4XView = clvFundList.GetPanel(index)
+	Dim imgfunddis As B4XView = pnl.GetView(6)
+	kvs.Put("AuditTransactionHash",imgfunddis.Tag)
+	
+	'Jump to  Fund Distribution
+	StartActivity("ViewAllocateMd") '<---- Add your self
+	
+End Sub
+
+Private Sub Button1_Click
+	StartActivity("ViewAllocateMd")
 End Sub

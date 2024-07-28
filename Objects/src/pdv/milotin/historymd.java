@@ -34,7 +34,7 @@ public class historymd extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "pdv.milotin", "pdv.milotin.historymd");
+			processBA = new BA(this.getApplicationContext(), null, null, "pdv.milotin", "pdv.milotin.historymd");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class historymd extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblhistorytitle = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblhistoryhashid = null;
@@ -385,132 +376,159 @@ public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
 public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
+public pdv.milotin.viewallocatemd _viewallocatemd = null;
 public pdv.milotin.httputils2service _httputils2service = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="historymd";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
 anywheresoftware.b4a.objects.drawable.GradientDrawable _gd = null;
-RDebugUtils.currentLine=3735552;
- //BA.debugLineNum = 3735552;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=3735554;
- //BA.debugLineNum = 3735554;BA.debugLine="Activity.LoadLayout(\"HistoryLy\")";
+ //BA.debugLineNum = 50;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 52;BA.debugLine="Activity.LoadLayout(\"HistoryLy\")";
 mostCurrent._activity.LoadLayout("HistoryLy",mostCurrent.activityBA);
-RDebugUtils.currentLine=3735557;
- //BA.debugLineNum = 3735557;BA.debugLine="clvHistory.FullScroll(True)";
+ //BA.debugLineNum = 55;BA.debugLine="clvHistory.FullScroll(True)";
 mostCurrent._clvhistory.FullScroll(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=3735558;
- //BA.debugLineNum = 3735558;BA.debugLine="clvHistory.Panel.LoadLayout(\"ListViewLy2\")";
+ //BA.debugLineNum = 56;BA.debugLine="clvHistory.Panel.LoadLayout(\"ListViewLy2\")";
 mostCurrent._clvhistory.getPanel().LoadLayout("ListViewLy2",mostCurrent.activityBA);
-RDebugUtils.currentLine=3735559;
- //BA.debugLineNum = 3735559;BA.debugLine="clvHistory.Panel.Height = 880dip";
+ //BA.debugLineNum = 57;BA.debugLine="clvHistory.Panel.Height = 880dip";
 mostCurrent._clvhistory.getPanel().setHeight(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (880)));
-RDebugUtils.currentLine=3735561;
- //BA.debugLineNum = 3735561;BA.debugLine="Dim gd As GradientDrawable";
+ //BA.debugLineNum = 59;BA.debugLine="Dim gd As GradientDrawable";
 _gd = new anywheresoftware.b4a.objects.drawable.GradientDrawable();
-RDebugUtils.currentLine=3735562;
- //BA.debugLineNum = 3735562;BA.debugLine="gd.Initialize(\"TOP_BOTTOM\", Array As Int(Colors.A";
+ //BA.debugLineNum = 60;BA.debugLine="gd.Initialize(\"TOP_BOTTOM\", Array As Int(Colors.A";
 _gd.Initialize(BA.getEnumFromString(android.graphics.drawable.GradientDrawable.Orientation.class,"TOP_BOTTOM"),new int[]{anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (255),(int) (255),(int) (255)),anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (255),(int) (255),(int) (255))});
-RDebugUtils.currentLine=3735563;
- //BA.debugLineNum = 3735563;BA.debugLine="gd.CornerRadius = 20dip ' Adjust the corner radiu";
+ //BA.debugLineNum = 61;BA.debugLine="gd.CornerRadius = 20dip ' Adjust the corner radiu";
 _gd.setCornerRadius((float) (anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (20))));
-RDebugUtils.currentLine=3735566;
- //BA.debugLineNum = 3735566;BA.debugLine="clvHistory.Background = gd";
+ //BA.debugLineNum = 64;BA.debugLine="clvHistory.Background = gd";
 mostCurrent._clvhistory.setBackground((android.graphics.drawable.Drawable)(_gd.getObject()));
-RDebugUtils.currentLine=3735568;
- //BA.debugLineNum = 3735568;BA.debugLine="End Sub";
+ //BA.debugLineNum = 66;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="historymd";
-RDebugUtils.currentLine=3866624;
- //BA.debugLineNum = 3866624;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=3866626;
- //BA.debugLineNum = 3866626;BA.debugLine="End Sub";
+ //BA.debugLineNum = 72;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 74;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="historymd";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=3801088;
- //BA.debugLineNum = 3801088;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=3801090;
- //BA.debugLineNum = 3801090;BA.debugLine="End Sub";
+ //BA.debugLineNum = 68;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 70;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 16;BA.debugLine="Private lblHistorytitle As Label";
+mostCurrent._lblhistorytitle = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 17;BA.debugLine="Private lblHistoryHashID As Label";
+mostCurrent._lblhistoryhashid = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Private imgStatus1 As ImageView";
+mostCurrent._imgstatus1 = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 19;BA.debugLine="Private lblHistoryDate As Label";
+mostCurrent._lblhistorydate = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 20;BA.debugLine="Private lblHistoryAmount As Label";
+mostCurrent._lblhistoryamount = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 21;BA.debugLine="Private lblHistorytitle2 As Label";
+mostCurrent._lblhistorytitle2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 22;BA.debugLine="Private lblHistoryHashID2 As Label";
+mostCurrent._lblhistoryhashid2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 23;BA.debugLine="Private imgStatus2 As ImageView";
+mostCurrent._imgstatus2 = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 24;BA.debugLine="Private lblHistoryDate2 As Label";
+mostCurrent._lblhistorydate2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 25;BA.debugLine="Private lblHistoryAmount2 As Label";
+mostCurrent._lblhistoryamount2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 26;BA.debugLine="Private lblHistorytitle3 As Label";
+mostCurrent._lblhistorytitle3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 27;BA.debugLine="Private lblHistoryHashID3 As Label";
+mostCurrent._lblhistoryhashid3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 28;BA.debugLine="Private imgStatus3 As ImageView";
+mostCurrent._imgstatus3 = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 29;BA.debugLine="Private lblHistoryDate3 As Label";
+mostCurrent._lblhistorydate3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 30;BA.debugLine="Private lblHistoryAmount3 As Label";
+mostCurrent._lblhistoryamount3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 31;BA.debugLine="Private lblHistorytitle4 As Label";
+mostCurrent._lblhistorytitle4 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 32;BA.debugLine="Private lblHistoryHashID4 As Label";
+mostCurrent._lblhistoryhashid4 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 33;BA.debugLine="Private imgStatus4 As ImageView";
+mostCurrent._imgstatus4 = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 34;BA.debugLine="Private lblHistoryDate4 As Label";
+mostCurrent._lblhistorydate4 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 35;BA.debugLine="Private lblHistoryAmount4 As Label";
+mostCurrent._lblhistoryamount4 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 36;BA.debugLine="Private lblHistorytitle5 As Label";
+mostCurrent._lblhistorytitle5 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 37;BA.debugLine="Private lblHistoryHashID5 As Label";
+mostCurrent._lblhistoryhashid5 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 38;BA.debugLine="Private imgStatus5 As ImageView";
+mostCurrent._imgstatus5 = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 39;BA.debugLine="Private lblHistoryDate5 As Label";
+mostCurrent._lblhistorydate5 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 40;BA.debugLine="Private lblHistoryAmount5 As Label";
+mostCurrent._lblhistoryamount5 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 41;BA.debugLine="Private lblSaperate As Label";
+mostCurrent._lblsaperate = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 42;BA.debugLine="Private lblSaperate2 As Label";
+mostCurrent._lblsaperate2 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 43;BA.debugLine="Private lblSaperate3 As Label";
+mostCurrent._lblsaperate3 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 44;BA.debugLine="Private lblSaperate4 As Label";
+mostCurrent._lblsaperate4 = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 46;BA.debugLine="Private clvHistory As ScrollView";
+mostCurrent._clvhistory = new anywheresoftware.b4a.objects.ScrollViewWrapper();
+ //BA.debugLineNum = 47;BA.debugLine="Private pnListView As Panel";
+mostCurrent._pnlistview = new anywheresoftware.b4a.objects.PanelWrapper();
+ //BA.debugLineNum = 48;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgback_click() throws Exception{
-RDebugUtils.currentModule="historymd";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "imgback_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "imgback_click", null));}
-RDebugUtils.currentLine=4194304;
- //BA.debugLineNum = 4194304;BA.debugLine="Private Sub imgBack_Click";
-RDebugUtils.currentLine=4194305;
- //BA.debugLineNum = 4194305;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 97;BA.debugLine="Private Sub imgBack_Click";
+ //BA.debugLineNum = 98;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4194306;
- //BA.debugLineNum = 4194306;BA.debugLine="End Sub";
+ //BA.debugLineNum = 99;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblfund_click() throws Exception{
-RDebugUtils.currentModule="historymd";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lblfund_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblfund_click", null));}
-RDebugUtils.currentLine=3997696;
- //BA.debugLineNum = 3997696;BA.debugLine="Private Sub lblFund_Click";
-RDebugUtils.currentLine=3997697;
- //BA.debugLineNum = 3997697;BA.debugLine="StartActivity(\"FundMd\")";
+ //BA.debugLineNum = 82;BA.debugLine="Private Sub lblFund_Click";
+ //BA.debugLineNum = 83;BA.debugLine="StartActivity(\"FundMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("FundMd"));
-RDebugUtils.currentLine=3997698;
- //BA.debugLineNum = 3997698;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 84;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=3997699;
- //BA.debugLineNum = 3997699;BA.debugLine="End Sub";
+ //BA.debugLineNum = 85;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhistory_click() throws Exception{
-RDebugUtils.currentModule="historymd";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lblhistory_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblhistory_click", null));}
-RDebugUtils.currentLine=4063232;
- //BA.debugLineNum = 4063232;BA.debugLine="Private Sub lblHistory_Click";
-RDebugUtils.currentLine=4063233;
- //BA.debugLineNum = 4063233;BA.debugLine="StartActivity(\"HistoryMd\")";
+ //BA.debugLineNum = 87;BA.debugLine="Private Sub lblHistory_Click";
+ //BA.debugLineNum = 88;BA.debugLine="StartActivity(\"HistoryMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HistoryMd"));
-RDebugUtils.currentLine=4063234;
- //BA.debugLineNum = 4063234;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 89;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4063235;
- //BA.debugLineNum = 4063235;BA.debugLine="End Sub";
+ //BA.debugLineNum = 90;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhome_click() throws Exception{
-RDebugUtils.currentModule="historymd";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lblhome_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lblhome_click", null));}
-RDebugUtils.currentLine=3932160;
- //BA.debugLineNum = 3932160;BA.debugLine="Private Sub lblHome_Click";
-RDebugUtils.currentLine=3932161;
- //BA.debugLineNum = 3932161;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 78;BA.debugLine="Private Sub lblHome_Click";
+ //BA.debugLineNum = 79;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=3932162;
- //BA.debugLineNum = 3932162;BA.debugLine="End Sub";
+ //BA.debugLineNum = 80;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbluser_click() throws Exception{
-RDebugUtils.currentModule="historymd";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "lbluser_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "lbluser_click", null));}
-RDebugUtils.currentLine=4128768;
- //BA.debugLineNum = 4128768;BA.debugLine="Private Sub lblUser_Click";
-RDebugUtils.currentLine=4128769;
- //BA.debugLineNum = 4128769;BA.debugLine="StartActivity(\"UserMd\")";
+ //BA.debugLineNum = 92;BA.debugLine="Private Sub lblUser_Click";
+ //BA.debugLineNum = 93;BA.debugLine="StartActivity(\"UserMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("UserMd"));
-RDebugUtils.currentLine=4128770;
- //BA.debugLineNum = 4128770;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 94;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=4128771;
- //BA.debugLineNum = 4128771;BA.debugLine="End Sub";
+ //BA.debugLineNum = 95;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }

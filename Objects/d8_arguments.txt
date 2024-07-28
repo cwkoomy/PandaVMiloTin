@@ -4,7 +4,6 @@ C:\Android\B4a\PandaVMiloTin\Objects
 --lib
 C:\Android\platforms\android-33\android.jar
 C:\Android\tools\..\extras\b4a_local\unpacked-b4ashared-63837448956000\dex_v1\b4ashared.zip
-C:\Android\tools\..\extras\b4a_local\unpacked-debug-63837448958000\dex_v1\debug.zip
 c:\android\tools\..\extras\b4a_remote\androidx\core\core\1.9.0\unpacked-core-1.9.0\jars\classes.zip
 c:\android\tools\..\extras\b4a_remote\androidx\core\core-ktx\1.9.0\unpacked-core-ktx-1.9.0\jars\classes.zip
 c:\android\tools\..\extras\b4a_remote\androidx\annotation\annotation-experimental\1.3.0\unpacked-annotation-experimental-1.3.0\jars\classes.zip
@@ -33,7 +32,6 @@ C:\Android\tools\..\extras\b4a_local\unpacked-okhttp-4.9.0-63837448958000\dex_v1
 C:\Android\tools\..\extras\b4a_local\unpacked-okio-2.8.0-63837448958000\dex_v1\okio-2.8.0.zip
 C:\Android\tools\..\extras\b4a_local\unpacked-okhttp-urlconnection-4.9.3-63837448958000\dex_v1\okhttp-urlconnection-4.9.3.zip
 C:\Android\tools\..\extras\b4a_local\unpacked-kotlin-stdlib-1.6.10-63837448958000\dex_v1\kotlin-stdlib-1.6.10.zip
-C:\Android\tools\..\extras\b4a_local\unpacked-remotelogger-63837448958000\dex_v1\remotelogger.zip
 c:\android\tools\..\extras\b4a_remote\androidx\annotation\annotation\1.5.0\annotation-1.5.0.zip
 c:\android\tools\..\extras\b4a_remote\androidx\arch\core\core-common\2.1.0\core-common-2.1.0.zip
 c:\android\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-common\2.5.1\lifecycle-common-2.5.1.zip
@@ -156,6 +154,12 @@ C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\usermd$HandleKeyDelayed.d
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\usermd$ResumeMessage.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\usermd$WaitForLayout.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\usermd.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\viewallocatemd$1.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\viewallocatemd$B4AMenuItemsClickListener.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\viewallocatemd$HandleKeyDelayed.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\viewallocatemd$ResumeMessage.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\viewallocatemd$WaitForLayout.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\viewallocatemd.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_addallocately.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_addprojectly.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_fundly.dex
@@ -165,7 +169,9 @@ C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_listvi
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_listviewly2.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_listviewly3.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_listviewly4.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_listviewly5.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_mainly.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_mainlybak.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_sendfundly.dex
 C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_userly.dex
+C:\Android\B4a\PandaVMiloTin\Objects\dexed\pdv\milotin\designerscripts\LS_viewallocately.dex
