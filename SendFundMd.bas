@@ -65,6 +65,7 @@ Sub Globals
 	Private lblLine3 As Label
 	Private lblStatus As Label
 	Private btnClose As Button
+	Private lbltransactionhash As Label
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -214,8 +215,11 @@ Sub JobDone(Job As HttpJob)
 			' Handle the response for the POST transaction
 			Dim root As Map = parser.NextObject
 			Dim status As Int = root.Get("status")
+			Dim result As Map = root.Get("result")
 			Log(root.Get("status"))
-
+			Log(result.Get("transactionHash"))
+			lbltransactionhash.Text = result.Get("transactionHash")
+			kvs.Put("CURRTransactionHash", result.Get("transactionHash"))
 			pnStatus.Visible = True
 			pnConfirmation.Visible = False
 
@@ -350,4 +354,15 @@ Sub CalculatePercentage(part As Double, total As Double)
 	End If
 
 	Log(NumberFormat(percentage, 1, 3))
+End Sub
+
+
+
+
+
+
+Private Sub btnCheck_Click
+	Dim url As String = "https://explorer-testnet.maschain.com/" & kvs.Get("CURRTransactionHash")
+	Dim p As PhoneIntents
+	StartActivity(p.OpenBrowser(url))
 End Sub

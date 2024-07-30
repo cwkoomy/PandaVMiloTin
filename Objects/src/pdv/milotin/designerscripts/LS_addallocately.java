@@ -329,14 +329,30 @@ views.get("lblstatus").vw.setHeight((int)((views.get("lbltittle3").vw.getHeight(
 views.get("lblstatus").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft())));
 //BA.debugLineNum = 208;BA.debugLine="lblStatus.Top = imgStatus.Bottom +2%y"[AddAllocateLy/General script]
 views.get("lblstatus").vw.setTop((int)((views.get("imgstatus").vw.getTop() + views.get("imgstatus").vw.getHeight())+(2d / 100 * height)));
-//BA.debugLineNum = 210;BA.debugLine="btnClose.Width = 70%x"[AddAllocateLy/General script]
+//BA.debugLineNum = 210;BA.debugLine="lbltransactionhash.Width = lblTittle3.Width"[AddAllocateLy/General script]
+views.get("lbltransactionhash").vw.setWidth((int)((views.get("lbltittle3").vw.getWidth())));
+//BA.debugLineNum = 211;BA.debugLine="lbltransactionhash.Height = lblTittle3.Height"[AddAllocateLy/General script]
+views.get("lbltransactionhash").vw.setHeight((int)((views.get("lbltittle3").vw.getHeight())));
+//BA.debugLineNum = 212;BA.debugLine="lbltransactionhash.Left = lblTittle3.Left"[AddAllocateLy/General script]
+views.get("lbltransactionhash").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft())));
+//BA.debugLineNum = 213;BA.debugLine="lbltransactionhash.Top = lblStatus.Bottom"[AddAllocateLy/General script]
+views.get("lbltransactionhash").vw.setTop((int)((views.get("lblstatus").vw.getTop() + views.get("lblstatus").vw.getHeight())));
+//BA.debugLineNum = 215;BA.debugLine="btnClose.Width = 70%x"[AddAllocateLy/General script]
 views.get("btnclose").vw.setWidth((int)((70d / 100 * width)));
-//BA.debugLineNum = 211;BA.debugLine="btnClose.Height = 50dip"[AddAllocateLy/General script]
+//BA.debugLineNum = 216;BA.debugLine="btnClose.Height = 50dip"[AddAllocateLy/General script]
 views.get("btnclose").vw.setHeight((int)((50d * scale)));
-//BA.debugLineNum = 212;BA.debugLine="btnClose.HorizontalCenter = lblTittle3.HorizontalCenter"[AddAllocateLy/General script]
+//BA.debugLineNum = 217;BA.debugLine="btnClose.HorizontalCenter = lblTittle3.HorizontalCenter"[AddAllocateLy/General script]
 views.get("btnclose").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft() + views.get("lbltittle3").vw.getWidth()/2) - (views.get("btnclose").vw.getWidth() / 2)));
-//BA.debugLineNum = 213;BA.debugLine="btnClose.Top = lblStatus.Bottom +10%y"[AddAllocateLy/General script]
+//BA.debugLineNum = 218;BA.debugLine="btnClose.Top = lblStatus.Bottom +10%y"[AddAllocateLy/General script]
 views.get("btnclose").vw.setTop((int)((views.get("lblstatus").vw.getTop() + views.get("lblstatus").vw.getHeight())+(10d / 100 * height)));
+//BA.debugLineNum = 220;BA.debugLine="btnCheck.Width = 70%x"[AddAllocateLy/General script]
+views.get("btncheck").vw.setWidth((int)((70d / 100 * width)));
+//BA.debugLineNum = 221;BA.debugLine="btnCheck.Height = 50dip"[AddAllocateLy/General script]
+views.get("btncheck").vw.setHeight((int)((50d * scale)));
+//BA.debugLineNum = 222;BA.debugLine="btnCheck.HorizontalCenter = lblTittle3.HorizontalCenter"[AddAllocateLy/General script]
+views.get("btncheck").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft() + views.get("lbltittle3").vw.getWidth()/2) - (views.get("btncheck").vw.getWidth() / 2)));
+//BA.debugLineNum = 223;BA.debugLine="btnCheck.Top = lblStatus.Bottom +10%y"[AddAllocateLy/General script]
+views.get("btncheck").vw.setTop((int)((views.get("lblstatus").vw.getTop() + views.get("lblstatus").vw.getHeight())+(10d / 100 * height)));
 
 }
 }

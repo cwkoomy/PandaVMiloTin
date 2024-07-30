@@ -79,6 +79,8 @@ Sub Globals
 	Private pnRemark As Panel
 	Private txtRemark As EditText
 	Private imgRemark As ImageView
+	Private lbltransactionhash As Label
+	Private btnCheck As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -216,6 +218,8 @@ Sub JobDone(Job As HttpJob)
 				Log("From: " & from)
 				Log("Status: " & responseStatus)
 				Log("Receipt: " & receipt)
+				kvs.Put("CURRTransactionHash", result.Get("transactionHash"))
+				lbltransactionhash.Text = transactionHash
 				pnBlackTransparent.Visible = True
 				pnStatus.Visible = True
 				
@@ -312,6 +316,7 @@ Private Sub btnNext_Click
 	Dim strSelectCategory As String
 	pnBlackTransparent.Visible = True
 	pnConfirmation.Visible = True
+	btnCheck.Visible = True
 	btnNext.Visible = False
 	strSelectCategory = cboCategory.GetItem(cboCategory.SelectedIndex)
 	kvs.Put("SelectedCategory", strSelectCategory)
@@ -365,4 +370,10 @@ Sub CalculatePercentage(part As Double, total As Double)
 	End If
 
 	Log(NumberFormat(percentage, 1, 3))
+End Sub
+
+Private Sub btnCheck_Click
+	Dim url As String = "https://explorer-testnet.maschain.com/" & kvs.Get("CURRTransactionHash")
+	Dim p As PhoneIntents
+	StartActivity(p.OpenBrowser(url))
 End Sub

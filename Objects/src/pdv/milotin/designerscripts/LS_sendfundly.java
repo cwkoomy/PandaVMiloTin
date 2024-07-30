@@ -172,16 +172,24 @@ views.get("imgstatus").vw.setTop((int)((views.get("lblline3").vw.getTop() + view
 views.get("lblstatus").vw.setWidth((int)((views.get("lbltittle3").vw.getWidth())));
 views.get("lblstatus").vw.setHeight((int)((views.get("lbltittle3").vw.getHeight())));
 views.get("lblstatus").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft())));
-//BA.debugLineNum = 210;BA.debugLine="lblStatus.Top = imgStatus.Bottom +2%y"[SendFundLy/General script]
 views.get("lblstatus").vw.setTop((int)((views.get("imgstatus").vw.getTop() + views.get("imgstatus").vw.getHeight())+(2d / 100 * height)));
-//BA.debugLineNum = 212;BA.debugLine="btnClose.Width = 70%x"[SendFundLy/General script]
+views.get("lbltransactionhash").vw.setWidth((int)((views.get("lbltittle3").vw.getWidth())));
+views.get("lbltransactionhash").vw.setHeight((int)((views.get("lbltittle3").vw.getHeight())));
+views.get("lbltransactionhash").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft())));
+views.get("lbltransactionhash").vw.setTop((int)((views.get("lblstatus").vw.getTop() + views.get("lblstatus").vw.getHeight())));
 views.get("btnclose").vw.setWidth((int)((70d / 100 * width)));
-//BA.debugLineNum = 213;BA.debugLine="btnClose.Height = 50dip"[SendFundLy/General script]
 views.get("btnclose").vw.setHeight((int)((50d * scale)));
-//BA.debugLineNum = 214;BA.debugLine="btnClose.HorizontalCenter = lblTittle3.HorizontalCenter"[SendFundLy/General script]
 views.get("btnclose").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft() + views.get("lbltittle3").vw.getWidth()/2) - (views.get("btnclose").vw.getWidth() / 2)));
-//BA.debugLineNum = 215;BA.debugLine="btnClose.Top = lblStatus.Bottom +10%y"[SendFundLy/General script]
+//BA.debugLineNum = 220;BA.debugLine="btnClose.Top = lblStatus.Bottom +10%y"[SendFundLy/General script]
 views.get("btnclose").vw.setTop((int)((views.get("lblstatus").vw.getTop() + views.get("lblstatus").vw.getHeight())+(10d / 100 * height)));
+//BA.debugLineNum = 222;BA.debugLine="btnCheck.Width = 70%x"[SendFundLy/General script]
+views.get("btncheck").vw.setWidth((int)((70d / 100 * width)));
+//BA.debugLineNum = 223;BA.debugLine="btnCheck.Height = 50dip"[SendFundLy/General script]
+views.get("btncheck").vw.setHeight((int)((50d * scale)));
+//BA.debugLineNum = 224;BA.debugLine="btnCheck.HorizontalCenter = lblTittle3.HorizontalCenter"[SendFundLy/General script]
+views.get("btncheck").vw.setLeft((int)((views.get("lbltittle3").vw.getLeft() + views.get("lbltittle3").vw.getWidth()/2) - (views.get("btncheck").vw.getWidth() / 2)));
+//BA.debugLineNum = 225;BA.debugLine="btnCheck.Top = lblStatus.Bottom +10%y"[SendFundLy/General script]
+views.get("btncheck").vw.setTop((int)((views.get("lblstatus").vw.getTop() + views.get("lblstatus").vw.getHeight())+(10d / 100 * height)));
 
 }
 }

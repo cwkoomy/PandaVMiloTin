@@ -63,6 +63,9 @@ Sub Globals
 	Private imgFullName As ImageView
 	Private imgEdit As ImageView
 	Private imgSave As ImageView
+	Private lblCertificate As Label
+	Private btnCertificate As Button
+	Private imgKYC As ImageView
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -81,7 +84,7 @@ Sub Activity_Create(FirstTime As Boolean)
 		SQL1.Initialize(File.DirDefaultExternal, "db.db", False)
 	End If
 	
-	GenerateQR
+'	GenerateQR
 	
 End Sub
 
@@ -93,19 +96,19 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-Sub GenerateQR
-
-	Dim strQRCode As String
-	strQRCode = kvs.Get("WalletAddress")
-'	DrawQRCode(strQRCode)
-	bmr = qr.drawQRCode(strQRCode)
-	imgQR.Bitmap = bmr
-	Log(strQRCode)
-'	DoEvents
-'	IME.HideKeyboard
-	'CallSubDelayed(EnterAmount,"CloseMe")
-	
-End Sub
+'Sub GenerateQR
+'
+'	Dim strQRCode As String
+'	strQRCode = kvs.Get("WalletAddress")
+''	DrawQRCode(strQRCode)
+'	bmr = qr.drawQRCode(strQRCode)
+'	imgQR.Bitmap = bmr
+'	Log(strQRCode)
+''	DoEvents
+''	IME.HideKeyboard
+'	'CallSubDelayed(EnterAmount,"CloseMe")
+'	
+'End Sub
 
 Private Sub lblHome_Click
 	Activity.Finish
@@ -184,4 +187,13 @@ Private Sub imgSave_Click
 	imgSave.Visible = False
 	imgSave.Enabled = False
 	ToastMessageShow("Save Succesful!", True)
+End Sub
+
+Private Sub btnCertificate_Click
+	StartActivity("CertMd")
+
+End Sub
+
+Private Sub imgKYC_Click
+	StartActivity("KYC1Md")
 End Sub

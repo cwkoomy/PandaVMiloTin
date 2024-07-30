@@ -44,9 +44,11 @@ public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 public static class _multipartfiledata{
 public boolean IsInitialized;
@@ -124,7 +126,7 @@ _req.InitializeDelete(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 266;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913893637",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916908293",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 267;BA.debugLine="req.InitializeDelete(InvalidURL)";
 _req.InitializeDelete(_invalidurl);
  };
@@ -143,7 +145,7 @@ _req.InitializeDelete(_escapelink(_link,_parameters));
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 277;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913959173",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916973829",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 278;BA.debugLine="req.InitializeDelete(escapeLink(InvalidURL, Para";
 _req.InitializeDelete(_escapelink(_invalidurl,_parameters));
  };
@@ -162,7 +164,7 @@ _req.InitializeGet(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 224;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913697029",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916711685",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 225;BA.debugLine="req.InitializeGet(InvalidURL)";
 _req.InitializeGet(_invalidurl);
  };
@@ -181,7 +183,7 @@ _req.InitializeGet(_escapelink(_link,_parameters));
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 240;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913762565",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916777221",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 241;BA.debugLine="req.InitializeGet(escapeLink(InvalidURL, Paramet";
 _req.InitializeGet(_escapelink(_invalidurl,_parameters));
  };
@@ -305,7 +307,7 @@ _req.InitializeHead(_link);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 124;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913434885",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916449541",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 125;BA.debugLine="req.InitializeHead(InvalidURL)";
 _req.InitializeHead(_invalidurl);
  };
@@ -359,7 +361,7 @@ _req.InitializePatch2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 109;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913369356",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916384012",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 110;BA.debugLine="req.InitializePatch2(InvalidURL, Data)";
 _req.InitializePatch2(_invalidurl,_data);
  };
@@ -385,7 +387,7 @@ _req.InitializePost2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 68;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913107205",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916121861",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 69;BA.debugLine="req.InitializePost2(InvalidURL, Data)";
 _req.InitializePost2(_invalidurl,_data);
  };
@@ -406,7 +408,7 @@ _length = 0;
  //BA.debugLineNum = 197;BA.debugLine="If Dir = File.DirAssets Then";
 if ((_dir).equals(__c.File.getDirAssets())) { 
  //BA.debugLineNum = 198;BA.debugLine="Log(\"Cannot send files from the assets folder.\")";
-__c.LogImpl("913631496","Cannot send files from the assets folder.",0);
+__c.LogImpl("916646152","Cannot send files from the assets folder.",0);
  //BA.debugLineNum = 199;BA.debugLine="Return";
 if (true) return "";
  };
@@ -543,7 +545,7 @@ _req.InitializePut2(_link,_data);
  } 
        catch (Exception e5) {
 			ba.setLastException(e5); //BA.debugLineNum = 85;BA.debugLine="Log($\"Invalid link: ${Link}\"$)";
-__c.LogImpl("913238277",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
+__c.LogImpl("916252933",("Invalid link: "+__c.SmartStringFormatter("",(Object)(_link))+""),0);
  //BA.debugLineNum = 86;BA.debugLine="req.InitializePut2(InvalidURL, Data)";
 _req.InitializePut2(_invalidurl,_data);
  };

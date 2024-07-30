@@ -39,9 +39,11 @@ public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 public static class _camerainfoandid{
 public boolean IsInitialized;
@@ -77,7 +79,7 @@ if (_success) {
 _takepicture();
  }else {
  //BA.debugLineNum = 293;BA.debugLine="Log(\"AutoFocus error.\")";
-__c.LogImpl("610092548","AutoFocus error.",0);
+__c.LogImpl("112910596","AutoFocus error.",0);
  };
  //BA.debugLineNum = 295;BA.debugLine="End Sub";
 return "";
@@ -115,7 +117,7 @@ _parameters = _r.RunMethod("getParameters");
 _setdisplayorientation();
  }else {
  //BA.debugLineNum = 89;BA.debugLine="Log(\"success = false, \" & LastException)";
-__c.LogImpl("68192008","success = false, "+BA.ObjectToString(__c.LastException(ba)),0);
+__c.LogImpl("111010056","success = false, "+BA.ObjectToString(__c.LastException(ba)),0);
  };
  //BA.debugLineNum = 91;BA.debugLine="CallSub2(target, event & \"_ready\", Success)";
 __c.CallSubNew2(ba,_target,_event+"_ready",(Object)(_success));
@@ -168,7 +170,7 @@ _r.RunMethod4("setParameters",new Object[]{_parameters},new String[]{"android.ha
 			ba.setLastException(e5); //BA.debugLineNum = 141;BA.debugLine="ToastMessageShow(\"Error setting parameters.\", Tr";
 __c.ToastMessageShow(BA.ObjectToCharSequence("Error setting parameters."),__c.True);
  //BA.debugLineNum = 142;BA.debugLine="Log(LastException)";
-__c.LogImpl("68847366",BA.ObjectToString(__c.LastException(ba)),0);
+__c.LogImpl("111665414",BA.ObjectToString(__c.LastException(ba)),0);
  };
  //BA.debugLineNum = 144;BA.debugLine="End Sub";
 return "";
@@ -503,7 +505,7 @@ _setfocusmode("continuous-picture");
 _setfocusmode("continuous-video");
  }else {
  //BA.debugLineNum = 263;BA.debugLine="Log(\"Continuous focus mode is not availabl";
-__c.LogImpl("69764871","Continuous focus mode is not available",0);
+__c.LogImpl("112582919","Continuous focus mode is not available",0);
  };
  //BA.debugLineNum = 265;BA.debugLine="End Sub";
 return "";
@@ -547,7 +549,7 @@ _previewresult = (int) ((_orientation-_degrees+360)%360);
  //BA.debugLineNum = 71;BA.debugLine="result = previewResult";
 _result = _previewresult;
  //BA.debugLineNum = 72;BA.debugLine="Log(previewResult)";
-__c.LogImpl("68126480",BA.NumberToString(_previewresult),0);
+__c.LogImpl("110944528",BA.NumberToString(_previewresult),0);
  };
  //BA.debugLineNum = 74;BA.debugLine="r.target = nativeCam";
 _r.Target = _nativecam;

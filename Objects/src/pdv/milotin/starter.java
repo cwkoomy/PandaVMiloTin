@@ -138,6 +138,8 @@ public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
  //BA.debugLineNum = 27;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";

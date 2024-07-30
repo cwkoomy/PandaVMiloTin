@@ -385,9 +385,11 @@ public pdv.milotin.sendfundmd _sendfundmd = null;
 public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -429,25 +431,21 @@ public static String  _activity_resume() throws Exception{
 return "";
 }
 public static String  _btnclose_click() throws Exception{
- //BA.debugLineNum = 171;BA.debugLine="Private Sub btnClose_Click";
- //BA.debugLineNum = 173;BA.debugLine="If kvs.Get(\"Status\") = \"success\" Then";
+ //BA.debugLineNum = 169;BA.debugLine="Private Sub btnClose_Click";
+ //BA.debugLineNum = 171;BA.debugLine="If kvs.Get(\"Status\") = \"success\" Then";
 if ((mostCurrent._kvs._get("Status")).equals((Object)("success"))) { 
- //BA.debugLineNum = 174;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 172;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else {
- //BA.debugLineNum = 176;BA.debugLine="pnStatus.Visible = False";
+ //BA.debugLineNum = 174;BA.debugLine="pnStatus.Visible = False";
 mostCurrent._pnstatus.setVisible(anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 178;BA.debugLine="End Sub";
+ //BA.debugLineNum = 176;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnprojectsubmit_click() throws Exception{
- //BA.debugLineNum = 166;BA.debugLine="Private Sub btnProjectSubmit_Click";
- //BA.debugLineNum = 167;BA.debugLine="PostAudit";
-_postaudit();
- //BA.debugLineNum = 168;BA.debugLine="pnBlackTransparent.Visible = True";
-mostCurrent._pnblacktransparent.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 169;BA.debugLine="End Sub";
+ //BA.debugLineNum = 164;BA.debugLine="Private Sub btnProjectSubmit_Click";
+ //BA.debugLineNum = 167;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -539,6 +537,13 @@ mostCurrent._imgclose2 = new anywheresoftware.b4a.objects.ImageViewWrapper();
  //BA.debugLineNum = 58;BA.debugLine="End Sub";
 return "";
 }
+public static String  _imgback_click() throws Exception{
+ //BA.debugLineNum = 178;BA.debugLine="Private Sub imgBack_Click";
+ //BA.debugLineNum = 179;BA.debugLine="Activity.Finish";
+mostCurrent._activity.Finish();
+ //BA.debugLineNum = 180;BA.debugLine="End Sub";
+return "";
+}
 public static String  _jobdone(pdv.milotin.httpjob _job) throws Exception{
 String _jsonstring = "";
 anywheresoftware.b4a.objects.collections.JSONParser _parser = null;
@@ -550,71 +555,71 @@ int _nonce = 0;
 String _from = "";
 String _responsestatus = "";
 anywheresoftware.b4a.objects.collections.Map _receipt = null;
- //BA.debugLineNum = 117;BA.debugLine="Sub JobDone(Job As HttpJob)";
- //BA.debugLineNum = 118;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 115;BA.debugLine="Sub JobDone(Job As HttpJob)";
+ //BA.debugLineNum = 116;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 120;BA.debugLine="If Job.Success Then";
+ //BA.debugLineNum = 118;BA.debugLine="If Job.Success Then";
 if (_job._success /*boolean*/ ) { 
- //BA.debugLineNum = 121;BA.debugLine="Dim jsonString As String = Job.GetString";
+ //BA.debugLineNum = 119;BA.debugLine="Dim jsonString As String = Job.GetString";
 _jsonstring = _job._getstring /*String*/ ();
- //BA.debugLineNum = 122;BA.debugLine="Log(jsonString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963781",_jsonstring,0);
- //BA.debugLineNum = 124;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 120;BA.debugLine="Log(jsonString)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553605",_jsonstring,0);
+ //BA.debugLineNum = 122;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 125;BA.debugLine="parser.Initialize(jsonString)";
+ //BA.debugLineNum = 123;BA.debugLine="parser.Initialize(jsonString)";
 _parser.Initialize(_jsonstring);
- //BA.debugLineNum = 127;BA.debugLine="If Job.JobName = \"PostAuditProject\" Then";
+ //BA.debugLineNum = 125;BA.debugLine="If Job.JobName = \"PostAuditProject\" Then";
 if ((_job._jobname /*String*/ ).equals("PostAuditProject")) { 
- //BA.debugLineNum = 128;BA.debugLine="Dim root As Map = parser.NextObject";
+ //BA.debugLineNum = 126;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
- //BA.debugLineNum = 129;BA.debugLine="Dim status As Int = root.Get(\"status\")";
+ //BA.debugLineNum = 127;BA.debugLine="Dim status As Int = root.Get(\"status\")";
 _status = (int)(BA.ObjectToNumber(_root.Get((Object)("status"))));
- //BA.debugLineNum = 130;BA.debugLine="Dim result As Map = root.Get(\"result\")";
+ //BA.debugLineNum = 128;BA.debugLine="Dim result As Map = root.Get(\"result\")";
 _result = new anywheresoftware.b4a.objects.collections.Map();
 _result = (anywheresoftware.b4a.objects.collections.Map) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.Map(), (java.util.Map)(_root.Get((Object)("result"))));
- //BA.debugLineNum = 132;BA.debugLine="If status = 200 Then";
+ //BA.debugLineNum = 130;BA.debugLine="If status = 200 Then";
 if (_status==200) { 
- //BA.debugLineNum = 133;BA.debugLine="Dim transactionHash As String = result.Get(\"tr";
+ //BA.debugLineNum = 131;BA.debugLine="Dim transactionHash As String = result.Get(\"tr";
 _transactionhash = BA.ObjectToString(_result.Get((Object)("transactionHash")));
- //BA.debugLineNum = 134;BA.debugLine="Dim nonce As Int = result.Get(\"nonce\")";
+ //BA.debugLineNum = 132;BA.debugLine="Dim nonce As Int = result.Get(\"nonce\")";
 _nonce = (int)(BA.ObjectToNumber(_result.Get((Object)("nonce"))));
- //BA.debugLineNum = 135;BA.debugLine="Dim from As String = result.Get(\"from\")";
+ //BA.debugLineNum = 133;BA.debugLine="Dim from As String = result.Get(\"from\")";
 _from = BA.ObjectToString(_result.Get((Object)("from")));
- //BA.debugLineNum = 136;BA.debugLine="Dim responseStatus As String = result.Get(\"sta";
+ //BA.debugLineNum = 134;BA.debugLine="Dim responseStatus As String = result.Get(\"sta";
 _responsestatus = BA.ObjectToString(_result.Get((Object)("status")));
- //BA.debugLineNum = 137;BA.debugLine="Dim receipt As Map = result.Get(\"receipt\")";
+ //BA.debugLineNum = 135;BA.debugLine="Dim receipt As Map = result.Get(\"receipt\")";
 _receipt = new anywheresoftware.b4a.objects.collections.Map();
 _receipt = (anywheresoftware.b4a.objects.collections.Map) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.Map(), (java.util.Map)(_result.Get((Object)("receipt"))));
- //BA.debugLineNum = 140;BA.debugLine="Log(\"Transaction Hash: \" & transactionHash)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963799","Transaction Hash: "+_transactionhash,0);
- //BA.debugLineNum = 141;BA.debugLine="Log(\"Nonce: \" & nonce)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963800","Nonce: "+BA.NumberToString(_nonce),0);
- //BA.debugLineNum = 142;BA.debugLine="Log(\"From: \" & from)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963801","From: "+_from,0);
- //BA.debugLineNum = 143;BA.debugLine="Log(\"Status: \" & responseStatus)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963802","Status: "+_responsestatus,0);
- //BA.debugLineNum = 144;BA.debugLine="Log(\"Receipt: \" & receipt)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963803","Receipt: "+BA.ObjectToString(_receipt),0);
- //BA.debugLineNum = 145;BA.debugLine="pnBlackTransparent.Visible = True";
+ //BA.debugLineNum = 138;BA.debugLine="Log(\"Transaction Hash: \" & transactionHash)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553623","Transaction Hash: "+_transactionhash,0);
+ //BA.debugLineNum = 139;BA.debugLine="Log(\"Nonce: \" & nonce)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553624","Nonce: "+BA.NumberToString(_nonce),0);
+ //BA.debugLineNum = 140;BA.debugLine="Log(\"From: \" & from)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553625","From: "+_from,0);
+ //BA.debugLineNum = 141;BA.debugLine="Log(\"Status: \" & responseStatus)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553626","Status: "+_responsestatus,0);
+ //BA.debugLineNum = 142;BA.debugLine="Log(\"Receipt: \" & receipt)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553627","Receipt: "+BA.ObjectToString(_receipt),0);
+ //BA.debugLineNum = 143;BA.debugLine="pnBlackTransparent.Visible = True";
 mostCurrent._pnblacktransparent.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 146;BA.debugLine="pnStatus.Visible = True";
+ //BA.debugLineNum = 144;BA.debugLine="pnStatus.Visible = True";
 mostCurrent._pnstatus.setVisible(anywheresoftware.b4a.keywords.Common.True);
  }else {
- //BA.debugLineNum = 150;BA.debugLine="Log(\"Failed to post the job\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963809","Failed to post the job",0);
+ //BA.debugLineNum = 148;BA.debugLine="Log(\"Failed to post the job\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553633","Failed to post the job",0);
  };
  }else {
- //BA.debugLineNum = 154;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963813","Error: "+_job._errormessage /*String*/ ,0);
+ //BA.debugLineNum = 152;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553637","Error: "+_job._errormessage /*String*/ ,0);
  };
  }else {
- //BA.debugLineNum = 158;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65963817","Error: "+_job._errormessage /*String*/ ,0);
+ //BA.debugLineNum = 156;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+anywheresoftware.b4a.keywords.Common.LogImpl("16553641","Error: "+_job._errormessage /*String*/ ,0);
  };
- //BA.debugLineNum = 162;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 160;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 163;BA.debugLine="End Sub";
+ //BA.debugLineNum = 161;BA.debugLine="End Sub";
 return "";
 }
 public static String  _postaudit() throws Exception{

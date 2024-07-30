@@ -379,9 +379,11 @@ public pdv.milotin.sendfundmd _sendfundmd = null;
 public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -472,7 +474,7 @@ _pnl = (anywheresoftware.b4a.objects.B4XViewWrapper) anywheresoftware.b4a.AbsObj
 _imgdisfund = new anywheresoftware.b4a.objects.B4XViewWrapper();
 _imgdisfund = _pnl.GetView((int) (5));
  //BA.debugLineNum = 265;BA.debugLine="Log(\"imgDisFund.Tag :\" & imgDisFund.Tag)";
-anywheresoftware.b4a.keywords.Common.LogImpl("615138820","imgDisFund.Tag :"+BA.ObjectToString(_imgdisfund.getTag()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("15963780","imgDisFund.Tag :"+BA.ObjectToString(_imgdisfund.getTag()),0);
  //BA.debugLineNum = 266;BA.debugLine="kvs.Put(\"AuditTransactionHash\",imgDisFund.Tag)";
 mostCurrent._kvs._put("AuditTransactionHash",_imgdisfund.getTag());
  //BA.debugLineNum = 269;BA.debugLine="StartActivity(\"AddAllocateMd\")";
@@ -510,7 +512,7 @@ mostCurrent._lblprojecttitle2.setText(BA.ObjectToCharSequence(_strproject));
  //BA.debugLineNum = 178;BA.debugLine="lblProjectFund2.Text = \"RM \" & NumberFormat2(strF";
 mostCurrent._lblprojectfund2.setText(BA.ObjectToCharSequence("RM "+anywheresoftware.b4a.keywords.Common.NumberFormat2((double)(Double.parseDouble(_strfund)),(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True)));
  //BA.debugLineNum = 179;BA.debugLine="Log(StrProgress)";
-anywheresoftware.b4a.keywords.Common.LogImpl("65046283",_strprogress,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("15439499",_strprogress,0);
  //BA.debugLineNum = 180;BA.debugLine="If StrProgress = Null Or StrProgress = \"null\" The";
 if (_strprogress== null || (_strprogress).equals("null")) { 
  //BA.debugLineNum = 181;BA.debugLine="lblProjectProgress2.TextColor = Colors.RGB(5,206";
@@ -663,7 +665,7 @@ if (_job._success /*boolean*/ ) {
  //BA.debugLineNum = 100;BA.debugLine="Dim jsonString As String = Job.GetString";
 _jsonstring = _job._getstring /*String*/ ();
  //BA.debugLineNum = 101;BA.debugLine="Log(jsonString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64980743",_jsonstring,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("15373959",_jsonstring,0);
  //BA.debugLineNum = 103;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
  //BA.debugLineNum = 104;BA.debugLine="parser.Initialize(jsonString)";
@@ -681,7 +683,7 @@ _results = (anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.
  //BA.debugLineNum = 112;BA.debugLine="Dim numberOfItems As Int = results.Size";
 _numberofitems = _results.getSize();
  //BA.debugLineNum = 113;BA.debugLine="Log(\"Number of items in result: \" & numberOfIte";
-anywheresoftware.b4a.keywords.Common.LogImpl("64980755","Number of items in result: "+BA.NumberToString(_numberofitems),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("15373971","Number of items in result: "+BA.NumberToString(_numberofitems),0);
  //BA.debugLineNum = 114;BA.debugLine="Dim totalFund As Double = 0 ' Initialize total";
 _totalfund = 0;
  //BA.debugLineNum = 115;BA.debugLine="For Each result As Map In results";
@@ -709,7 +711,7 @@ _fund = (double)(BA.ObjectToNumber(_metadata.Get((Object)("fund"))));
  //BA.debugLineNum = 125;BA.debugLine="totalFund = totalFund + fund";
 _totalfund = _totalfund+_fund;
  //BA.debugLineNum = 129;BA.debugLine="Log(totalFund)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64980771",BA.NumberToString(_totalfund),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("15373987",BA.NumberToString(_totalfund),0);
  //BA.debugLineNum = 131;BA.debugLine="clvFundList.Add(CreateListItem(result.Get(\"id\"";
 mostCurrent._clvfundlist._add /*String*/ (_createlistitem(BA.ObjectToString(_result.Get((Object)("id"))),BA.ObjectToString(_metadata.Get((Object)("project"))),BA.ObjectToString(_metadata.Get((Object)("fund"))),BA.ObjectToString(_metadata.Get((Object)("progress"))),BA.ObjectToString(_metadata.Get((Object)("project_wallet"))),BA.ObjectToString(_result.Get((Object)("transactionHash"))),BA.ObjectToString(_metadata.Get((Object)("status"))),mostCurrent._clvfundlist._asview /*anywheresoftware.b4a.objects.ConcreteViewWrapper*/ ().getWidth(),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (55))),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (80)),_result.Get((Object)("transactionHash")));
  //BA.debugLineNum = 132;BA.debugLine="Dim gd As GradientDrawable";
@@ -734,11 +736,11 @@ _amount = 0;
 _amount = (double)(Double.parseDouble(_stramount));
  }else {
  //BA.debugLineNum = 155;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64980797","Error: "+_job._errormessage /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("15374013","Error: "+_job._errormessage /*String*/ ,0);
  };
  }else {
  //BA.debugLineNum = 160;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("64980802","Error: "+_job._errormessage /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("15374018","Error: "+_job._errormessage /*String*/ ,0);
  };
  //BA.debugLineNum = 164;BA.debugLine="Job.Release";
 _job._release /*String*/ ();

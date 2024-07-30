@@ -45,9 +45,11 @@ public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 public String  _add(anywheresoftware.b4a.objects.PanelWrapper _pnl,int _itemheight,Object _value) throws Exception{
  //BA.debugLineNum = 184;BA.debugLine="Public Sub Add(Pnl As Panel, ItemHeight As Int, Va";

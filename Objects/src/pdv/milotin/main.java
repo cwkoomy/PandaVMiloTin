@@ -372,9 +372,11 @@ public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 
 public static boolean isAnyActivityVisible() {
@@ -388,6 +390,8 @@ vis = vis | (fundmd.mostCurrent != null);
 vis = vis | (addprojectmd.mostCurrent != null);
 vis = vis | (addallocatemd.mostCurrent != null);
 vis = vis | (viewallocatemd.mostCurrent != null);
+vis = vis | (kyc1md.mostCurrent != null);
+vis = vis | (certmd.mostCurrent != null);
 return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 52;BA.debugLine="Sub	 Activity_Create(FirstTime As Boolean)";
@@ -548,6 +552,13 @@ _getwallet();
  //BA.debugLineNum = 223;BA.debugLine="End Sub";
 return "";
 }
+public static String  _btnregister_click() throws Exception{
+ //BA.debugLineNum = 254;BA.debugLine="Private Sub btnRegister_Click";
+ //BA.debugLineNum = 255;BA.debugLine="StartActivity(\"KYC1Md\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("KYC1Md"));
+ //BA.debugLineNum = 256;BA.debugLine="End Sub";
+return "";
+}
 public static String  _getwallet() throws Exception{
 pdv.milotin.httpjob _jobgetwallet = null;
 String _address = "";
@@ -628,7 +639,7 @@ if (_job._success /*boolean*/ ==anywheresoftware.b4a.keywords.Common.True) {
  //BA.debugLineNum = 136;BA.debugLine="Dim jsonString As String = job.GetString";
 _jsonstring = _job._getstring /*String*/ ();
  //BA.debugLineNum = 137;BA.debugLine="Log(jsonString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("6327686",_jsonstring,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("1327686",_jsonstring,0);
  //BA.debugLineNum = 139;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
  //BA.debugLineNum = 140;BA.debugLine="parser.Initialize(jsonString)";
@@ -675,9 +686,11 @@ usermd._process_globals();
 historymd._process_globals();
 fundmd._process_globals();
 addprojectmd._process_globals();
-starter._process_globals();
 addallocatemd._process_globals();
 viewallocatemd._process_globals();
+kyc1md._process_globals();
+certmd._process_globals();
+starter._process_globals();
 httputils2service._process_globals();
 		
         } catch (Exception e) {

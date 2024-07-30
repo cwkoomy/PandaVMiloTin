@@ -398,8 +398,10 @@ public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -643,7 +645,7 @@ if (_job._success /*boolean*/ ) {
  //BA.debugLineNum = 118;BA.debugLine="Dim jsonString As String = Job.GetString";
 _jsonstring = _job._getstring /*String*/ ();
  //BA.debugLineNum = 119;BA.debugLine="Log(jsonString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("615794183",_jsonstring,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("18585223",_jsonstring,0);
  //BA.debugLineNum = 121;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
  //BA.debugLineNum = 122;BA.debugLine="parser.Initialize(jsonString)";
@@ -661,7 +663,7 @@ _results = (anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.
  //BA.debugLineNum = 130;BA.debugLine="Dim numberOfItems As Int = results.Size";
 _numberofitems = _results.getSize();
  //BA.debugLineNum = 131;BA.debugLine="Log(\"Number of items in result: \" & numberOfIte";
-anywheresoftware.b4a.keywords.Common.LogImpl("615794195","Number of items in result: "+BA.NumberToString(_numberofitems),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("18585235","Number of items in result: "+BA.NumberToString(_numberofitems),0);
  //BA.debugLineNum = 133;BA.debugLine="For Each result As Map In results";
 _result = new anywheresoftware.b4a.objects.collections.Map();
 {
@@ -704,11 +706,11 @@ _amount = 0;
 _amount = (double)(Double.parseDouble(_stramount));
  }else {
  //BA.debugLineNum = 173;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("615794237","Error: "+_job._errormessage /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("18585277","Error: "+_job._errormessage /*String*/ ,0);
  };
  }else {
  //BA.debugLineNum = 178;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("615794242","Error: "+_job._errormessage /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("18585282","Error: "+_job._errormessage /*String*/ ,0);
  };
  //BA.debugLineNum = 182;BA.debugLine="Job.Release";
 _job._release /*String*/ ();

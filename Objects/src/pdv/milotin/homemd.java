@@ -379,9 +379,11 @@ public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -484,7 +486,7 @@ public static String  _clvhome_itemclick(int _index,Object _value) throws Except
  //BA.debugLineNum = 256;BA.debugLine="kvs.Put(\"AuditTransactionHash\",Value)";
 mostCurrent._kvs._put("AuditTransactionHash",_value);
  //BA.debugLineNum = 258;BA.debugLine="Log(kvs.Get(\"AuditTransactionHash\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("61245188",BA.ObjectToString(mostCurrent._kvs._get("AuditTransactionHash")),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11310724",BA.ObjectToString(mostCurrent._kvs._get("AuditTransactionHash")),0);
  //BA.debugLineNum = 259;BA.debugLine="StartActivity(\"SendFundMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("SendFundMd"));
  //BA.debugLineNum = 261;BA.debugLine="End Sub";
@@ -508,7 +510,7 @@ mostCurrent._lblprojecttitle2.setText(BA.ObjectToCharSequence(_strproject));
  //BA.debugLineNum = 230;BA.debugLine="lblProjectFund2.Text = \"RM \" & NumberFormat2(str";
 mostCurrent._lblprojectfund2.setText(BA.ObjectToCharSequence("RM "+anywheresoftware.b4a.keywords.Common.NumberFormat2((double)(Double.parseDouble(_strfund)),(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True)));
  //BA.debugLineNum = 231;BA.debugLine="Log(StrProgress)";
-anywheresoftware.b4a.keywords.Common.LogImpl("61179659",_strprogress,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11245195",_strprogress,0);
  //BA.debugLineNum = 232;BA.debugLine="If StrProgress = Null Or StrProgress = \"null\" The";
 if (_strprogress== null || (_strprogress).equals("null")) { 
  //BA.debugLineNum = 233;BA.debugLine="lblProjectProgress2.TextColor = Colors.RGB(5,206";
@@ -674,6 +676,13 @@ mostCurrent._btnadd = new anywheresoftware.b4a.objects.ButtonWrapper();
  //BA.debugLineNum = 59;BA.debugLine="End Sub";
 return "";
 }
+public static String  _imgadd_click() throws Exception{
+ //BA.debugLineNum = 330;BA.debugLine="Private Sub imgAdd_Click";
+ //BA.debugLineNum = 331;BA.debugLine="StartActivity(\"AddProjectMd\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("AddProjectMd"));
+ //BA.debugLineNum = 332;BA.debugLine="End Sub";
+return "";
+}
 public static String  _imgmenu_click() throws Exception{
  //BA.debugLineNum = 306;BA.debugLine="Private Sub imgMenu_Click";
  //BA.debugLineNum = 308;BA.debugLine="End Sub";
@@ -702,7 +711,7 @@ if (_job._success /*boolean*/ ) {
  //BA.debugLineNum = 152;BA.debugLine="Dim jsonString As String = Job.GetString";
 _jsonstring = _job._getstring /*String*/ ();
  //BA.debugLineNum = 153;BA.debugLine="Log(jsonString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("61114119",_jsonstring,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11179655",_jsonstring,0);
  //BA.debugLineNum = 155;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
  //BA.debugLineNum = 156;BA.debugLine="parser.Initialize(jsonString)";
@@ -720,7 +729,7 @@ _results = (anywheresoftware.b4a.objects.collections.List) anywheresoftware.b4a.
  //BA.debugLineNum = 164;BA.debugLine="Dim numberOfItems As Int = results.Size";
 _numberofitems = _results.getSize();
  //BA.debugLineNum = 165;BA.debugLine="Log(\"Number of items in result: \" & numberOfIte";
-anywheresoftware.b4a.keywords.Common.LogImpl("61114131","Number of items in result: "+BA.NumberToString(_numberofitems),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11179667","Number of items in result: "+BA.NumberToString(_numberofitems),0);
  //BA.debugLineNum = 166;BA.debugLine="Dim totalFund As Double = 0 ' Initialize total";
 _totalfund = 0;
  //BA.debugLineNum = 167;BA.debugLine="For Each result As Map In results";
@@ -752,7 +761,7 @@ mostCurrent._lbltotal.setText(BA.ObjectToCharSequence(_root.Get((Object)("result
  //BA.debugLineNum = 180;BA.debugLine="lblAmount.Text = \"RM \" & NumberFormat2(totalFu";
 mostCurrent._lblamount.setText(BA.ObjectToCharSequence("RM "+anywheresoftware.b4a.keywords.Common.NumberFormat2(_totalfund,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True)));
  //BA.debugLineNum = 181;BA.debugLine="Log(totalFund)";
-anywheresoftware.b4a.keywords.Common.LogImpl("61114147",BA.NumberToString(_totalfund),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11179683",BA.NumberToString(_totalfund),0);
  //BA.debugLineNum = 183;BA.debugLine="clvHome.Add(CreateListItem(result.Get(\"id\"),me";
 mostCurrent._clvhome._add /*String*/ (_createlistitem(BA.ObjectToString(_result.Get((Object)("id"))),BA.ObjectToString(_metadata.Get((Object)("project"))),BA.ObjectToString(_metadata.Get((Object)("fund"))),BA.ObjectToString(_metadata.Get((Object)("progress"))),BA.ObjectToString(_metadata.Get((Object)("project_wallet"))),BA.ObjectToString(_metadata.Get((Object)("status"))),mostCurrent._clvhome._asview /*anywheresoftware.b4a.objects.ConcreteViewWrapper*/ ().getWidth(),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (55))),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (80)),_result.Get((Object)("transactionHash")));
  //BA.debugLineNum = 184;BA.debugLine="Dim gd As GradientDrawable";
@@ -781,11 +790,11 @@ _amount = 0;
 _amount = (double)(Double.parseDouble(_stramount));
  }else {
  //BA.debugLineNum = 207;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("61114173","Error: "+_job._errormessage /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11179709","Error: "+_job._errormessage /*String*/ ,0);
  };
  }else {
  //BA.debugLineNum = 212;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("61114178","Error: "+_job._errormessage /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("11179714","Error: "+_job._errormessage /*String*/ ,0);
  };
  //BA.debugLineNum = 216;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
@@ -799,6 +808,13 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("FundMd"))
  //BA.debugLineNum = 295;BA.debugLine="End Sub";
 return "";
 }
+public static String  _lblfund2_click() throws Exception{
+ //BA.debugLineNum = 318;BA.debugLine="Private Sub lblFund2_Click";
+ //BA.debugLineNum = 319;BA.debugLine="StartActivity(\"FundMd\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("FundMd"));
+ //BA.debugLineNum = 320;BA.debugLine="End Sub";
+return "";
+}
 public static String  _lblhistory_click() throws Exception{
  //BA.debugLineNum = 297;BA.debugLine="Private Sub lblHistory_Click";
  //BA.debugLineNum = 298;BA.debugLine="StartActivity(\"HistoryMd\")";
@@ -806,11 +822,30 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HistoryMd
  //BA.debugLineNum = 299;BA.debugLine="End Sub";
 return "";
 }
+public static String  _lblhistory2_click() throws Exception{
+ //BA.debugLineNum = 322;BA.debugLine="Private Sub lblHistory2_Click";
+ //BA.debugLineNum = 323;BA.debugLine="StartActivity(\"HistoryMd\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HistoryMd"));
+ //BA.debugLineNum = 324;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lblhome2_click() throws Exception{
+ //BA.debugLineNum = 314;BA.debugLine="Private Sub lblHome2_Click";
+ //BA.debugLineNum = 316;BA.debugLine="End Sub";
+return "";
+}
 public static String  _lbluser_click() throws Exception{
  //BA.debugLineNum = 301;BA.debugLine="Private Sub lblUser_Click";
  //BA.debugLineNum = 302;BA.debugLine="StartActivity(\"UserMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("UserMd"));
  //BA.debugLineNum = 304;BA.debugLine="End Sub";
+return "";
+}
+public static String  _lbluser2_click() throws Exception{
+ //BA.debugLineNum = 326;BA.debugLine="Private Sub lblUser2_Click";
+ //BA.debugLineNum = 327;BA.debugLine="StartActivity(\"UserMd\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("UserMd"));
+ //BA.debugLineNum = 328;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{

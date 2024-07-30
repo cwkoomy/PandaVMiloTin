@@ -316,3 +316,23 @@ End Sub
 Private Sub btnAdd_Click
 	StartActivity("AddProjectMd")
 End Sub
+
+Private Sub lblHome2_Click
+	
+End Sub
+
+Private Sub lblFund2_Click
+	StartActivity("FundMd")
+End Sub
+
+Private Sub lblHistory2_Click
+	StartActivity("HistoryMd")
+End Sub
+
+Private Sub lblUser2_Click
+	StartActivity("UserMd")
+End Sub
+
+Private Sub imgAdd_Click
+	StartActivity("AddProjectMd")
+End Sub

@@ -380,6 +380,9 @@ public anywheresoftware.b4a.objects.ImageViewWrapper _imgemail = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imgfullname = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imgedit = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imgsave = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lblcertificate = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _btncertificate = null;
+public anywheresoftware.b4a.objects.ImageViewWrapper _imgkyc = null;
 public b4a.example.dateutils _dateutils = null;
 public pdv.milotin.main _main = null;
 public pdv.milotin.homemd _homemd = null;
@@ -387,9 +390,11 @@ public pdv.milotin.sendfundmd _sendfundmd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -400,54 +405,43 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 62;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 64;BA.debugLine="Activity.LoadLayout(\"UserLy\")";
+ //BA.debugLineNum = 65;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 67;BA.debugLine="Activity.LoadLayout(\"UserLy\")";
 mostCurrent._activity.LoadLayout("UserLy",mostCurrent.activityBA);
- //BA.debugLineNum = 66;BA.debugLine="shared = rp.GetSafeDirDefaultExternal(\"\")";
+ //BA.debugLineNum = 69;BA.debugLine="shared = rp.GetSafeDirDefaultExternal(\"\")";
 mostCurrent._shared = mostCurrent._rp.GetSafeDirDefaultExternal("");
- //BA.debugLineNum = 67;BA.debugLine="kvs.Initialize(shared, \"Userdatastore\")";
+ //BA.debugLineNum = 70;BA.debugLine="kvs.Initialize(shared, \"Userdatastore\")";
 mostCurrent._kvs._initialize(processBA,mostCurrent._shared,"Userdatastore");
- //BA.debugLineNum = 68;BA.debugLine="qr.Initialize";
+ //BA.debugLineNum = 71;BA.debugLine="qr.Initialize";
 mostCurrent._qr._initialize /*String*/ (processBA);
- //BA.debugLineNum = 70;BA.debugLine="If File.Exists(File.DirDefaultExternal ,\"db.db\")";
+ //BA.debugLineNum = 73;BA.debugLine="If File.Exists(File.DirDefaultExternal ,\"db.db\")";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db")==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 71;BA.debugLine="File.Copy(File.DirAssets,\"db.db\",File.DirDefault";
+ //BA.debugLineNum = 74;BA.debugLine="File.Copy(File.DirAssets,\"db.db\",File.DirDefault";
 anywheresoftware.b4a.keywords.Common.File.Copy(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"db.db",anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db");
  };
- //BA.debugLineNum = 74;BA.debugLine="If SQL1.IsInitialized = False Then";
+ //BA.debugLineNum = 77;BA.debugLine="If SQL1.IsInitialized = False Then";
 if (mostCurrent._sql1.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 75;BA.debugLine="SQL1.Initialize(File.DirDefaultExternal, \"db.db\"";
+ //BA.debugLineNum = 78;BA.debugLine="SQL1.Initialize(File.DirDefaultExternal, \"db.db\"";
 mostCurrent._sql1.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db",anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 78;BA.debugLine="GenerateQR";
-_generateqr();
- //BA.debugLineNum = 80;BA.debugLine="End Sub";
+ //BA.debugLineNum = 83;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 86;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 88;BA.debugLine="End Sub";
+ //BA.debugLineNum = 89;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 91;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 82;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 84;BA.debugLine="End Sub";
+ //BA.debugLineNum = 85;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 87;BA.debugLine="End Sub";
 return "";
 }
-public static String  _generateqr() throws Exception{
-String _strqrcode = "";
- //BA.debugLineNum = 90;BA.debugLine="Sub GenerateQR";
- //BA.debugLineNum = 92;BA.debugLine="Dim strQRCode As String";
-_strqrcode = "";
- //BA.debugLineNum = 93;BA.debugLine="strQRCode = kvs.Get(\"WalletAddress\")";
-_strqrcode = BA.ObjectToString(mostCurrent._kvs._get("WalletAddress"));
- //BA.debugLineNum = 95;BA.debugLine="bmr = qr.drawQRCode(strQRCode)";
-mostCurrent._bmr = mostCurrent._qr._drawqrcode /*anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper*/ (_strqrcode);
- //BA.debugLineNum = 96;BA.debugLine="imgQR.Bitmap = bmr";
-mostCurrent._imgqr.setBitmap((android.graphics.Bitmap)(mostCurrent._bmr.getObject()));
- //BA.debugLineNum = 97;BA.debugLine="Log(strQRCode)";
-anywheresoftware.b4a.keywords.Common.LogImpl("63407879",_strqrcode,0);
- //BA.debugLineNum = 102;BA.debugLine="End Sub";
+public static String  _btncertificate_click() throws Exception{
+ //BA.debugLineNum = 186;BA.debugLine="Private Sub btnCertificate_Click";
+ //BA.debugLineNum = 187;BA.debugLine="StartActivity(\"CertMd\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("CertMd"));
+ //BA.debugLineNum = 189;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -540,43 +534,56 @@ mostCurrent._imgfullname = new anywheresoftware.b4a.objects.ImageViewWrapper();
 mostCurrent._imgedit = new anywheresoftware.b4a.objects.ImageViewWrapper();
  //BA.debugLineNum = 59;BA.debugLine="Private imgSave As ImageView";
 mostCurrent._imgsave = new anywheresoftware.b4a.objects.ImageViewWrapper();
- //BA.debugLineNum = 60;BA.debugLine="End Sub";
+ //BA.debugLineNum = 60;BA.debugLine="Private lblCertificate As Label";
+mostCurrent._lblcertificate = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 61;BA.debugLine="Private btnCertificate As Button";
+mostCurrent._btncertificate = new anywheresoftware.b4a.objects.ButtonWrapper();
+ //BA.debugLineNum = 62;BA.debugLine="Private imgKYC As ImageView";
+mostCurrent._imgkyc = new anywheresoftware.b4a.objects.ImageViewWrapper();
+ //BA.debugLineNum = 63;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgback_click() throws Exception{
- //BA.debugLineNum = 122;BA.debugLine="Private Sub imgBack_Click";
- //BA.debugLineNum = 123;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 125;BA.debugLine="Private Sub imgBack_Click";
+ //BA.debugLineNum = 126;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 124;BA.debugLine="End Sub";
+ //BA.debugLineNum = 127;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgedit_click() throws Exception{
- //BA.debugLineNum = 142;BA.debugLine="Private Sub imgEdit_Click";
- //BA.debugLineNum = 143;BA.debugLine="txtFullName.Enabled = True";
+ //BA.debugLineNum = 145;BA.debugLine="Private Sub imgEdit_Click";
+ //BA.debugLineNum = 146;BA.debugLine="txtFullName.Enabled = True";
 mostCurrent._txtfullname.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 144;BA.debugLine="txtEmail.Enabled = True";
+ //BA.debugLineNum = 147;BA.debugLine="txtEmail.Enabled = True";
 mostCurrent._txtemail.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 145;BA.debugLine="txtPassword.Enabled = True";
+ //BA.debugLineNum = 148;BA.debugLine="txtPassword.Enabled = True";
 mostCurrent._txtpassword.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 146;BA.debugLine="txtPhone.Enabled = True";
+ //BA.debugLineNum = 149;BA.debugLine="txtPhone.Enabled = True";
 mostCurrent._txtphone.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 147;BA.debugLine="txtFullName.TextColor = Colors.RGB(0,0,0)";
+ //BA.debugLineNum = 150;BA.debugLine="txtFullName.TextColor = Colors.RGB(0,0,0)";
 mostCurrent._txtfullname.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 148;BA.debugLine="txtEmail.TextColor = Colors.RGB(0,0,0)";
+ //BA.debugLineNum = 151;BA.debugLine="txtEmail.TextColor = Colors.RGB(0,0,0)";
 mostCurrent._txtemail.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 149;BA.debugLine="txtPassword.TextColor = Colors.RGB(0,0,0)";
+ //BA.debugLineNum = 152;BA.debugLine="txtPassword.TextColor = Colors.RGB(0,0,0)";
 mostCurrent._txtpassword.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 150;BA.debugLine="txtPhone.TextColor = Colors.RGB(0,0,0)";
+ //BA.debugLineNum = 153;BA.debugLine="txtPhone.TextColor = Colors.RGB(0,0,0)";
 mostCurrent._txtphone.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 151;BA.debugLine="imgSave.Visible = True";
+ //BA.debugLineNum = 154;BA.debugLine="imgSave.Visible = True";
 mostCurrent._imgsave.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 152;BA.debugLine="imgSave.Enabled = True";
+ //BA.debugLineNum = 155;BA.debugLine="imgSave.Enabled = True";
 mostCurrent._imgsave.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 153;BA.debugLine="imgEdit.Visible = False";
+ //BA.debugLineNum = 156;BA.debugLine="imgEdit.Visible = False";
 mostCurrent._imgedit.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 154;BA.debugLine="imgEdit.Enabled = False";
+ //BA.debugLineNum = 157;BA.debugLine="imgEdit.Enabled = False";
 mostCurrent._imgedit.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 155;BA.debugLine="End Sub";
+ //BA.debugLineNum = 158;BA.debugLine="End Sub";
+return "";
+}
+public static String  _imgkyc_click() throws Exception{
+ //BA.debugLineNum = 191;BA.debugLine="Private Sub imgKYC_Click";
+ //BA.debugLineNum = 192;BA.debugLine="StartActivity(\"KYC1Md\")";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("KYC1Md"));
+ //BA.debugLineNum = 193;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgsave_click() throws Exception{
@@ -584,80 +591,80 @@ String _strfullname = "";
 String _stremail = "";
 String _strpassword = "";
 String _strphone = "";
- //BA.debugLineNum = 157;BA.debugLine="Private Sub imgSave_Click";
- //BA.debugLineNum = 159;BA.debugLine="Dim strFullName As String = txtFullName.Text";
+ //BA.debugLineNum = 160;BA.debugLine="Private Sub imgSave_Click";
+ //BA.debugLineNum = 162;BA.debugLine="Dim strFullName As String = txtFullName.Text";
 _strfullname = mostCurrent._txtfullname.getText();
- //BA.debugLineNum = 160;BA.debugLine="txtFullName.Text = strFullName";
+ //BA.debugLineNum = 163;BA.debugLine="txtFullName.Text = strFullName";
 mostCurrent._txtfullname.setText(BA.ObjectToCharSequence(_strfullname));
- //BA.debugLineNum = 161;BA.debugLine="Dim strEmail As String = txtEmail.Text";
+ //BA.debugLineNum = 164;BA.debugLine="Dim strEmail As String = txtEmail.Text";
 _stremail = mostCurrent._txtemail.getText();
- //BA.debugLineNum = 162;BA.debugLine="txtEmail.Text = strEmail";
+ //BA.debugLineNum = 165;BA.debugLine="txtEmail.Text = strEmail";
 mostCurrent._txtemail.setText(BA.ObjectToCharSequence(_stremail));
- //BA.debugLineNum = 163;BA.debugLine="Dim strPassword As String = txtPassword.Text";
+ //BA.debugLineNum = 166;BA.debugLine="Dim strPassword As String = txtPassword.Text";
 _strpassword = mostCurrent._txtpassword.getText();
- //BA.debugLineNum = 164;BA.debugLine="txtPassword.Text = strPassword";
+ //BA.debugLineNum = 167;BA.debugLine="txtPassword.Text = strPassword";
 mostCurrent._txtpassword.setText(BA.ObjectToCharSequence(_strpassword));
- //BA.debugLineNum = 165;BA.debugLine="Dim strPhone As String = txtPhone.Text";
+ //BA.debugLineNum = 168;BA.debugLine="Dim strPhone As String = txtPhone.Text";
 _strphone = mostCurrent._txtphone.getText();
- //BA.debugLineNum = 166;BA.debugLine="txtPhone.Text = strPhone";
+ //BA.debugLineNum = 169;BA.debugLine="txtPhone.Text = strPhone";
 mostCurrent._txtphone.setText(BA.ObjectToCharSequence(_strphone));
- //BA.debugLineNum = 168;BA.debugLine="txtFullName.Enabled = False";
+ //BA.debugLineNum = 171;BA.debugLine="txtFullName.Enabled = False";
 mostCurrent._txtfullname.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 169;BA.debugLine="txtEmail.Enabled = False";
+ //BA.debugLineNum = 172;BA.debugLine="txtEmail.Enabled = False";
 mostCurrent._txtemail.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 170;BA.debugLine="txtPassword.Enabled = False";
+ //BA.debugLineNum = 173;BA.debugLine="txtPassword.Enabled = False";
 mostCurrent._txtpassword.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 171;BA.debugLine="txtPhone.Enabled = False";
+ //BA.debugLineNum = 174;BA.debugLine="txtPhone.Enabled = False";
 mostCurrent._txtphone.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 172;BA.debugLine="txtFullName.TextColor = Colors.RGB(149,149,149)";
+ //BA.debugLineNum = 175;BA.debugLine="txtFullName.TextColor = Colors.RGB(149,149,149)";
 mostCurrent._txtfullname.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
- //BA.debugLineNum = 173;BA.debugLine="txtEmail.TextColor = Colors.RGB(149,149,149)";
+ //BA.debugLineNum = 176;BA.debugLine="txtEmail.TextColor = Colors.RGB(149,149,149)";
 mostCurrent._txtemail.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
- //BA.debugLineNum = 174;BA.debugLine="txtPassword.TextColor = Colors.RGB(149,149,149)";
+ //BA.debugLineNum = 177;BA.debugLine="txtPassword.TextColor = Colors.RGB(149,149,149)";
 mostCurrent._txtpassword.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
- //BA.debugLineNum = 175;BA.debugLine="txtPhone.TextColor = Colors.RGB(149,149,149)";
+ //BA.debugLineNum = 178;BA.debugLine="txtPhone.TextColor = Colors.RGB(149,149,149)";
 mostCurrent._txtphone.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (149),(int) (149),(int) (149)));
- //BA.debugLineNum = 176;BA.debugLine="imgEdit.Visible = True";
+ //BA.debugLineNum = 179;BA.debugLine="imgEdit.Visible = True";
 mostCurrent._imgedit.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 177;BA.debugLine="imgEdit.Enabled = True";
+ //BA.debugLineNum = 180;BA.debugLine="imgEdit.Enabled = True";
 mostCurrent._imgedit.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 178;BA.debugLine="imgSave.Visible = False";
+ //BA.debugLineNum = 181;BA.debugLine="imgSave.Visible = False";
 mostCurrent._imgsave.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 179;BA.debugLine="imgSave.Enabled = False";
+ //BA.debugLineNum = 182;BA.debugLine="imgSave.Enabled = False";
 mostCurrent._imgsave.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 180;BA.debugLine="ToastMessageShow(\"Save Succesful!\", True)";
+ //BA.debugLineNum = 183;BA.debugLine="ToastMessageShow(\"Save Succesful!\", True)";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Save Succesful!"),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 181;BA.debugLine="End Sub";
+ //BA.debugLineNum = 184;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblfund_click() throws Exception{
- //BA.debugLineNum = 108;BA.debugLine="Private Sub lblFund_Click";
- //BA.debugLineNum = 109;BA.debugLine="StartActivity(\"FundMd\")";
+ //BA.debugLineNum = 111;BA.debugLine="Private Sub lblFund_Click";
+ //BA.debugLineNum = 112;BA.debugLine="StartActivity(\"FundMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("FundMd"));
- //BA.debugLineNum = 110;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 113;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
+ //BA.debugLineNum = 114;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhistory_click() throws Exception{
- //BA.debugLineNum = 113;BA.debugLine="Private Sub lblHistory_Click";
- //BA.debugLineNum = 114;BA.debugLine="StartActivity(\"HistoryMd\")";
+ //BA.debugLineNum = 116;BA.debugLine="Private Sub lblHistory_Click";
+ //BA.debugLineNum = 117;BA.debugLine="StartActivity(\"HistoryMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HistoryMd"));
- //BA.debugLineNum = 115;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 118;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 116;BA.debugLine="End Sub";
+ //BA.debugLineNum = 119;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhome_click() throws Exception{
- //BA.debugLineNum = 104;BA.debugLine="Private Sub lblHome_Click";
- //BA.debugLineNum = 105;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 107;BA.debugLine="Private Sub lblHome_Click";
+ //BA.debugLineNum = 108;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 106;BA.debugLine="End Sub";
+ //BA.debugLineNum = 109;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbluser_click() throws Exception{
- //BA.debugLineNum = 118;BA.debugLine="Private Sub lblUser_Click";
- //BA.debugLineNum = 120;BA.debugLine="End Sub";
+ //BA.debugLineNum = 121;BA.debugLine="Private Sub lblUser_Click";
+ //BA.debugLineNum = 123;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{

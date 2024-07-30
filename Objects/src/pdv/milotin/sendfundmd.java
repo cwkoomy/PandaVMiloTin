@@ -383,6 +383,7 @@ public anywheresoftware.b4a.objects.ImageViewWrapper _imgstatus = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblline3 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblstatus = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnclose = null;
+public anywheresoftware.b4a.objects.LabelWrapper _lbltransactionhash = null;
 public b4a.example.dateutils _dateutils = null;
 public pdv.milotin.main _main = null;
 public pdv.milotin.homemd _homemd = null;
@@ -390,9 +391,11 @@ public pdv.milotin.usermd _usermd = null;
 public pdv.milotin.historymd _historymd = null;
 public pdv.milotin.fundmd _fundmd = null;
 public pdv.milotin.addprojectmd _addprojectmd = null;
-public pdv.milotin.starter _starter = null;
 public pdv.milotin.addallocatemd _addallocatemd = null;
 public pdv.milotin.viewallocatemd _viewallocatemd = null;
+public pdv.milotin.kyc1md _kyc1md = null;
+public pdv.milotin.certmd _certmd = null;
+public pdv.milotin.starter _starter = null;
 public pdv.milotin.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
@@ -403,125 +406,138 @@ public static void initializeProcessGlobals() {
             }
 }
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 64;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 66;BA.debugLine="Activity.LoadLayout(\"SendFundLy\")";
+ //BA.debugLineNum = 65;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 67;BA.debugLine="Activity.LoadLayout(\"SendFundLy\")";
 mostCurrent._activity.LoadLayout("SendFundLy",mostCurrent.activityBA);
- //BA.debugLineNum = 68;BA.debugLine="shared = rp.GetSafeDirDefaultExternal(\"\")";
+ //BA.debugLineNum = 69;BA.debugLine="shared = rp.GetSafeDirDefaultExternal(\"\")";
 mostCurrent._shared = mostCurrent._rp.GetSafeDirDefaultExternal("");
- //BA.debugLineNum = 69;BA.debugLine="kvs.Initialize(shared, \"Userdatastore\")";
+ //BA.debugLineNum = 70;BA.debugLine="kvs.Initialize(shared, \"Userdatastore\")";
 mostCurrent._kvs._initialize(processBA,mostCurrent._shared,"Userdatastore");
- //BA.debugLineNum = 71;BA.debugLine="If File.Exists(File.DirDefaultExternal ,\"db.db\")";
+ //BA.debugLineNum = 72;BA.debugLine="If File.Exists(File.DirDefaultExternal ,\"db.db\")";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db")==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 72;BA.debugLine="File.Copy(File.DirAssets,\"db.db\",File.DirDefault";
+ //BA.debugLineNum = 73;BA.debugLine="File.Copy(File.DirAssets,\"db.db\",File.DirDefault";
 anywheresoftware.b4a.keywords.Common.File.Copy(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),"db.db",anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db");
  };
- //BA.debugLineNum = 75;BA.debugLine="If SQL1.IsInitialized = False Then";
+ //BA.debugLineNum = 76;BA.debugLine="If SQL1.IsInitialized = False Then";
 if (mostCurrent._sql1.IsInitialized()==anywheresoftware.b4a.keywords.Common.False) { 
- //BA.debugLineNum = 76;BA.debugLine="SQL1.Initialize(File.DirDefaultExternal, \"db.db\"";
+ //BA.debugLineNum = 77;BA.debugLine="SQL1.Initialize(File.DirDefaultExternal, \"db.db\"";
 mostCurrent._sql1.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirDefaultExternal(),"db.db",anywheresoftware.b4a.keywords.Common.False);
  };
- //BA.debugLineNum = 79;BA.debugLine="Log(kvs.Get(\"AuditID\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("61835023",BA.ObjectToString(mostCurrent._kvs._get("AuditID")),0);
- //BA.debugLineNum = 80;BA.debugLine="GetAuditByID";
+ //BA.debugLineNum = 80;BA.debugLine="Log(kvs.Get(\"AuditID\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12162703",BA.ObjectToString(mostCurrent._kvs._get("AuditID")),0);
+ //BA.debugLineNum = 81;BA.debugLine="GetAuditByID";
 _getauditbyid();
- //BA.debugLineNum = 81;BA.debugLine="End Sub";
+ //BA.debugLineNum = 82;BA.debugLine="End Sub";
 return "";
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
- //BA.debugLineNum = 281;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
- //BA.debugLineNum = 283;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ //BA.debugLineNum = 285;BA.debugLine="Sub Activity_KeyPress (KeyCode As Int) As Boolean";
+ //BA.debugLineNum = 287;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
- //BA.debugLineNum = 284;BA.debugLine="kvs.Put(\"ProjectWallet\",\"\")";
+ //BA.debugLineNum = 288;BA.debugLine="kvs.Put(\"ProjectWallet\",\"\")";
 mostCurrent._kvs._put("ProjectWallet",(Object)(""));
- //BA.debugLineNum = 285;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 289;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 286;BA.debugLine="Return True";
+ //BA.debugLineNum = 290;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  };
- //BA.debugLineNum = 290;BA.debugLine="End Sub";
+ //BA.debugLineNum = 294;BA.debugLine="End Sub";
 return false;
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 252;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 254;BA.debugLine="End Sub";
+ //BA.debugLineNum = 256;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 258;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 248;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 250;BA.debugLine="End Sub";
+ //BA.debugLineNum = 252;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 254;BA.debugLine="End Sub";
+return "";
+}
+public static String  _btncheck_click() throws Exception{
+String _url = "";
+anywheresoftware.b4a.phone.Phone.PhoneIntents _p = null;
+ //BA.debugLineNum = 358;BA.debugLine="Private Sub btnCheck_Click";
+ //BA.debugLineNum = 359;BA.debugLine="Dim url As String = \"https://explorer-testnet.mas";
+_url = "https://explorer-testnet.maschain.com/"+BA.ObjectToString(mostCurrent._kvs._get("CURRTransactionHash"));
+ //BA.debugLineNum = 360;BA.debugLine="Dim p As PhoneIntents";
+_p = new anywheresoftware.b4a.phone.Phone.PhoneIntents();
+ //BA.debugLineNum = 361;BA.debugLine="StartActivity(p.OpenBrowser(url))";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_p.OpenBrowser(_url)));
+ //BA.debugLineNum = 362;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnclose_click() throws Exception{
- //BA.debugLineNum = 320;BA.debugLine="Private Sub btnClose_Click";
- //BA.debugLineNum = 322;BA.debugLine="If kvs.Get(\"Status\") = \"success\" Then";
+ //BA.debugLineNum = 324;BA.debugLine="Private Sub btnClose_Click";
+ //BA.debugLineNum = 326;BA.debugLine="If kvs.Get(\"Status\") = \"success\" Then";
 if ((mostCurrent._kvs._get("Status")).equals((Object)("success"))) { 
- //BA.debugLineNum = 323;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 327;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  }else {
- //BA.debugLineNum = 325;BA.debugLine="pnStatus.Visible = False";
+ //BA.debugLineNum = 329;BA.debugLine="pnStatus.Visible = False";
 mostCurrent._pnstatus.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 326;BA.debugLine="pnConfirmation.Visible = False";
+ //BA.debugLineNum = 330;BA.debugLine="pnConfirmation.Visible = False";
 mostCurrent._pnconfirmation.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 327;BA.debugLine="btnNext.Visible = True";
+ //BA.debugLineNum = 331;BA.debugLine="btnNext.Visible = True";
 mostCurrent._btnnext.setVisible(anywheresoftware.b4a.keywords.Common.True);
  };
- //BA.debugLineNum = 329;BA.debugLine="End Sub";
+ //BA.debugLineNum = 333;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnnext_click() throws Exception{
- //BA.debugLineNum = 292;BA.debugLine="Private Sub btnNext_Click";
- //BA.debugLineNum = 293;BA.debugLine="pnBlackTransparent.Visible = True";
+ //BA.debugLineNum = 296;BA.debugLine="Private Sub btnNext_Click";
+ //BA.debugLineNum = 297;BA.debugLine="pnBlackTransparent.Visible = True";
 mostCurrent._pnblacktransparent.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 294;BA.debugLine="pnConfirmation.Visible = True";
+ //BA.debugLineNum = 298;BA.debugLine="pnConfirmation.Visible = True";
 mostCurrent._pnconfirmation.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 295;BA.debugLine="btnNext.Visible = False";
+ //BA.debugLineNum = 299;BA.debugLine="btnNext.Visible = False";
 mostCurrent._btnnext.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 296;BA.debugLine="lblDonateAmount.Text = txtDonateAmount.Text";
+ //BA.debugLineNum = 300;BA.debugLine="lblDonateAmount.Text = txtDonateAmount.Text";
 mostCurrent._lbldonateamount.setText(BA.ObjectToCharSequence(mostCurrent._txtdonateamount.getText()));
- //BA.debugLineNum = 298;BA.debugLine="kvs.Put(\"DonateAmount\",lblDonateAmount.Text)";
+ //BA.debugLineNum = 302;BA.debugLine="kvs.Put(\"DonateAmount\",lblDonateAmount.Text)";
 mostCurrent._kvs._put("DonateAmount",(Object)(mostCurrent._lbldonateamount.getText()));
- //BA.debugLineNum = 299;BA.debugLine="Log(kvs.Get(\"DonateAmount\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62686983",BA.ObjectToString(mostCurrent._kvs._get("DonateAmount")),0);
- //BA.debugLineNum = 300;BA.debugLine="End Sub";
+ //BA.debugLineNum = 303;BA.debugLine="Log(kvs.Get(\"DonateAmount\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("13014663",BA.ObjectToString(mostCurrent._kvs._get("DonateAmount")),0);
+ //BA.debugLineNum = 304;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnsend_click() throws Exception{
- //BA.debugLineNum = 304;BA.debugLine="Private Sub btnSend_Click";
- //BA.debugLineNum = 305;BA.debugLine="PostTransaction";
+ //BA.debugLineNum = 308;BA.debugLine="Private Sub btnSend_Click";
+ //BA.debugLineNum = 309;BA.debugLine="PostTransaction";
 _posttransaction();
- //BA.debugLineNum = 306;BA.debugLine="End Sub";
+ //BA.debugLineNum = 310;BA.debugLine="End Sub";
 return "";
 }
 public static String  _calculatepercentage(double _part,double _total) throws Exception{
 double _percentage = 0;
- //BA.debugLineNum = 331;BA.debugLine="Sub CalculatePercentage(part As Double, total As D";
- //BA.debugLineNum = 332;BA.debugLine="Dim percentage As Double";
+ //BA.debugLineNum = 335;BA.debugLine="Sub CalculatePercentage(part As Double, total As D";
+ //BA.debugLineNum = 336;BA.debugLine="Dim percentage As Double";
 _percentage = 0;
- //BA.debugLineNum = 333;BA.debugLine="percentage = (part / total) * 100";
+ //BA.debugLineNum = 337;BA.debugLine="percentage = (part / total) * 100";
 _percentage = (_part/(double)_total)*100;
- //BA.debugLineNum = 334;BA.debugLine="If percentage > 100 Then";
+ //BA.debugLineNum = 338;BA.debugLine="If percentage > 100 Then";
 if (_percentage>100) { 
- //BA.debugLineNum = 335;BA.debugLine="cpBar2.Value = \"100\"";
+ //BA.debugLineNum = 339;BA.debugLine="cpBar2.Value = \"100\"";
 mostCurrent._cpbar2._setvalue /*float*/ ((float)(Double.parseDouble("100")));
- //BA.debugLineNum = 336;BA.debugLine="lblProjectProgress2.TextColor = Colors.RGB(5,206";
+ //BA.debugLineNum = 340;BA.debugLine="lblProjectProgress2.TextColor = Colors.RGB(5,206";
 mostCurrent._lblprojectprogress2.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (5),(int) (206),(int) (46)));
- //BA.debugLineNum = 337;BA.debugLine="lblProjectProgress2.Text = \"Fundraising complete";
+ //BA.debugLineNum = 341;BA.debugLine="lblProjectProgress2.Text = \"Fundraising complete";
 mostCurrent._lblprojectprogress2.setText(BA.ObjectToCharSequence("Fundraising complete"));
- //BA.debugLineNum = 338;BA.debugLine="txtDonateAmount.Enabled = False";
+ //BA.debugLineNum = 342;BA.debugLine="txtDonateAmount.Enabled = False";
 mostCurrent._txtdonateamount.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 339;BA.debugLine="txtDonateAmount.Text = \"-\"";
+ //BA.debugLineNum = 343;BA.debugLine="txtDonateAmount.Text = \"-\"";
 mostCurrent._txtdonateamount.setText(BA.ObjectToCharSequence("-"));
  }else {
- //BA.debugLineNum = 341;BA.debugLine="cpBar2.Value = NumberFormat(percentage, 1, 3)";
+ //BA.debugLineNum = 345;BA.debugLine="cpBar2.Value = NumberFormat(percentage, 1, 3)";
 mostCurrent._cpbar2._setvalue /*float*/ ((float)(Double.parseDouble(anywheresoftware.b4a.keywords.Common.NumberFormat(_percentage,(int) (1),(int) (3)))));
- //BA.debugLineNum = 342;BA.debugLine="lblProjectProgress2.TextColor = Colors.RGB(254,17";
+ //BA.debugLineNum = 346;BA.debugLine="lblProjectProgress2.TextColor = Colors.RGB(254,17";
 mostCurrent._lblprojectprogress2.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (254),(int) (171),(int) (43)));
- //BA.debugLineNum = 343;BA.debugLine="lblProjectProgress2.Text = \"Fundraising in progre";
+ //BA.debugLineNum = 347;BA.debugLine="lblProjectProgress2.Text = \"Fundraising in progre";
 mostCurrent._lblprojectprogress2.setText(BA.ObjectToCharSequence("Fundraising in progress"));
  };
- //BA.debugLineNum = 346;BA.debugLine="Log(NumberFormat(percentage, 1, 3))";
-anywheresoftware.b4a.keywords.Common.LogImpl("63014671",anywheresoftware.b4a.keywords.Common.NumberFormat(_percentage,(int) (1),(int) (3)),0);
- //BA.debugLineNum = 347;BA.debugLine="End Sub";
+ //BA.debugLineNum = 350;BA.debugLine="Log(NumberFormat(percentage, 1, 3))";
+anywheresoftware.b4a.keywords.Common.LogImpl("13342351",anywheresoftware.b4a.keywords.Common.NumberFormat(_percentage,(int) (1),(int) (3)),0);
+ //BA.debugLineNum = 351;BA.debugLine="End Sub";
 return "";
 }
 public static String  _checkwalletbalance() throws Exception{
@@ -529,55 +545,55 @@ pdv.milotin.httpjob _jobcheckwalletbalance = null;
 anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator _json = null;
 anywheresoftware.b4a.objects.collections.Map _data = null;
 String _url = "";
- //BA.debugLineNum = 98;BA.debugLine="Sub CheckWalletBalance";
- //BA.debugLineNum = 100;BA.debugLine="Dim JobCheckWalletBalance As HttpJob";
+ //BA.debugLineNum = 99;BA.debugLine="Sub CheckWalletBalance";
+ //BA.debugLineNum = 101;BA.debugLine="Dim JobCheckWalletBalance As HttpJob";
 _jobcheckwalletbalance = new pdv.milotin.httpjob();
- //BA.debugLineNum = 101;BA.debugLine="JobCheckWalletBalance.Initialize(\"JobCheckWalletB";
+ //BA.debugLineNum = 102;BA.debugLine="JobCheckWalletBalance.Initialize(\"JobCheckWalletB";
 _jobcheckwalletbalance._initialize /*String*/ (processBA,"JobCheckWalletBalance",sendfundmd.getObject());
- //BA.debugLineNum = 104;BA.debugLine="Dim json As JSONGenerator";
+ //BA.debugLineNum = 105;BA.debugLine="Dim json As JSONGenerator";
 _json = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator();
- //BA.debugLineNum = 105;BA.debugLine="Dim data As Map";
+ //BA.debugLineNum = 106;BA.debugLine="Dim data As Map";
 _data = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 106;BA.debugLine="data.Initialize";
+ //BA.debugLineNum = 107;BA.debugLine="data.Initialize";
 _data.Initialize();
- //BA.debugLineNum = 107;BA.debugLine="data.Put(\"wallet_address\", kvs.Get(\"ProjectWallet";
+ //BA.debugLineNum = 108;BA.debugLine="data.Put(\"wallet_address\", kvs.Get(\"ProjectWallet";
 _data.Put((Object)("wallet_address"),mostCurrent._kvs._get("ProjectWallet"));
- //BA.debugLineNum = 108;BA.debugLine="data.Put(\"contract_address\", kvs.Get(\"token-contr";
+ //BA.debugLineNum = 109;BA.debugLine="data.Put(\"contract_address\", kvs.Get(\"token-contr";
 _data.Put((Object)("contract_address"),mostCurrent._kvs._get("token-contract"));
- //BA.debugLineNum = 109;BA.debugLine="json.Initialize(data)";
+ //BA.debugLineNum = 110;BA.debugLine="json.Initialize(data)";
 _json.Initialize(_data);
- //BA.debugLineNum = 112;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
+ //BA.debugLineNum = 113;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
 _url = "https://service-testnet.maschain.com/api/token/balance/";
- //BA.debugLineNum = 113;BA.debugLine="JobCheckWalletBalance.PostString(url, json.ToStri";
+ //BA.debugLineNum = 114;BA.debugLine="JobCheckWalletBalance.PostString(url, json.ToStri";
 _jobcheckwalletbalance._poststring /*String*/ (_url,_json.ToString());
- //BA.debugLineNum = 114;BA.debugLine="JobCheckWalletBalance.GetRequest.SetContentType(\"";
+ //BA.debugLineNum = 115;BA.debugLine="JobCheckWalletBalance.GetRequest.SetContentType(\"";
 _jobcheckwalletbalance._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetContentType("application/json");
- //BA.debugLineNum = 115;BA.debugLine="JobCheckWalletBalance.GetRequest.SetHeader(\"clien";
-_jobcheckwalletbalance._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetHeader("client_id",BA.ObjectToString(mostCurrent._kvs._get("client_id")));
  //BA.debugLineNum = 116;BA.debugLine="JobCheckWalletBalance.GetRequest.SetHeader(\"clien";
+_jobcheckwalletbalance._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetHeader("client_id",BA.ObjectToString(mostCurrent._kvs._get("client_id")));
+ //BA.debugLineNum = 117;BA.debugLine="JobCheckWalletBalance.GetRequest.SetHeader(\"clien";
 _jobcheckwalletbalance._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetHeader("client_secret",BA.ObjectToString(mostCurrent._kvs._get("client_secret")));
- //BA.debugLineNum = 118;BA.debugLine="End Sub";
+ //BA.debugLineNum = 119;BA.debugLine="End Sub";
 return "";
 }
 public static String  _getauditbyid() throws Exception{
 pdv.milotin.httpjob _jobgetauditbyid = null;
 String _url = "";
- //BA.debugLineNum = 84;BA.debugLine="Sub GetAuditByID";
- //BA.debugLineNum = 86;BA.debugLine="Dim JobGetAuditByID As HttpJob";
+ //BA.debugLineNum = 85;BA.debugLine="Sub GetAuditByID";
+ //BA.debugLineNum = 87;BA.debugLine="Dim JobGetAuditByID As HttpJob";
 _jobgetauditbyid = new pdv.milotin.httpjob();
- //BA.debugLineNum = 87;BA.debugLine="JobGetAuditByID.Initialize(\"JobGetAuditByID\", Me)";
+ //BA.debugLineNum = 88;BA.debugLine="JobGetAuditByID.Initialize(\"JobGetAuditByID\", Me)";
 _jobgetauditbyid._initialize /*String*/ (processBA,"JobGetAuditByID",sendfundmd.getObject());
- //BA.debugLineNum = 89;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
+ //BA.debugLineNum = 90;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
 _url = "https://service-testnet.maschain.com/api/audit/audit/"+BA.ObjectToString(mostCurrent._kvs._get("AuditTransactionHash"));
- //BA.debugLineNum = 90;BA.debugLine="Log(\"HASH:\" & kvs.Get(\"AuditTransactionHash\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("61900550","HASH:"+BA.ObjectToString(mostCurrent._kvs._get("AuditTransactionHash")),0);
- //BA.debugLineNum = 91;BA.debugLine="JobGetAuditByID.Download(url)";
+ //BA.debugLineNum = 91;BA.debugLine="Log(\"HASH:\" & kvs.Get(\"AuditTransactionHash\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12228230","HASH:"+BA.ObjectToString(mostCurrent._kvs._get("AuditTransactionHash")),0);
+ //BA.debugLineNum = 92;BA.debugLine="JobGetAuditByID.Download(url)";
 _jobgetauditbyid._download /*String*/ (_url);
- //BA.debugLineNum = 92;BA.debugLine="JobGetAuditByID.GetRequest.SetHeader(\"client_id\",";
+ //BA.debugLineNum = 93;BA.debugLine="JobGetAuditByID.GetRequest.SetHeader(\"client_id\",";
 _jobgetauditbyid._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetHeader("client_id",BA.ObjectToString(mostCurrent._kvs._get("client_id")));
- //BA.debugLineNum = 93;BA.debugLine="JobGetAuditByID.GetRequest.SetHeader(\"client_secr";
+ //BA.debugLineNum = 94;BA.debugLine="JobGetAuditByID.GetRequest.SetHeader(\"client_secr";
 _jobgetauditbyid._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetHeader("client_secret",BA.ObjectToString(mostCurrent._kvs._get("client_secret")));
- //BA.debugLineNum = 96;BA.debugLine="End Sub";
+ //BA.debugLineNum = 97;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
@@ -676,38 +692,40 @@ mostCurrent._lblline3 = new anywheresoftware.b4a.objects.LabelWrapper();
 mostCurrent._lblstatus = new anywheresoftware.b4a.objects.LabelWrapper();
  //BA.debugLineNum = 61;BA.debugLine="Private btnClose As Button";
 mostCurrent._btnclose = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 62;BA.debugLine="End Sub";
+ //BA.debugLineNum = 62;BA.debugLine="Private lbltransactionhash As Label";
+mostCurrent._lbltransactionhash = new anywheresoftware.b4a.objects.LabelWrapper();
+ //BA.debugLineNum = 63;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgback_click() throws Exception{
- //BA.debugLineNum = 276;BA.debugLine="Private Sub imgBack_Click";
- //BA.debugLineNum = 277;BA.debugLine="kvs.Put(\"ProjectWallet\",\"\")";
+ //BA.debugLineNum = 280;BA.debugLine="Private Sub imgBack_Click";
+ //BA.debugLineNum = 281;BA.debugLine="kvs.Put(\"ProjectWallet\",\"\")";
 mostCurrent._kvs._put("ProjectWallet",(Object)(""));
- //BA.debugLineNum = 278;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 282;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 279;BA.debugLine="End Sub";
+ //BA.debugLineNum = 283;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgclose_click() throws Exception{
- //BA.debugLineNum = 308;BA.debugLine="Private Sub imgClose_Click";
- //BA.debugLineNum = 309;BA.debugLine="pnBlackTransparent.Visible = False";
+ //BA.debugLineNum = 312;BA.debugLine="Private Sub imgClose_Click";
+ //BA.debugLineNum = 313;BA.debugLine="pnBlackTransparent.Visible = False";
 mostCurrent._pnblacktransparent.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 310;BA.debugLine="pnConfirmation.Visible = False";
+ //BA.debugLineNum = 314;BA.debugLine="pnConfirmation.Visible = False";
 mostCurrent._pnconfirmation.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 311;BA.debugLine="btnNext.Visible = True";
+ //BA.debugLineNum = 315;BA.debugLine="btnNext.Visible = True";
 mostCurrent._btnnext.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 312;BA.debugLine="kvs.Put(\"DonateAmount\",\"\")";
+ //BA.debugLineNum = 316;BA.debugLine="kvs.Put(\"DonateAmount\",\"\")";
 mostCurrent._kvs._put("DonateAmount",(Object)(""));
- //BA.debugLineNum = 313;BA.debugLine="Log(\"Donate :\" & kvs.Get(\"DonateAmount\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62818053","Donate :"+BA.ObjectToString(mostCurrent._kvs._get("DonateAmount")),0);
- //BA.debugLineNum = 314;BA.debugLine="End Sub";
+ //BA.debugLineNum = 317;BA.debugLine="Log(\"Donate :\" & kvs.Get(\"DonateAmount\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("13145733","Donate :"+BA.ObjectToString(mostCurrent._kvs._get("DonateAmount")),0);
+ //BA.debugLineNum = 318;BA.debugLine="End Sub";
 return "";
 }
 public static String  _imgclose2_click() throws Exception{
- //BA.debugLineNum = 316;BA.debugLine="Private Sub imgClose2_Click";
- //BA.debugLineNum = 317;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 320;BA.debugLine="Private Sub imgClose2_Click";
+ //BA.debugLineNum = 321;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 318;BA.debugLine="End Sub";
+ //BA.debugLineNum = 322;BA.debugLine="End Sub";
 return "";
 }
 public static String  _jobdone(pdv.milotin.httpjob _job) throws Exception{
@@ -720,159 +738,168 @@ anywheresoftware.b4a.objects.collections.JSONParser _metadataparser = null;
 anywheresoftware.b4a.objects.collections.Map _metadata = null;
 String _strresult = "";
 int _status = 0;
- //BA.debugLineNum = 142;BA.debugLine="Sub JobDone(Job As HttpJob)";
- //BA.debugLineNum = 144;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 143;BA.debugLine="Sub JobDone(Job As HttpJob)";
+ //BA.debugLineNum = 145;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 146;BA.debugLine="If Job.Success Then";
+ //BA.debugLineNum = 147;BA.debugLine="If Job.Success Then";
 if (_job._success /*boolean*/ ) { 
- //BA.debugLineNum = 148;BA.debugLine="Dim jsonString As String = Job.GetString";
+ //BA.debugLineNum = 149;BA.debugLine="Dim jsonString As String = Job.GetString";
 _jsonstring = _job._getstring /*String*/ ();
- //BA.debugLineNum = 149;BA.debugLine="Log(jsonString)";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097159",_jsonstring,0);
- //BA.debugLineNum = 151;BA.debugLine="Dim parser As JSONParser";
+ //BA.debugLineNum = 150;BA.debugLine="Log(jsonString)";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424839",_jsonstring,0);
+ //BA.debugLineNum = 152;BA.debugLine="Dim parser As JSONParser";
 _parser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 152;BA.debugLine="parser.Initialize(jsonString)";
+ //BA.debugLineNum = 153;BA.debugLine="parser.Initialize(jsonString)";
 _parser.Initialize(_jsonstring);
- //BA.debugLineNum = 154;BA.debugLine="If Job.JobName = \"JobGetAuditByID\" Then";
+ //BA.debugLineNum = 155;BA.debugLine="If Job.JobName = \"JobGetAuditByID\" Then";
 if ((_job._jobname /*String*/ ).equals("JobGetAuditByID")) { 
- //BA.debugLineNum = 158;BA.debugLine="Dim root As Map = parser.NextObject";
+ //BA.debugLineNum = 159;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
- //BA.debugLineNum = 159;BA.debugLine="Dim result As Map = root.Get(\"result\")";
+ //BA.debugLineNum = 160;BA.debugLine="Dim result As Map = root.Get(\"result\")";
 _result = new anywheresoftware.b4a.objects.collections.Map();
 _result = (anywheresoftware.b4a.objects.collections.Map) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.Map(), (java.util.Map)(_root.Get((Object)("result"))));
- //BA.debugLineNum = 162;BA.debugLine="Dim metadataString As String = result.Get(\"meta";
+ //BA.debugLineNum = 163;BA.debugLine="Dim metadataString As String = result.Get(\"meta";
 _metadatastring = BA.ObjectToString(_result.Get((Object)("metadata")));
- //BA.debugLineNum = 165;BA.debugLine="Dim metadataParser As JSONParser";
+ //BA.debugLineNum = 166;BA.debugLine="Dim metadataParser As JSONParser";
 _metadataparser = new anywheresoftware.b4a.objects.collections.JSONParser();
- //BA.debugLineNum = 166;BA.debugLine="metadataParser.Initialize(metadataString)";
+ //BA.debugLineNum = 167;BA.debugLine="metadataParser.Initialize(metadataString)";
 _metadataparser.Initialize(_metadatastring);
- //BA.debugLineNum = 167;BA.debugLine="Dim metadata As Map = metadataParser.NextObject";
+ //BA.debugLineNum = 168;BA.debugLine="Dim metadata As Map = metadataParser.NextObject";
 _metadata = new anywheresoftware.b4a.objects.collections.Map();
 _metadata = _metadataparser.NextObject();
- //BA.debugLineNum = 171;BA.debugLine="lblProjectTittle.Text = metadata.Get(\"project\")";
+ //BA.debugLineNum = 172;BA.debugLine="lblProjectTittle.Text = metadata.Get(\"project\")";
 mostCurrent._lblprojecttittle.setText(BA.ObjectToCharSequence(_metadata.Get((Object)("project"))));
- //BA.debugLineNum = 173;BA.debugLine="kvs.Put(\"metadataFund\",metadata.Get(\"fund\"))";
+ //BA.debugLineNum = 174;BA.debugLine="kvs.Put(\"metadataFund\",metadata.Get(\"fund\"))";
 mostCurrent._kvs._put("metadataFund",_metadata.Get((Object)("fund")));
- //BA.debugLineNum = 175;BA.debugLine="metadata.Get(\"status\")";
+ //BA.debugLineNum = 176;BA.debugLine="metadata.Get(\"status\")";
 _metadata.Get((Object)("status"));
- //BA.debugLineNum = 178;BA.debugLine="Log(metadata.Get(\"project\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097188",BA.ObjectToString(_metadata.Get((Object)("project"))),0);
- //BA.debugLineNum = 179;BA.debugLine="Log(metadata.Get(\"fund\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097189",BA.ObjectToString(_metadata.Get((Object)("fund"))),0);
- //BA.debugLineNum = 180;BA.debugLine="Log(metadata.Get(\"progress\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097190",BA.ObjectToString(_metadata.Get((Object)("progress"))),0);
- //BA.debugLineNum = 181;BA.debugLine="Log(metadata.Get(\"status\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097191",BA.ObjectToString(_metadata.Get((Object)("status"))),0);
- //BA.debugLineNum = 182;BA.debugLine="Log(metadata.Get(\"project_wallet\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097192",BA.ObjectToString(_metadata.Get((Object)("project_wallet"))),0);
- //BA.debugLineNum = 183;BA.debugLine="kvs.Put(\"ProjectWallet\",metadata.Get(\"project_w";
+ //BA.debugLineNum = 179;BA.debugLine="Log(metadata.Get(\"project\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424868",BA.ObjectToString(_metadata.Get((Object)("project"))),0);
+ //BA.debugLineNum = 180;BA.debugLine="Log(metadata.Get(\"fund\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424869",BA.ObjectToString(_metadata.Get((Object)("fund"))),0);
+ //BA.debugLineNum = 181;BA.debugLine="Log(metadata.Get(\"progress\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424870",BA.ObjectToString(_metadata.Get((Object)("progress"))),0);
+ //BA.debugLineNum = 182;BA.debugLine="Log(metadata.Get(\"status\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424871",BA.ObjectToString(_metadata.Get((Object)("status"))),0);
+ //BA.debugLineNum = 183;BA.debugLine="Log(metadata.Get(\"project_wallet\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424872",BA.ObjectToString(_metadata.Get((Object)("project_wallet"))),0);
+ //BA.debugLineNum = 184;BA.debugLine="kvs.Put(\"ProjectWallet\",metadata.Get(\"project_w";
 mostCurrent._kvs._put("ProjectWallet",_metadata.Get((Object)("project_wallet")));
- //BA.debugLineNum = 185;BA.debugLine="If kvs.Get(\"ProjectWallet\") = Null Then";
+ //BA.debugLineNum = 186;BA.debugLine="If kvs.Get(\"ProjectWallet\") = Null Then";
 if (mostCurrent._kvs._get("ProjectWallet")== null) { 
- //BA.debugLineNum = 186;BA.debugLine="kvs.Put(\"ProjectWallet\",kvs.Get(\"WalletAddress";
+ //BA.debugLineNum = 187;BA.debugLine="kvs.Put(\"ProjectWallet\",kvs.Get(\"WalletAddress";
 mostCurrent._kvs._put("ProjectWallet",mostCurrent._kvs._get("WalletAddress"));
- //BA.debugLineNum = 187;BA.debugLine="CheckWalletBalance";
+ //BA.debugLineNum = 188;BA.debugLine="CheckWalletBalance";
 _checkwalletbalance();
  }else {
- //BA.debugLineNum = 189;BA.debugLine="CheckWalletBalance";
+ //BA.debugLineNum = 190;BA.debugLine="CheckWalletBalance";
 _checkwalletbalance();
  };
  }else if((_job._jobname /*String*/ ).equals("JobCheckWalletBalance")) { 
- //BA.debugLineNum = 195;BA.debugLine="Dim root As Map = parser.NextObject";
+ //BA.debugLineNum = 196;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
- //BA.debugLineNum = 196;BA.debugLine="Dim strResult As String = root.Get(\"result\")";
+ //BA.debugLineNum = 197;BA.debugLine="Dim strResult As String = root.Get(\"result\")";
 _strresult = BA.ObjectToString(_root.Get((Object)("result")));
- //BA.debugLineNum = 198;BA.debugLine="CalculatePercentage(root.Get(\"result\"),kvs.Get(";
+ //BA.debugLineNum = 199;BA.debugLine="CalculatePercentage(root.Get(\"result\"),kvs.Get(";
 _calculatepercentage((double)(BA.ObjectToNumber(_root.Get((Object)("result")))),(double)(BA.ObjectToNumber(mostCurrent._kvs._get("metadataFund"))));
- //BA.debugLineNum = 200;BA.debugLine="If kvs.Get(\"metadataFund\") < root.Get(\"result\")";
+ //BA.debugLineNum = 201;BA.debugLine="If kvs.Get(\"metadataFund\") < root.Get(\"result\")";
 if ((double)(BA.ObjectToNumber(mostCurrent._kvs._get("metadataFund")))<(double)(BA.ObjectToNumber(_root.Get((Object)("result"))))) { 
- //BA.debugLineNum = 201;BA.debugLine="lblProjectFund2.Text = \"RM 0\" & NumberFormat2(";
+ //BA.debugLineNum = 202;BA.debugLine="lblProjectFund2.Text = \"RM 0\" & NumberFormat2(";
 mostCurrent._lblprojectfund2.setText(BA.ObjectToCharSequence("RM 0"+anywheresoftware.b4a.keywords.Common.NumberFormat2(0,(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True)));
  }else {
- //BA.debugLineNum = 203;BA.debugLine="lblProjectFund2.Text = \"RM \" & NumberFormat2(k";
+ //BA.debugLineNum = 204;BA.debugLine="lblProjectFund2.Text = \"RM \" & NumberFormat2(k";
 mostCurrent._lblprojectfund2.setText(BA.ObjectToCharSequence("RM "+anywheresoftware.b4a.keywords.Common.NumberFormat2((double)(BA.ObjectToNumber(mostCurrent._kvs._get("metadataFund")))-(double)(BA.ObjectToNumber(_root.Get((Object)("result")))),(int) (0),(int) (2),(int) (2),anywheresoftware.b4a.keywords.Common.True)));
  };
- //BA.debugLineNum = 206;BA.debugLine="Log(lblProjectFund2.Text)";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097216",mostCurrent._lblprojectfund2.getText(),0);
+ //BA.debugLineNum = 207;BA.debugLine="Log(lblProjectFund2.Text)";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424896",mostCurrent._lblprojectfund2.getText(),0);
  }else if((_job._jobname /*String*/ ).equals("JobPostTransaction")) { 
- //BA.debugLineNum = 209;BA.debugLine="Dim root As Map = parser.NextObject";
+ //BA.debugLineNum = 210;BA.debugLine="Dim root As Map = parser.NextObject";
 _root = new anywheresoftware.b4a.objects.collections.Map();
 _root = _parser.NextObject();
- //BA.debugLineNum = 210;BA.debugLine="Dim status As Int = root.Get(\"status\")";
+ //BA.debugLineNum = 211;BA.debugLine="Dim status As Int = root.Get(\"status\")";
 _status = (int)(BA.ObjectToNumber(_root.Get((Object)("status"))));
- //BA.debugLineNum = 211;BA.debugLine="Log(root.Get(\"status\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097221",BA.ObjectToString(_root.Get((Object)("status"))),0);
- //BA.debugLineNum = 213;BA.debugLine="pnStatus.Visible = True";
+ //BA.debugLineNum = 212;BA.debugLine="Dim result As Map = root.Get(\"result\")";
+_result = new anywheresoftware.b4a.objects.collections.Map();
+_result = (anywheresoftware.b4a.objects.collections.Map) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.collections.Map(), (java.util.Map)(_root.Get((Object)("result"))));
+ //BA.debugLineNum = 213;BA.debugLine="Log(root.Get(\"status\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424902",BA.ObjectToString(_root.Get((Object)("status"))),0);
+ //BA.debugLineNum = 214;BA.debugLine="Log(result.Get(\"transactionHash\"))";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424903",BA.ObjectToString(_result.Get((Object)("transactionHash"))),0);
+ //BA.debugLineNum = 215;BA.debugLine="lbltransactionhash.Text = result.Get(\"transacti";
+mostCurrent._lbltransactionhash.setText(BA.ObjectToCharSequence(_result.Get((Object)("transactionHash"))));
+ //BA.debugLineNum = 216;BA.debugLine="kvs.Put(\"CURRTransactionHash\", result.Get(\"tran";
+mostCurrent._kvs._put("CURRTransactionHash",_result.Get((Object)("transactionHash")));
+ //BA.debugLineNum = 217;BA.debugLine="pnStatus.Visible = True";
 mostCurrent._pnstatus.setVisible(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 214;BA.debugLine="pnConfirmation.Visible = False";
+ //BA.debugLineNum = 218;BA.debugLine="pnConfirmation.Visible = False";
 mostCurrent._pnconfirmation.setVisible(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 217;BA.debugLine="If status = \"200\" Then";
+ //BA.debugLineNum = 221;BA.debugLine="If status = \"200\" Then";
 if (_status==(double)(Double.parseDouble("200"))) { 
- //BA.debugLineNum = 219;BA.debugLine="ToastMessageShow(\"Transaction posted successfu";
+ //BA.debugLineNum = 223;BA.debugLine="ToastMessageShow(\"Transaction posted successfu";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Transaction posted successfully."),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 220;BA.debugLine="lblStatus.Text = \"Transaction Completed!\" ' Di";
+ //BA.debugLineNum = 224;BA.debugLine="lblStatus.Text = \"Transaction Completed!\" ' Di";
 mostCurrent._lblstatus.setText(BA.ObjectToCharSequence("Transaction Completed!"));
- //BA.debugLineNum = 221;BA.debugLine="lblStatus.TextColor = Colors.RGB(5,206,46)";
+ //BA.debugLineNum = 225;BA.debugLine="lblStatus.TextColor = Colors.RGB(5,206,46)";
 mostCurrent._lblstatus.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (5),(int) (206),(int) (46)));
- //BA.debugLineNum = 222;BA.debugLine="kvs.Put(\"Status\",\"success\")";
+ //BA.debugLineNum = 226;BA.debugLine="kvs.Put(\"Status\",\"success\")";
 mostCurrent._kvs._put("Status",(Object)("success"));
  }else {
- //BA.debugLineNum = 226;BA.debugLine="ToastMessageShow(\"Failed to post transaction.\"";
+ //BA.debugLineNum = 230;BA.debugLine="ToastMessageShow(\"Failed to post transaction.\"";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Failed to post transaction."),anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 227;BA.debugLine="lblStatus.Text = \"Transaction Failed!\" ' Displ";
+ //BA.debugLineNum = 231;BA.debugLine="lblStatus.Text = \"Transaction Failed!\" ' Displ";
 mostCurrent._lblstatus.setText(BA.ObjectToCharSequence("Transaction Failed!"));
- //BA.debugLineNum = 228;BA.debugLine="lblStatus.TextColor = Colors.RGB(220,14,13)";
+ //BA.debugLineNum = 232;BA.debugLine="lblStatus.TextColor = Colors.RGB(220,14,13)";
 mostCurrent._lblstatus.setTextColor(anywheresoftware.b4a.keywords.Common.Colors.RGB((int) (220),(int) (14),(int) (13)));
- //BA.debugLineNum = 230;BA.debugLine="kvs.Put(\"Status\",\"failed\")";
+ //BA.debugLineNum = 234;BA.debugLine="kvs.Put(\"Status\",\"failed\")";
 mostCurrent._kvs._put("Status",(Object)("failed"));
  };
  }else {
- //BA.debugLineNum = 235;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097245","Error: "+_job._errormessage /*String*/ ,0);
+ //BA.debugLineNum = 239;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424928","Error: "+_job._errormessage /*String*/ ,0);
  };
  }else {
- //BA.debugLineNum = 240;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-anywheresoftware.b4a.keywords.Common.LogImpl("62097250","Error: "+_job._errormessage /*String*/ ,0);
+ //BA.debugLineNum = 244;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+anywheresoftware.b4a.keywords.Common.LogImpl("12424933","Error: "+_job._errormessage /*String*/ ,0);
  };
- //BA.debugLineNum = 244;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 248;BA.debugLine="Job.Release";
 _job._release /*String*/ ();
- //BA.debugLineNum = 246;BA.debugLine="End Sub";
+ //BA.debugLineNum = 250;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblfund_click() throws Exception{
- //BA.debugLineNum = 261;BA.debugLine="Private Sub lblFund_Click";
- //BA.debugLineNum = 262;BA.debugLine="StartActivity(\"FundMd\")";
+ //BA.debugLineNum = 265;BA.debugLine="Private Sub lblFund_Click";
+ //BA.debugLineNum = 266;BA.debugLine="StartActivity(\"FundMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("FundMd"));
- //BA.debugLineNum = 263;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 267;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 264;BA.debugLine="End Sub";
+ //BA.debugLineNum = 268;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhistory_click() throws Exception{
- //BA.debugLineNum = 266;BA.debugLine="Private Sub lblHistory_Click";
- //BA.debugLineNum = 267;BA.debugLine="StartActivity(\"HistoryMd\")";
+ //BA.debugLineNum = 270;BA.debugLine="Private Sub lblHistory_Click";
+ //BA.debugLineNum = 271;BA.debugLine="StartActivity(\"HistoryMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("HistoryMd"));
- //BA.debugLineNum = 268;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 272;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 269;BA.debugLine="End Sub";
+ //BA.debugLineNum = 273;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lblhome_click() throws Exception{
- //BA.debugLineNum = 257;BA.debugLine="Private Sub lblHome_Click";
- //BA.debugLineNum = 258;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 261;BA.debugLine="Private Sub lblHome_Click";
+ //BA.debugLineNum = 262;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 259;BA.debugLine="End Sub";
+ //BA.debugLineNum = 263;BA.debugLine="End Sub";
 return "";
 }
 public static String  _lbluser_click() throws Exception{
- //BA.debugLineNum = 271;BA.debugLine="Private Sub lblUser_Click";
- //BA.debugLineNum = 272;BA.debugLine="StartActivity(\"UserMd\")";
+ //BA.debugLineNum = 275;BA.debugLine="Private Sub lblUser_Click";
+ //BA.debugLineNum = 276;BA.debugLine="StartActivity(\"UserMd\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("UserMd"));
- //BA.debugLineNum = 273;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 277;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
- //BA.debugLineNum = 274;BA.debugLine="End Sub";
+ //BA.debugLineNum = 278;BA.debugLine="End Sub";
 return "";
 }
 public static String  _posttransaction() throws Exception{
@@ -880,40 +907,40 @@ pdv.milotin.httpjob _jobposttransaction = null;
 String _url = "";
 anywheresoftware.b4a.objects.collections.Map _data = null;
 anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator _json = null;
- //BA.debugLineNum = 120;BA.debugLine="Sub PostTransaction";
- //BA.debugLineNum = 121;BA.debugLine="Dim JobPostTransaction As HttpJob";
+ //BA.debugLineNum = 121;BA.debugLine="Sub PostTransaction";
+ //BA.debugLineNum = 122;BA.debugLine="Dim JobPostTransaction As HttpJob";
 _jobposttransaction = new pdv.milotin.httpjob();
- //BA.debugLineNum = 122;BA.debugLine="JobPostTransaction.Initialize(\"JobPostTransaction";
+ //BA.debugLineNum = 123;BA.debugLine="JobPostTransaction.Initialize(\"JobPostTransaction";
 _jobposttransaction._initialize /*String*/ (processBA,"JobPostTransaction",sendfundmd.getObject());
- //BA.debugLineNum = 124;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
+ //BA.debugLineNum = 125;BA.debugLine="Dim url As String = \"https://service-testnet.masc";
 _url = "https://service-testnet.maschain.com/api/token/token-transfer/";
- //BA.debugLineNum = 125;BA.debugLine="Dim data As Map";
+ //BA.debugLineNum = 126;BA.debugLine="Dim data As Map";
 _data = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 126;BA.debugLine="data.Initialize";
+ //BA.debugLineNum = 127;BA.debugLine="data.Initialize";
 _data.Initialize();
- //BA.debugLineNum = 127;BA.debugLine="data.Put(\"wallet_address\", kvs.Get(\"WalletAddress";
+ //BA.debugLineNum = 128;BA.debugLine="data.Put(\"wallet_address\", kvs.Get(\"WalletAddress";
 _data.Put((Object)("wallet_address"),mostCurrent._kvs._get("WalletAddress"));
- //BA.debugLineNum = 128;BA.debugLine="data.Put(\"to\", kvs.Get(\"ProjectWallet\"))";
+ //BA.debugLineNum = 129;BA.debugLine="data.Put(\"to\", kvs.Get(\"ProjectWallet\"))";
 _data.Put((Object)("to"),mostCurrent._kvs._get("ProjectWallet"));
- //BA.debugLineNum = 129;BA.debugLine="data.Put(\"amount\", kvs.Get(\"DonateAmount\"))";
+ //BA.debugLineNum = 130;BA.debugLine="data.Put(\"amount\", kvs.Get(\"DonateAmount\"))";
 _data.Put((Object)("amount"),mostCurrent._kvs._get("DonateAmount"));
- //BA.debugLineNum = 130;BA.debugLine="data.Put(\"contract_address\", \"0x5BA886F619b95E2b2";
+ //BA.debugLineNum = 131;BA.debugLine="data.Put(\"contract_address\", \"0x5BA886F619b95E2b2";
 _data.Put((Object)("contract_address"),(Object)("0x5BA886F619b95E2b2a875503e2FCE58c14027ade"));
- //BA.debugLineNum = 131;BA.debugLine="data.Put(\"callback_url\", \"https://\")";
+ //BA.debugLineNum = 132;BA.debugLine="data.Put(\"callback_url\", \"https://\")";
 _data.Put((Object)("callback_url"),(Object)("https://"));
- //BA.debugLineNum = 133;BA.debugLine="Dim json As JSONGenerator";
+ //BA.debugLineNum = 134;BA.debugLine="Dim json As JSONGenerator";
 _json = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator();
- //BA.debugLineNum = 134;BA.debugLine="json.Initialize(data)";
+ //BA.debugLineNum = 135;BA.debugLine="json.Initialize(data)";
 _json.Initialize(_data);
- //BA.debugLineNum = 136;BA.debugLine="JobPostTransaction.PostString(url, json.ToString)";
+ //BA.debugLineNum = 137;BA.debugLine="JobPostTransaction.PostString(url, json.ToString)";
 _jobposttransaction._poststring /*String*/ (_url,_json.ToString());
- //BA.debugLineNum = 137;BA.debugLine="JobPostTransaction.GetRequest.SetContentType(\"app";
+ //BA.debugLineNum = 138;BA.debugLine="JobPostTransaction.GetRequest.SetContentType(\"app";
 _jobposttransaction._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetContentType("application/json");
- //BA.debugLineNum = 138;BA.debugLine="JobPostTransaction.GetRequest.SetHeader(\"client_i";
+ //BA.debugLineNum = 139;BA.debugLine="JobPostTransaction.GetRequest.SetHeader(\"client_i";
 _jobposttransaction._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetHeader("client_id",BA.ObjectToString(mostCurrent._kvs._get("client_id")));
- //BA.debugLineNum = 139;BA.debugLine="JobPostTransaction.GetRequest.SetHeader(\"client_s";
+ //BA.debugLineNum = 140;BA.debugLine="JobPostTransaction.GetRequest.SetHeader(\"client_s";
 _jobposttransaction._getrequest /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest*/ ().SetHeader("client_secret",BA.ObjectToString(mostCurrent._kvs._get("client_secret")));
- //BA.debugLineNum = 140;BA.debugLine="End Sub";
+ //BA.debugLineNum = 141;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{

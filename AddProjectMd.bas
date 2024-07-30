@@ -118,8 +118,6 @@ Sub PostAudit
 
 End Sub
 
-
-
 Sub JobDone(Job As HttpJob)
 	ProgressDialogHide
     
@@ -170,8 +168,8 @@ End Sub
 
 
 Private Sub btnProjectSubmit_Click
-	PostAudit
-	pnBlackTransparent.Visible = True
+'	PostAudit
+'	pnBlackTransparent.Visible = True
 End Sub
 
 Private Sub btnClose_Click
@@ -183,3 +181,6 @@ Private Sub btnClose_Click
 	End If
 End Sub
 
+Private Sub imgBack_Click
+	Activity.Finish
+End Sub
